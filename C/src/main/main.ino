@@ -35,12 +35,17 @@ Sensor_t dht20;
 const int chipSelect = 10;
 
 int main(){
+  // Necessary to use int main() instead of void setup() & void loop()
   init();
+
+  // Initializing peripherals and components
   init_setup();
 
+  // Buffer to be saved on SD
   uint8_t data[32] = {0};
   uint8_t ix = 0;
 
+  // Program loop
   while(true){
     Serial.println("Printing indexes: ");
     ix += as7262.sread(&as7262, data + ix);
@@ -79,52 +84,9 @@ void init_setup(void){
   as7262_init(&as7262);
   dht20_init(&dht20);
 
-  delay(2000);
-}
-/*
-void setup() {
-  Serial.begin(9600);
-
-  Serial.print("Initializing SD card...");
-
-  // see if the card is present and can be initialized:
-  if (!SD.begin(chipSelect)) {
-    Serial.println("Card failed, or not present");
-    // don't do anything more:
-    while (1);
-  }
-  Serial.println("card initialized.");
-  
-  as7262_init(&as7262);
-  dht20_init(&dht20);
-
-  delay(2000);
+  delay(500);
 }
 
-void loop() {
-
-  uint8_t data[32] = {0};
-  uint8_t ix = 0;
-
-  while(true){
-    Serial.println("Printing indexes: ");
-    ix += as7262.sread(&as7262, data + ix);
-    Serial.println(ix);
-    ix += dht20.sread(&dht20, data + ix);
-    Serial.println(ix);
-    Serial.println("Printing data[32]: ");
-    for(int i = 0; i < 32; i++){
-      Serial.print(data[i]);
-      Serial.print("\t");
-    }
-    Serial.println("");
-  
-    save_frame(data, ix);
-    
-    ix = 0;
-    delay(SAMPLING_MS);
-  }
-}
 /*
 void sd_init(){
   
@@ -208,3 +170,49 @@ uint8_t dht20_read(Sensor_t* sens, uint8_t* data){
   return sizeof(float) * 2;
   
 }
+
+/*
+void setup() {
+  Serial.begin(9600);
+
+  Serial.print("Initializing SD card...");
+
+  // see if the card is present and can be initialized:
+  if (!SD.begin(chipSelect)) {
+    Serial.println("Card failed, or not present");
+    // don't do anything more:
+    while (1);
+  }
+  Serial.println("card initialized.");
+  
+  as7262_init(&as7262);
+  dht20_init(&dht20);
+
+  delay(2000);
+}
+
+void loop() {
+
+  uint8_t data[32] = {0};
+  uint8_t ix = 0;
+
+  while(true){
+    Serial.println("Printing indexes: ");
+    ix += as7262.sread(&as7262, data + ix);
+    Serial.println(ix);
+    ix += dht20.sread(&dht20, data + ix);
+    Serial.println(ix);
+    Serial.println("Printing data[32]: ");
+    for(int i = 0; i < 32; i++){
+      Serial.print(data[i]);
+      Serial.print("\t");
+    }
+    Serial.println("");
+  
+    save_frame(data, ix);
+    
+    ix = 0;
+    delay(SAMPLING_MS);
+  }
+}
+*/

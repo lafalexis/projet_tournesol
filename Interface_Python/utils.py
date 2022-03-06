@@ -35,6 +35,11 @@ class ReadBinaryData:
         df_anemometer = pd.DataFrame(columns=MEAS_ANEMOMETER)
 
         for frame in self.frame_list:
+
+            # If the checksums don't match, reject the frame.
+            if checksum(frame) is False:
+                continue
+
             # The time is the first element.
             sample_time = struct.unpack('>Q', bytes([frame.pop(0) for _ in range(BYTE_COUNT_TIME)]))[0]
             # Then the spectral measurements.
@@ -52,3 +57,10 @@ class ReadBinaryData:
                     'hdc1080': df_temp_rh,
                     'rtd': df_soil_temp,
                     'anemometer': df_anemometer}
+
+
+def checksum(frame: bytearray, checksum_bytes=2):
+    frame = list(frame)
+    xsum = struct.unpack('>H', bytes([frame.pop(-i) for i in range(checksum_bytes, 0, -1)]))[0]
+    calculated_xsum = sum(frame)
+    return calculated_xsum == xsum

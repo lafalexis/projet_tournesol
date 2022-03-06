@@ -1,6 +1,10 @@
-#Libraries
+# Libraries
 
 import sys
+
+import pandas as pd
+
+import os
 
 from PyQt5.QtCore import Qt
 from PyQt5 import QtWidgets
@@ -10,11 +14,13 @@ import numpy as np
 
 import matplotlib
 
-matplotlib.use('Qt5Agg')
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg, NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
 
-#Classes
+matplotlib.use('Qt5Agg')
+
+
+# Classes
 
 class MplCanvas(FigureCanvasQTAgg):
 
@@ -23,15 +29,16 @@ class MplCanvas(FigureCanvasQTAgg):
         self.axes = fig.add_subplot(111)
         super(MplCanvas, self).__init__(fig)
 
+
 class Qtplotter(QtWidgets.QMainWindow):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, unit: str, *args, **kwargs):
         super(Qtplotter, self).__init__(*args, **kwargs)
 
         self.canvas = MplCanvas(self, width=5, height=4, dpi=100)
 
-        self.canvas.axes.set_xlabel("123123123")
-        self.canvas.axes.set_ylabel("123123123")
+        self.canvas.axes.set_xlabel("Time")
+        self.canvas.axes.set_ylabel(unit)
 
         toolbar = NavigationToolbar(self.canvas, self)
 
@@ -47,27 +54,36 @@ class Qtplotter(QtWidgets.QMainWindow):
         widget = QtWidgets.QWidget()
         widget.setLayout(layout)
         self.setCentralWidget(widget)
+        self.setMinimumSize(1000, 800)
 
-    def update_plot(self, datax: np.array, datay: np.array):
+    def update_plot(self, datax: np.array, datay: np.array, legends: np.array):
+
+        xlabel = self.canvas.axes.get_xlabel()
+        ylabel = self.canvas.axes.get_ylabel()
+
         self.canvas.axes.cla()
-        self.canvas.axes.plot(datax, datay)
+        self.canvas.axes.plot(datax, datay, label=legends)
+        self.canvas.axes.legend(legends)
+        self.canvas.axes.set_xlabel(xlabel)
+        self.canvas.axes.set_ylabel(ylabel)
         self.canvas.draw()
 
-#App parameters
-app = QtWidgets.QApplication(sys.argv)
-screenWidth = 1440
-screenHeight = 900
 
-#Page 1 GUI building
+# App parameters
+app = QtWidgets.QApplication(sys.argv)
+
+# Page 1 GUI building
 page1 = QtWidgets.QWidget()
-page1.setFixedSize(screenWidth, screenHeight)
+page1.setFixedSize(1440, 900)
 page1.setWindowTitle("Main menu")
+
 
 def gotopage1():
     page1.show()
     page2.close()
 
-#Page 1 components
+
+# Page 1 components
 page1_mainLayout = QtWidgets.QVBoxLayout()
 page1_pushButtonLayout = QtWidgets.QHBoxLayout()
 page1_bottomLayout = QtWidgets.QVBoxLayout()
@@ -77,20 +93,19 @@ page1_programTitle = QtWidgets.QLabel()
 page1_image = QtWidgets.QLabel()
 page1_fileSelected = QtWidgets.QLabel(" ")
 
-#Page 1 assembling
+# Page 1 assembling
 pixmap = QPixmap('vegetation.jpg')
 page1_image.setPixmap(pixmap)
 page1_image.setAlignment(Qt.AlignCenter)
 
 page1_programTitle.setText("Weather data analyser")
-#page1_programTitle.setStyleSheet("background-color : gray; color : black;")
+# page1_programTitle.setStyleSheet("background-color : gray; color : black;")
 page1_programTitle.setAlignment(Qt.AlignCenter)
 page1_programTitle.setFont(QFont('Arial', 40))
 
 page1_filePushButton.setText("Choose file")
 page1_filePushButton.setFixedWidth(100)
 page1_filePushButton.setStyleSheet("background-color: rgb(220,220,220);")
-
 
 page1_pushButtonLayout.addWidget(page1_filePushButton)
 page1_pushButtonLayout.addWidget(page1_fileSelected)
@@ -114,15 +129,16 @@ page1_mainLayout.addLayout(page1_bottomLayout)
 page1.setStyleSheet("background-color:white;")
 page1.setLayout(page1_mainLayout)
 
-
-#Page 2 GUI building
+# Page 2 GUI building
 page2 = QtWidgets.QWidget()
-page2.setFixedSize(screenWidth, screenHeight)
+page2.setFixedSize(600, 600)
 page2.setWindowTitle("Graphics")
+
 
 def gotopage2():
     page2.show()
     page1.close()
+
 
 page2_mainLayout = QtWidgets.QVBoxLayout()
 page2_optionsLayout = QtWidgets.QHBoxLayout()
@@ -179,8 +195,8 @@ page2_fileinfolayout = QtWidgets.QVBoxLayout()
 
 page2_filedirectorylabel = QtWidgets.QLabel()
 page2_filesizelabel = QtWidgets.QLabel('Size: ')
-page2_fileminimumdate = QtWidgets.QLabel('Minimum date:')
-page2_filemaximumdate = QtWidgets.QLabel('Maximum date')
+page2_fileminimumdate = QtWidgets.QLabel('Minimum date: ')
+page2_filemaximumdate = QtWidgets.QLabel('Maximum date: ')
 page2_nbrofmeasurements = QtWidgets.QLabel('Number of measurements:')
 
 page2_fileinfolayout.addWidget(page2_filedirectorylabel)
@@ -190,14 +206,15 @@ page2_fileinfolayout.addWidget(page2_filemaximumdate)
 page2_fileinfolayout.addWidget(page2_nbrofmeasurements)
 
 page2_fileinfo.setLayout(page2_fileinfolayout)
-page2_fileinfo.setFixedSize(600,200)
+page2_fileinfo.setFixedSize(600, 200)
 page2_mainLayout.addLayout(page2_optionsLayout)
 page2_mainLayout.addWidget(page2_fileinfo)
 
 page2.setLayout(page2_mainLayout)
 
-#Graphics pages
+# Graphics pages
 optionschecked = np.zeros(8)
+
 
 def checkmeasurementsoptions():
     if page2_measurements_option1button.isChecked():
@@ -228,65 +245,137 @@ def checkmeasurementsoptions():
         optionschecked[7] = 1
     else:
         optionschecked[7] = 0
-    print(optionschecked)
 
-def updatedate():
 
-    print(page2_calendarminimumdate.date())
-    print(page2_calendarminimumdate.time())
-
-lightspectrumgraphicpage = Qtplotter()
+lightspectrumgraphicpage = Qtplotter('Unit')
 lightspectrumgraphicpage.setWindowTitle("Light spectrum")
 
-lightintensitygraphicpage = Qtplotter()
+lightintensitygraphicpage = Qtplotter('Lux')
 lightintensitygraphicpage.setWindowTitle("Light intensity")
 
-lightcyclesgraphicpage = Qtplotter()
+lightcyclesgraphicpage = Qtplotter('bnr of hours of sun,')
 lightcyclesgraphicpage.setWindowTitle("Light cycles")
 
-airtemperaturegraphicpage = Qtplotter()
+airtemperaturegraphicpage = Qtplotter('Celsius')
 airtemperaturegraphicpage.setWindowTitle("Air temperature")
 
-groundtemperaturegraphicpage = Qtplotter()
+groundtemperaturegraphicpage = Qtplotter('Celsius')
 groundtemperaturegraphicpage.setWindowTitle("Ground temperature")
 
-airhumiditygraphicpage = Qtplotter()
+airhumiditygraphicpage = Qtplotter('%rel')
 airhumiditygraphicpage.setWindowTitle("Air humidity")
 
-windspeedgraphicpage = Qtplotter()
+windspeedgraphicpage = Qtplotter('m/s')
 windspeedgraphicpage.setWindowTitle("Wind speed")
 
-def printgraphics():
 
-    if optionschecked[1] == 1:
-        lightspectrumgraphicpage.show()
-    if optionschecked[2] == 1:
-        lightintensitygraphicpage.show()
-    if optionschecked[3] == 1:
-        lightcyclesgraphicpage.show()
-    if optionschecked[4] == 1:
-        airtemperaturegraphicpage.show()
-    if optionschecked[5] == 1:
-        groundtemperaturegraphicpage.show()
-    if optionschecked[6] == 1:
-        airhumiditygraphicpage.show()
-    if optionschecked[7] == 1:
-        windspeedgraphicpage.show()
+def printgraphics():
+    dfs = pd.read_excel('DataBase.xlsx', index_col=None, sheet_name=None)
+
+    datemin = pd.Timestamp(page2_calendarminimumdate.date().year(), page2_calendarminimumdate.date().month(),
+                           page2_calendarminimumdate.date().day(), page2_calendarminimumdate.time().hour(),
+                           page2_calendarminimumdate.time().minute())
+
+    datemax = pd.Timestamp(page2_calendarmaximumdate.date().year(), page2_calendarmaximumdate.date().month(),
+                           page2_calendarmaximumdate.date().day(), page2_calendarmaximumdate.time().hour(),
+                           page2_calendarmaximumdate.time().minute())
+
+    alldates = np.array(dfs['Light']['Datetime'])
+
+    sortedmindate = alldates > datemin
+    sortedmaxdate = alldates < datemax
+    sorteddates = np.logical_and(sortedmindate, sortedmaxdate)
+
+    numberofdates = np.count_nonzero(sorteddates)
+    selecteddates = alldates[sorteddates]
+
+    if numberofdates >= 1:
+
+        if optionschecked[1] == 1:
+            lightspectrumdatay = np.array(dfs['Light'][['CH1', 'CH2', 'CH3', 'CH4', 'CH5', 'CH6']])
+            lightspectrumdataysorted = lightspectrumdatay[sorteddates]
+
+            lightspectrumgraphicpage.update_plot(selecteddates, lightspectrumdataysorted,
+                                                 ['CH1', 'CH2', 'CH3', 'CH4', 'CH5', 'CH6'])
+            lightspectrumgraphicpage.show()
+
+        if optionschecked[2] == 1:
+            lightintensitygraphicpage.show()
+        if optionschecked[3] == 1:
+            lightcyclesgraphicpage.show()
+        if optionschecked[4] == 1:
+            airtemperaturedatay = np.array(dfs['Air_temp_%RH'][['Temp_degC']])
+            airtemperaturedataysorted = airtemperaturedatay[sorteddates]
+
+            airtemperaturegraphicpage.update_plot(selecteddates, airtemperaturedataysorted, ['Temp_degC'])
+            airtemperaturegraphicpage.show()
+
+        if optionschecked[5] == 1:
+            groundtemperaturedatay = np.array(dfs['Soil_temp'][['Temp']])
+            groundtemperaturedataysorted = groundtemperaturedatay[sorteddates]
+
+            groundtemperaturegraphicpage.update_plot(selecteddates, groundtemperaturedataysorted, ['ground temp'])
+            groundtemperaturegraphicpage.show()
+
+        if optionschecked[6] == 1:
+            airhumiditydatay = np.array(dfs['Air_temp_%RH'][['%RH']])
+            airhumiditydataysorted = airhumiditydatay[sorteddates]
+
+            airhumiditygraphicpage.update_plot(selecteddates, airhumiditydataysorted, ['%RH'])
+            airhumiditygraphicpage.show()
+
+        if optionschecked[7] == 1:
+            windspeeddatay = np.array(dfs['Wind_speed'][['Wind_speed']])
+            windspeeddataysorted = windspeeddatay[sorteddates]
+
+            windspeedgraphicpage.update_plot(selecteddates, windspeeddataysorted, ['wind speed'])
+            windspeedgraphicpage.show()
+
 
 def filedirectory():
     filewindow = QtWidgets.QFileDialog()
-    filewindow.setNameFilter("*.txt *.jpg")
+    filewindow.setNameFilter("*.jpg *.txt")
     isvalid = filewindow.exec()
 
     if isvalid:
-        filedirectory = filewindow.selectedUrls()[0]
-        page1_fileSelected.setText(filedirectory.fileName())
+        selectedfile = filewindow.selectedUrls()[0]
+        page1_fileSelected.setText(selectedfile.fileName())
         page1_progressBar.setVisible(True)
-        page1_progressBar.setValue(50)
-        page2_filedirectorylabel.setText('Directory: '+filedirectory.path())
+        page1_progressBar.setValue(0)
+        page2_filedirectorylabel.setText('Directory: ' + selectedfile.path())
+
+        # getting file size
+        path = selectedfile.path()
+        harddrivedirectory = path.find(':') + 1
+        path = path[harddrivedirectory:]
+        size = os.path.getsize(path)
+
+        size = size / 1000
+
+        # Création du fichier excel (fonction alexis)
+        dfs = pd.read_excel('DataBase.xlsx', index_col=None, sheet_name=None)
+
+        dates = dfs['Light']['Datetime']
+
+        minimumdate = dates[dates.index.min()]
+        maximumdate = dates[dates.index.max()]
+        numerofelements = dates.size
+
+        page2_filesizelabel.setText("File size: " + str(size) + 'KB')
+        page2_fileminimumdate.setText('Minimum Date: ' + str(minimumdate))
+        page2_filemaximumdate.setText('Maximum Date: ' + str(maximumdate))
+        page2_nbrofmeasurements.setText('Number of measurments: ' + str(numerofelements))
+
+        page2_calendarminimumdate.setMinimumDate(minimumdate)
+        page2_calendarminimumdate.setMaximumDate(maximumdate)
+
+        page2_calendarmaximumdate.setMinimumDate(minimumdate)
+        page2_calendarmaximumdate.setMaximumDate(maximumdate)
+
         gotopage2()
 
-#Connections
+
+# Connections
 
 page1_filePushButton.clicked.connect(filedirectory)
 
@@ -301,14 +390,8 @@ page2_measurements_option7button.clicked.connect(checkmeasurementsoptions)
 page2_returnmainmenubutton.clicked.connect(gotopage1)
 page2_printgraphicsbutton.clicked.connect(printgraphics)
 
-page2_calendarminimumdate.dateTimeChanged.connect(updatedate)
-page2_calendarmaximumdate.dateTimeChanged.connect(updatedate)
-
-
-#Main
+# Main
 
 gotopage1()
-
-
 
 exit(app.exec_())

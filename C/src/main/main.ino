@@ -20,12 +20,12 @@
 
 #define ERROR_BLINK_MS    (200)
 
-#define SERIAL_EN                (1)
+#define SERIAL_EN                (0)
 #define DEBUG_AS7262_SERIAL      (0 & SERIAL_EN)
 #define DEBUG_HDC1080_SERIAL     (0 & SERIAL_EN)
-#define DEBUG_SAVE_FRAME_SERIAL  (1 & SERIAL_EN)
+#define DEBUG_SAVE_FRAME_SERIAL  (0 & SERIAL_EN)
 
-#define DEBUG_NO_SD              (1)
+#define DEBUG_NO_SD              (0)
 
 struct Sensor_t;
 
@@ -99,7 +99,7 @@ int main(){
   while(true){
     dt.value = datetime;
     
-    for (int i = sizeof(uint64_t); i > 0; i--){
+    for (int i = sizeof(uint64_t) - 1; i >= 0; i--){
       data[ix++] = dt.bytes[i];
     }
     

@@ -103,16 +103,21 @@ int main(){
       data[ix++] = dt.bytes[i];
     }
     
+    // Sensors reading
     ix += as7262.sread(&as7262, data + ix);
     ix += hdc1080.sread(&hdc1080, data + ix);
     
+    // Data validation
+
     //crc = calculate_crc16(0xFFFF, data, ix);
     crc = checksum(data, ix);
     data[ix++] = (uint8_t)((crc & 0xFF00) >> 8);
     data[ix++] = (uint8_t)(crc & 0x00FF);
 
+    // Save data to disk
     save_frame(data, ix);
 
+    // Sleep mode
     delay(SAMPLING_MS);
     datetime += SAMPLING_MS;
     ix = 0;

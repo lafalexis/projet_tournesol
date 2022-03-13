@@ -4,6 +4,7 @@
 
 #include "Adafruit_AS726x.h"
 #include "ClosedCube_HDC1080.h"
+#include "PT100.h"
 
 #define SAMPLING_S        (1)
 #define SAMPLING_MS       (1000 * (SAMPLING_S - 0.5))
@@ -25,7 +26,7 @@
 #define DEBUG_HDC1080_SERIAL     (0 & SERIAL_EN)
 #define DEBUG_SAVE_FRAME_SERIAL  (0 & SERIAL_EN)
 
-#define DEBUG_NO_SD              (0)
+#define DEBUG_NO_SD              (1)
 
 struct Sensor_t;
 
@@ -54,10 +55,12 @@ void status_blinker_disable(void);
 int as7262_init(Sensor_t* sens);
 int hdc1080_init(Sensor_t* sens);
 int dht20_init(Sensor_t* sens);
+int pt100_init(Sensor_t* sens);
 
 uint8_t as7262_read(Sensor_t* sens, uint8_t* data);
 uint8_t hdc1080_read(Sensor_t* sens, uint8_t* data);
 uint8_t dht20_read(Sensor_t* sens, uint8_t* data);
+uint8_t pt100_read(Sensor_t* sens, uint8_t* data);
 
 void save_frame(uint8_t* data, uint8_t len);
 void signal_error(int err);
@@ -69,9 +72,11 @@ uint16_t checksum(const uint8_t *c_ptr, size_t len);
 
 Sensor_t as7262;
 Sensor_t hdc1080;
+Sensor_t pt100;
 
 Adafruit_AS726x as7262_sensor;
 ClosedCube_HDC1080 hdc1080_sensor;
+PT100 pt100_sensor;
 
 const int chipSelect = 10;
 
@@ -288,6 +293,10 @@ int hdc1080_init(Sensor_t* sens){
   return 0;
 }
 
+int pt100_init(Sensor_t* sens){
+	return 0;
+}
+
 uint8_t as7262_read(Sensor_t* sens, uint8_t* data){
 
   float measurements[AS726x_NUM_CHANNELS] = {0};
@@ -359,4 +368,8 @@ ISR(TIMER1_COMPA_vect){
     }
     digitalWrite(ERROR_LED, ledState);
   }
+}
+
+uint8_t pt100_read(Sensor_t* sens, uint8_t* data) {
+	return 0;
 }

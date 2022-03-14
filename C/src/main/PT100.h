@@ -1,4 +1,3 @@
-
 /*!
  * @file PT100.h
  *
@@ -15,6 +14,7 @@
 #include "Arduino.h"
 
 #define PT100_CAL_REF            (float) (2.77)
+#define PT100_DEFAULT_PIN        (A0)           // pins_arduino.h
 
 /**************************************************************************/
 /*!
@@ -29,14 +29,14 @@ public:           // Access specifier
       @param  None 
      
   */
-  PT100(void);     // Constructor
+  PT100(float ref = PT100_CAL_REF, int pin = PT100_DEFAULT_PIN);     // Constructor
   ~PT100(void);     // Destructor
 
   /*!
       @brief  
       @return 
   */
-  void setCalibrationReference(float ref = PT100_CAL_REF);
+  void setCalibrationReference(float ref);
   /*!
       @brief  
       @return 
@@ -46,10 +46,25 @@ public:           // Access specifier
       @brief  
       @return 
   */
+  void setPin(int pin);
+  /*!
+      @brief  
+      @return 
+  */
+  int getPin(void);
+  /*!
+      @brief  
+      @return 
+  */
   uint8_t readTemperature(void);
 
 private:
-  float calRef;
+  struct control_setup {
+    float calRef;
+    int pin;
+    int rawVal;
+    float tempVal;
+  } _control_setup;
 };
 
 #endif

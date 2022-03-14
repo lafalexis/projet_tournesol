@@ -294,7 +294,11 @@ int hdc1080_init(Sensor_t* sens){
 }
 
 int pt100_init(Sensor_t* sens){
-	return 0;
+
+  sens->sensor_mod = (void*)&pt100_sensor;
+  sens->sread = &pt100_read;
+
+  return 0;
 }
 
 uint8_t as7262_read(Sensor_t* sens, uint8_t* data){
@@ -371,5 +375,6 @@ ISR(TIMER1_COMPA_vect){
 }
 
 uint8_t pt100_read(Sensor_t* sens, uint8_t* data) {
-	return 0;
+  PT100* pPt100 = (PT100*)sens->sensor_mod;
+  return 0;
 }

@@ -63,9 +63,10 @@ int PT100::getPin(void) { return _control_setup.pin; }
     @return 
 */
 /**************************************************************************/
-uint8_t PT100::readTemperature(void) {
+float PT100::readTemperature(void) {
   _control_setup.rawVal = analogRead(_control_setup.pin);
-  //_control_setup.tempVal =; 
-  return 0;
+  // Bits to temperature
+  _control_setup.tempVal = PT100_C1 * (_control_setup.rawVal - PT100_C2); 
+  return _control_setup.tempVal;
 }
 

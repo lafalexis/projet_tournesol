@@ -21,10 +21,11 @@
 
 #define ERROR_BLINK_MS    (200)
 
-#define SERIAL_EN                (0)
+#define SERIAL_EN                (1)
 #define DEBUG_AS7262_SERIAL      (0 & SERIAL_EN)
 #define DEBUG_HDC1080_SERIAL     (0 & SERIAL_EN)
 #define DEBUG_SAVE_FRAME_SERIAL  (0 & SERIAL_EN)
+#define DEBUG_PT100_SERIAL       (1 & SERIAL_EN)
 
 #define DEBUG_NO_SD              (1)
 
@@ -109,8 +110,9 @@ int main(){
     }
     
     // Sensors reading
-    ix += as7262.sread(&as7262, data + ix);
-    ix += hdc1080.sread(&hdc1080, data + ix);
+    //ix += as7262.sread(&as7262, data + ix);
+    //ix += hdc1080.sread(&hdc1080, data + ix);
+    ix += pt100.sread(&pt100, data + ix);
     
     // Data validation
 
@@ -143,8 +145,9 @@ int init_setup(void){
   err |= sd_init();
 #endif
 
-  err |= as7262_init(&as7262);
-  err |= hdc1080_init(&hdc1080);
+  //err |= as7262_init(&as7262);
+  //err |= hdc1080_init(&hdc1080);
+  err |= pt100_init(&pt100);
   
   delay(500);
   status_blinker_disable();
@@ -376,5 +379,15 @@ ISR(TIMER1_COMPA_vect){
 
 uint8_t pt100_read(Sensor_t* sens, uint8_t* data) {
   PT100* pPt100 = (PT100*)sens->sensor_mod;
-  return 0;
+  
+  data_float_bytes temp;
+  temp.value = (float)(pPt100->readTemperature());
+
+#if DEBUG_PT100_SERIAL
+  Serial.print("Temp(PT100): "); Serial.print(temp.value); Serial.print("\n");
+#endif
+  for (int i = 0; i < sizeof(float); i++){
+    data[i] = temp.bytes[i];
+  }
+  return sizeof(float);
 }

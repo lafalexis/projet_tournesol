@@ -16,6 +16,9 @@
 #define PT100_CAL_REF            (float) (2.77)
 #define PT100_DEFAULT_PIN        (A0)           // pins_arduino.h
 
+// Conversion constants
+#define PT100_C1                 (float) (0.142541)
+#define PT100_C2                 (float) (566.742)
 /**************************************************************************/
 /*!
     @brief  Class that stores state and functions for interacting with PT100
@@ -56,7 +59,7 @@ public:           // Access specifier
       @brief  
       @return 
   */
-  uint8_t readTemperature(void);
+  float readTemperature(void);
 
 private:
   struct control_setup {

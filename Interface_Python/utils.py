@@ -56,10 +56,11 @@ class ReadBinaryData:
             # Then the soil temperature.
             # Then the wind speed.
 
-        df_light.index = pd.to_datetime(df_light.index, unit='s').astype('datetime64[ns, Canada/Eastern]')
-        df_temp_rh.index = pd.to_datetime(df_temp_rh.index, unit='s').astype('datetime64[ns, Canada/Eastern]')
-        df_soil_temp.index = pd.to_datetime(df_soil_temp.index, unit='s').astype('datetime64[ns, Canada/Eastern]')
-        df_anemometer.index = pd.to_datetime(df_anemometer.index, unit='s').astype('datetime64[ns, Canada/Eastern]')
+        #df_light.index = pd.to_datetime(df_light.index, unit='s').tz_localize('canada/eastern')
+        df_light.index = pd.to_datetime(df_light.index, unit='s').tz_localize(None)
+        df_temp_rh.index = pd.to_datetime(df_temp_rh.index, unit='s').tz_localize(None)
+        df_soil_temp.index = pd.to_datetime(df_soil_temp.index, unit='s').tz_localize(None)
+        df_anemometer.index = pd.to_datetime(df_anemometer.index, unit='s').tz_localize(None)
 
         self.dfs = {'as7262': df_light,
                     'hdc1080': df_temp_rh,
@@ -71,6 +72,7 @@ class GenerateDerivativeData:
     def __init__(self, dfs):
         self.dfs = dfs
         self.gen_data()
+        self.save_xlsx()
 
     def gen_data(self):
         self.estimate_light_intensity(self.dfs['as7262'])
@@ -84,6 +86,11 @@ class GenerateDerivativeData:
     def estimate_air_thermo_period(self, air_temp_data):
         pass
 
+    def save_xlsx(self):
+        with pd.ExcelWriter('database.xlsx', mode='w') as writer:
+            for key, df in self.dfs.items():
+                df.to_excel(writer, sheet_name=key, index_label='datetime')
+
 
 def checksum(frame: bytearray, checksum_bytes=2):
     frame = list(frame)
@@ -93,13 +100,6 @@ def checksum(frame: bytearray, checksum_bytes=2):
 
 
 if __name__ == '__main__':
-    data = ReadBinaryData(42)
+    data = ReadBinaryData(42, fn=r'D:\DATALOG_small.BIN')
     more_data = GenerateDerivativeData(data.dfs)
-    plt.figure()
-    data.dfs['as7262'].plot()
-    plt.show()
-
-    plt.figure()
-    more_data.dfs['light_intensity'].plot()
-    plt.show()
     print()

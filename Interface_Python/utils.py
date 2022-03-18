@@ -9,7 +9,7 @@ MEAS_AS7262 = ['450nm', '500nm', '550nm', '570nm', '600nm', '650nm']
 MEAS_HDC1080 = ['temp', 'rh%']
 MEAS_RTD = ['temp']
 MEAS_ANEMOMETER = ['wind']
-
+SENSORLIST = ['as7262', 'hdc1080', 'rtd', 'anemometer']
 # Some useful definitions : bytes count for used data types.
 BYTE_COUNT_FLOAT = 4
 BYTE_COUNT_TIME = 8

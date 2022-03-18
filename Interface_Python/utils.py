@@ -1,4 +1,5 @@
 import pandas as pd
+
 import matplotlib.pyplot as plt
 import struct
 from tqdm import tqdm
@@ -6,20 +7,26 @@ from pytz import timezone
 
 from PyQt5 import QtWidgets
 
+import struct
+
+
 # Some constant definitions : lists of measurements.
 MEAS_AS7262 = ['450nm', '500nm', '550nm', '570nm', '600nm', '650nm']
 MEAS_HDC1080 = ['temp', 'rh%']
 MEAS_RTD = ['temp']
 MEAS_ANEMOMETER = ['wind']
+
 SENSORLIST = ['as7262', 'hdc1080', 'rtd', 'anemometer']
 EXCELNAME = 'database.xlsx'
+
 # Some useful definitions : bytes count for used data types.
 BYTE_COUNT_FLOAT = 4
 BYTE_COUNT_TIME = 8
 
-
 class ReadBinaryData:
+
     def __init__(self, progressbar: QtWidgets.QProgressBar, frame_size, fn=r'D:\DATALOG.BIN'):
+
         self.bytes = None
         self.frame_list = None
         self.dfs = None
@@ -41,7 +48,6 @@ class ReadBinaryData:
         df_soil_temp = pd.DataFrame(columns=MEAS_RTD)
         df_anemometer = pd.DataFrame(columns=MEAS_ANEMOMETER)
 
-        #for frame in tqdm(self.frame_list):
         for i, frame in enumerate(self.frame_list):
 
             self.progressbar.setValue(int((i/self.sample_count)*100))
@@ -73,7 +79,6 @@ class ReadBinaryData:
                     'rtd': df_soil_temp,
                     'anemometer': df_anemometer}
 
-
 class GenerateDerivativeData:
     def __init__(self, dfs):
         self.dfs = dfs
@@ -97,15 +102,12 @@ class GenerateDerivativeData:
             for key, df in self.dfs.items():
                 df.to_excel(writer, sheet_name=key, index_label='datetime')
 
-
 def checksum(frame: bytearray, checksum_bytes=2):
     frame = list(frame)
     xsum = struct.unpack('>H', bytes([frame.pop(-i) for i in range(checksum_bytes, 0, -1)]))[0]
     calculated_xsum = sum(frame)
+
     return calculated_xsum == xsum
 
 
-if __name__ == '__main__':
-    data = ReadBinaryData(42, fn=r'D:\DATALOG_small.BIN')
-    more_data = GenerateDerivativeData(data.dfs)
-    print()
+

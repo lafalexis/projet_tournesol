@@ -4,24 +4,31 @@ import struct
 from tqdm import tqdm
 from pytz import timezone
 
+from PyQt5 import QtWidgets
+
+import struct
+
 # Some constant definitions : lists of measurements.
 MEAS_AS7262 = ['450nm', '500nm', '550nm', '570nm', '600nm', '650nm']
 MEAS_HDC1080 = ['temp', 'rh%']
 MEAS_RTD = ['temp']
 MEAS_ANEMOMETER = ['wind']
 SENSORLIST = ['as7262', 'hdc1080', 'rtd', 'anemometer']
+EXCELNAME = 'database.xlsx'
+
 # Some useful definitions : bytes count for used data types.
 BYTE_COUNT_FLOAT = 4
 BYTE_COUNT_TIME = 8
 
-
 class ReadBinaryData:
-    def __init__(self, frame_size, fn=r'D:\DATALOG.BIN'):
+    def __init__(self, progressbar: QtWidgets.QProgressBar, frame_size, fn=r'D:\DATALOG.BIN'):
+
         self.bytes = None
         self.frame_list = None
         self.dfs = None
         self.frame_size = frame_size
         self.sample_count = 0
+        self.progressbar = progressbar
         self.import_data(fn)
         self.split_data()
 
@@ -37,8 +44,9 @@ class ReadBinaryData:
         df_soil_temp = pd.DataFrame(columns=MEAS_RTD)
         df_anemometer = pd.DataFrame(columns=MEAS_ANEMOMETER)
 
-        for frame in tqdm(self.frame_list):
+        for i, frame in enumerate(self.frame_list):
 
+            self.progressbar.setValue(int((i/self.sample_count)*100))
             # If the checksums don't match, reject the frame.
             if checksum(frame) is False:
                 continue
@@ -67,6 +75,28 @@ class ReadBinaryData:
                     'rtd': df_soil_temp,
                     'anemometer': df_anemometer}
 
+class GenerateDerivativeData:
+    def __init__(self, dfs):
+        self.dfs = dfs
+        self.gen_data()
+        self.save_xlsx()
+
+    def gen_data(self):
+        self.estimate_light_intensity(self.dfs['as7262'])
+
+    def estimate_light_intensity(self, light_spectral_data: pd.DataFrame):
+        self.dfs['light_intensity'] = light_spectral_data.sum(axis=1)
+
+    def estimate_photo_period(self, light_intensity_data):
+        pass
+
+    def estimate_air_thermo_period(self, air_temp_data):
+        pass
+
+    def save_xlsx(self):
+        with pd.ExcelWriter(EXCELNAME, mode='w') as writer:
+            for key, df in self.dfs.items():
+                df.to_excel(writer, sheet_name=key, index_label='datetime')
 
 class GenerateDerivativeData:
     def __init__(self, dfs):
@@ -96,10 +126,6 @@ def checksum(frame: bytearray, checksum_bytes=2):
     frame = list(frame)
     xsum = struct.unpack('>H', bytes([frame.pop(-i) for i in range(checksum_bytes, 0, -1)]))[0]
     calculated_xsum = sum(frame)
-    return calculated_xsum == xsum
 
-
-if __name__ == '__main__':
-    data = ReadBinaryData(42, fn=r'D:\DATALOG_small.BIN')
-    more_data = GenerateDerivativeData(data.dfs)
-    print()
+    return calculated_xsum == xsuM
+ 

@@ -1,5 +1,8 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import struct
+from tqdm import tqdm
+from pytz import timezone
 
 # Some constant definitions : lists of measurements.
 MEAS_AS7262 = ['450nm', '500nm', '550nm', '570nm', '600nm', '650nm']
@@ -34,7 +37,7 @@ class ReadBinaryData:
         df_soil_temp = pd.DataFrame(columns=MEAS_RTD)
         df_anemometer = pd.DataFrame(columns=MEAS_ANEMOMETER)
 
-        for frame in self.frame_list:
+        for frame in tqdm(self.frame_list):
 
             # If the checksums don't match, reject the frame.
             if checksum(frame) is False:
@@ -53,10 +56,33 @@ class ReadBinaryData:
             # Then the soil temperature.
             # Then the wind speed.
 
+        df_light.index = pd.to_datetime(df_light.index, unit='s').astype('datetime64[ns, Canada/Eastern]')
+        df_temp_rh.index = pd.to_datetime(df_temp_rh.index, unit='s').astype('datetime64[ns, Canada/Eastern]')
+        df_soil_temp.index = pd.to_datetime(df_soil_temp.index, unit='s').astype('datetime64[ns, Canada/Eastern]')
+        df_anemometer.index = pd.to_datetime(df_anemometer.index, unit='s').astype('datetime64[ns, Canada/Eastern]')
+
         self.dfs = {'as7262': df_light,
                     'hdc1080': df_temp_rh,
                     'rtd': df_soil_temp,
                     'anemometer': df_anemometer}
+
+
+class GenerateDerivativeData:
+    def __init__(self, dfs):
+        self.dfs = dfs
+        self.gen_data()
+
+    def gen_data(self):
+        self.estimate_light_intensity(self.dfs['as7262'])
+
+    def estimate_light_intensity(self, light_spectral_data: pd.DataFrame):
+        self.dfs['light_intensity'] = light_spectral_data.sum(axis=1)
+
+    def estimate_photo_period(self, light_intensity_data):
+        pass
+
+    def estimate_air_thermo_period(self, air_temp_data):
+        pass
 
 
 def checksum(frame: bytearray, checksum_bytes=2):
@@ -64,3 +90,16 @@ def checksum(frame: bytearray, checksum_bytes=2):
     xsum = struct.unpack('>H', bytes([frame.pop(-i) for i in range(checksum_bytes, 0, -1)]))[0]
     calculated_xsum = sum(frame)
     return calculated_xsum == xsum
+
+
+if __name__ == '__main__':
+    data = ReadBinaryData(42)
+    more_data = GenerateDerivativeData(data.dfs)
+    plt.figure()
+    data.dfs['as7262'].plot()
+    plt.show()
+
+    plt.figure()
+    more_data.dfs['light_intensity'].plot()
+    plt.show()
+    print()

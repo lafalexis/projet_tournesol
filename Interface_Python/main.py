@@ -18,10 +18,12 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg, NavigationTool
 from matplotlib.figure import Figure
 
 matplotlib.use('Qt5Agg')
+#My lib
+
+import utils
 
 
 # Classes
-
 class MplCanvas(FigureCanvasQTAgg):
 
     def __init__(self, parent=None, width=10, height=10, dpi=100):
@@ -215,7 +217,6 @@ page2.setLayout(page2_mainLayout)
 # Graphics pages
 optionschecked = np.zeros(8)
 
-
 def checkmeasurementsoptions():
     if page2_measurements_option1button.isChecked():
         optionschecked[1] = 1
@@ -246,7 +247,6 @@ def checkmeasurementsoptions():
     else:
         optionschecked[7] = 0
 
-
 lightspectrumgraphicpage = Qtplotter('Unit')
 lightspectrumgraphicpage.setWindowTitle("Light spectrum")
 
@@ -270,7 +270,6 @@ windspeedgraphicpage.setWindowTitle("Wind speed")
 
 
 def printgraphics():
-    dfs = pd.read_excel('DataBase.xlsx', index_col=None, sheet_name=None)
 
     datemin = pd.Timestamp(page2_calendarminimumdate.date().year(), page2_calendarminimumdate.date().month(),
                            page2_calendarminimumdate.date().day(), page2_calendarminimumdate.time().hour(),
@@ -280,7 +279,9 @@ def printgraphics():
                            page2_calendarmaximumdate.date().day(), page2_calendarmaximumdate.time().hour(),
                            page2_calendarmaximumdate.time().minute())
 
-    alldates = np.array(dfs['Light']['Datetime'])
+    dfs = pd.read_excel(utils.EXCELNAME, index_col='datetime', sheet_name=None)
+
+    alldates = dfs[utils.SENSORLIST[0]].index
 
     sortedmindate = alldates > datemin
     sortedmaxdate = alldates < datemax
@@ -289,52 +290,66 @@ def printgraphics():
     numberofdates = np.count_nonzero(sorteddates)
     selecteddates = alldates[sorteddates]
 
+    excelpages = list(dfs.keys())
+    columnames = [list(dfs[page].columns) for page in excelpages]
+
     if numberofdates >= 1:
 
         if optionschecked[1] == 1:
-            lightspectrumdatay = np.array(dfs['Light'][['CH1', 'CH2', 'CH3', 'CH4', 'CH5', 'CH6']])
-            lightspectrumdataysorted = lightspectrumdatay[sorteddates]
 
-            lightspectrumgraphicpage.update_plot(selecteddates, lightspectrumdataysorted,
-                                                 ['CH1', 'CH2', 'CH3', 'CH4', 'CH5', 'CH6'])
+            datay = np.array(dfs[excelpages[0]][columnames[0]])
+            dataysorted = datay[sorteddates]
+
+            lightspectrumgraphicpage.update_plot(selecteddates, dataysorted, columnames[0])
             lightspectrumgraphicpage.show()
 
         if optionschecked[2] == 1:
-            lightintensitygraphicpage.show()
-        if optionschecked[3] == 1:
-            lightcyclesgraphicpage.show()
-        if optionschecked[4] == 1:
-            airtemperaturedatay = np.array(dfs['Air_temp_%RH'][['Temp_degC']])
-            airtemperaturedataysorted = airtemperaturedatay[sorteddates]
 
-            airtemperaturegraphicpage.update_plot(selecteddates, airtemperaturedataysorted, ['Temp_degC'])
+            datay = np.array(dfs[excelpages[4]][columnames[4]])
+            dataysorted = datay[sorteddates]
+
+            lightintensitygraphicpage.update_plot(selecteddates, dataysorted, columnames[4])
+            lightintensitygraphicpage.show()
+
+        if optionschecked[3] == 1:
+
+            datay = np.array(dfs[excelpages[5]][columnames[5]])
+            dataysorted = datay[sorteddates]
+
+            lightcyclesgraphicpage.update_plot(selecteddates, dataysorted, columnames[5])
+            lightcyclesgraphicpage.show()
+
+        if optionschecked[4] == 1:
+            datay = np.array(dfs[excelpages[1]][columnames[1][0]])
+            dataysorted = datay[sorteddates]
+
+            airtemperaturegraphicpage.update_plot(selecteddates, dataysorted, [columnames[1][0]])
             airtemperaturegraphicpage.show()
 
         if optionschecked[5] == 1:
-            groundtemperaturedatay = np.array(dfs['Soil_temp'][['Temp']])
-            groundtemperaturedataysorted = groundtemperaturedatay[sorteddates]
+            datay = np.array(dfs[excelpages[2]][columnames[2]])
+            dataysorted = datay[sorteddates]
 
-            groundtemperaturegraphicpage.update_plot(selecteddates, groundtemperaturedataysorted, ['ground temp'])
+            groundtemperaturegraphicpage.update_plot(selecteddates, dataysorted, columnames[2])
             groundtemperaturegraphicpage.show()
 
         if optionschecked[6] == 1:
-            airhumiditydatay = np.array(dfs['Air_temp_%RH'][['%RH']])
-            airhumiditydataysorted = airhumiditydatay[sorteddates]
+            datay = np.array(dfs[excelpages[1]][columnames[1][1]])
+            dataysorted = datay[sorteddates]
 
-            airhumiditygraphicpage.update_plot(selecteddates, airhumiditydataysorted, ['%RH'])
+            airhumiditygraphicpage.update_plot(selecteddates, dataysorted, [columnames[1][1]])
             airhumiditygraphicpage.show()
 
         if optionschecked[7] == 1:
-            windspeeddatay = np.array(dfs['Wind_speed'][['Wind_speed']])
-            windspeeddataysorted = windspeeddatay[sorteddates]
+            datay = np.array(dfs[excelpages[3]][columnames[3]])
+            dataysorted = datay[sorteddates]
 
-            windspeedgraphicpage.update_plot(selecteddates, windspeeddataysorted, ['wind speed'])
+            windspeedgraphicpage.update_plot(selecteddates, dataysorted, columnames[3])
             windspeedgraphicpage.show()
-
 
 def filedirectory():
     filewindow = QtWidgets.QFileDialog()
-    filewindow.setNameFilter("*.jpg *.txt")
+    filewindow.setNameFilter("*.BIN *.xlsx")
     isvalid = filewindow.exec()
 
     if isvalid:
@@ -352,25 +367,40 @@ def filedirectory():
 
         size = size / 1000
 
-        # Création du fichier excel (fonction alexis)
-        dfs = pd.read_excel('DataBase.xlsx', index_col=None, sheet_name=None)
+        if path.split('.')[-1] == 'BIN':
 
-        dates = dfs['Light']['Datetime']
+            #Création du fichier excel (alexis)
+            data = utils.ReadBinaryData(page1_progressBar, 42, fn=path)
+            data = utils.GenerateDerivativeData(data.dfs)
+            dfs = pd.read_excel(utils.EXCELNAME, index_col='datetime', sheet_name=None)
 
-        minimumdate = dates[dates.index.min()]
-        maximumdate = dates[dates.index.max()]
-        numerofelements = dates.size
+        else:
+            page1_progressBar.setValue(10)
+            dfs = pd.read_excel(path, index_col='datetime', sheet_name=None)
+            page1_progressBar.setValue(20)
+            numberofpages = len(list(dfs.keys()))
+            with pd.ExcelWriter(utils.EXCELNAME, mode='w') as writer:
+                for i, data in enumerate(dfs.items()):
+                    page1_progressBar.setValue(int(((i+1)/numberofpages)*80+20))
+                    data[1].to_excel(writer, sheet_name=data[0], index_label='datetime')
+
+
+        alldates = dfs[utils.SENSORLIST[0]].index
+
+        minimumdate = min(alldates)
+        maximumdate = max(alldates)
+        numerofelements = len(alldates)
 
         page2_filesizelabel.setText("File size: " + str(size) + 'KB')
         page2_fileminimumdate.setText('Minimum Date: ' + str(minimumdate))
         page2_filemaximumdate.setText('Maximum Date: ' + str(maximumdate))
         page2_nbrofmeasurements.setText('Number of measurments: ' + str(numerofelements))
 
-        page2_calendarminimumdate.setMinimumDate(minimumdate)
-        page2_calendarminimumdate.setMaximumDate(maximumdate)
+        page2_calendarminimumdate.setMinimumDateTime(minimumdate)
+        page2_calendarminimumdate.setMaximumDateTime(maximumdate)
 
-        page2_calendarmaximumdate.setMinimumDate(minimumdate)
-        page2_calendarmaximumdate.setMaximumDate(maximumdate)
+        page2_calendarmaximumdate.setMinimumDateTime(page2_calendarminimumdate.dateTime())
+        page2_calendarmaximumdate.setMaximumDateTime(maximumdate)
 
         gotopage2()
 

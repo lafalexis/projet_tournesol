@@ -7,6 +7,7 @@
 #include "Adafruit_AS726x.h"
 #include "ClosedCube_HDC1080.h"
 #include "DS3231.h"
+#include "anemometer.h"
 
 #define SAMPLING_S        (5)
 #define SAMPLING_MS       (1000 * (SAMPLING_S - 0.5))

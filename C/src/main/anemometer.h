@@ -13,6 +13,8 @@
 
 #include "Arduino.h"
 
+#define ANEMOMETER_DEFAULT_PIN      (A0)
+
 
 /**************************************************************************/
 /*!
@@ -26,7 +28,7 @@ public:              // Access specifier
     @brief  Class constructor
     @param  None 
   */
-  Anemometer(int pin); //  Constructor
+  Anemometer(int pin = ANEMOMETER_DEFAULT_PIN); //  Constructor
   ~Anemometer(); // Destructor
   
   /*!

@@ -48,9 +48,6 @@ float Anemometer::readWindSpeed() {
   _control_setup.rawVal = analogRead(_control_setup.pin);
   // Bits to wind readWindSpeed
   // TODO : conversion bit a vitesse du vent
-  _control_setup.speed = _control_setup.rawVal;
-  return _control_setup.pin; 
+  _control_setup.speed = (float) _control_setup.rawVal;
+  return _control_setup.speed; 
 }
-
-
-

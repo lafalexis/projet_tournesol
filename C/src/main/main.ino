@@ -28,10 +28,11 @@
 #define SERIAL_EN                 (1)
 #define DEBUG_AS7262_SERIAL       (0 & SERIAL_EN)
 #define DEBUG_HDC1080_SERIAL      (0 & SERIAL_EN)
-#define DEBUG_SAVE_FRAME_SERIAL   (1 & SERIAL_EN)
+#define DEBUG_SAVE_FRAME_SERIAL   (0 & SERIAL_EN)
 //#define DEBUG_SIGNAL_ERROR_SERIAL (1 & SERIAL_EN)
+#define DEBUG_ANEMOMETER_SERIAL   (1 & SERIAL_EN)
 
-#define DEBUG_NO_SD               (0)
+#define DEBUG_NO_SD               (1)
 
 #define DS3231_ALARM1_SEC         (30)
 #define DS3231_ALARM1_MIN         (30)
@@ -67,10 +68,12 @@ int ds3231_init(uint8_t set_current_time);
 int as7262_init(Sensor_t* sens);
 int hdc1080_init(Sensor_t* sens);
 int dht20_init(Sensor_t* sens);
+int anemometer_init(Sensor_t* sens);
 
 uint8_t as7262_read(Sensor_t* sens, uint8_t* data);
 uint8_t hdc1080_read(Sensor_t* sens, uint8_t* data);
 uint8_t dht20_read(Sensor_t* sens, uint8_t* data);
+uint8_t anemometer_read(Sensor_t* sens, uint8_t* data);
 
 void save_frame(uint8_t* data, uint8_t len);
 void signal_error(int err);
@@ -85,9 +88,11 @@ uint16_t checksum(const uint8_t *c_ptr, size_t len);
 
 Sensor_t as7262;
 Sensor_t hdc1080;
+Sensor_t anemometer;
 
 Adafruit_AS726x as7262_sensor;
 ClosedCube_HDC1080 hdc1080_sensor;
+Anemometer anemometer_sensor;
 
 DS3231_config_t ds3231_config = DS3231_CONFIG_DEFAULT;
 DS3231_alm_config_t alm1_config;
@@ -112,19 +117,23 @@ int main(){
   uint8_t data[64] = {0};
   uint8_t ix = 0;
   uint16_t crc = 0;
+  //debug
+  uint64_t datetime = 0;
   data_uint64_bytes dt;
 
   // Program loop
   while(true){
-    
-    dt.value = DS3231_get_datetime();
+
+    //dt.value = DS3231_get_datetime();
+    dt.value = datetime;
     
     for (int i = sizeof(uint64_t) - 1; i >= 0; i--){
       data[ix++] = dt.bytes[i];
     }
-    
-    ix += as7262.sread(&as7262, data + ix);
-    ix += hdc1080.sread(&hdc1080, data + ix);
+
+    //ix += as7262.sread(&as7262, data + ix);
+    //ix += hdc1080.sread(&hdc1080, data + ix);
+    ix += anemometer.sread(&anemometer, data + ix);
     
     //crc = calculate_crc16(0xFFFF, data, ix);
     crc = checksum(data, ix);
@@ -132,9 +141,12 @@ int main(){
     data[ix++] = (uint8_t)(crc & 0x00FF);
 
     save_frame(data, ix);
+    //debug
+    delay(SAMPLING_MS);
+    datetime += SAMPLING_MS;
     ix = 0;
-    Serial.println("going to sleep");
-    goto_sleep();
+    //Serial.println("going to sleep");
+    //goto_sleep();
   }
   
   return 0;
@@ -144,18 +156,21 @@ int init_setup(void){
   int err = 0;
   status_blinker_init();
 
-  ds3231_init(0);
+  // debug
+  //ds3231_init(0);
   
 #if SERIAL_EN
   Serial.begin(9600);
+  Serial.print("test debut\n");
 #endif
 
 #if !DEBUG_NO_SD
   err |= sd_init();
 #endif
 
-  err |= as7262_init(&as7262);
-  err |= hdc1080_init(&hdc1080);
+  //err |= as7262_init(&as7262);
+  //err |= hdc1080_init(&hdc1080);
+  err |= anemometer_init(&anemometer);
   
   delay(500);
   status_blinker_disable();
@@ -320,6 +335,14 @@ int hdc1080_init(Sensor_t* sens){
   return NO_ERROR;
 }
 
+int anemometer_init(Sensor_t* sens) {
+
+  sens->sensor_mod = (void*)&anemometer_sensor;
+  sens->sread = &anemometer_read;
+
+  return 0;
+}
+
 uint8_t as7262_read(Sensor_t* sens, uint8_t* data){
 
   float measurements[AS726x_NUM_CHANNELS] = {0};
@@ -372,6 +395,22 @@ uint8_t hdc1080_read(Sensor_t* sens, uint8_t* data){
   }
   return 2 * sizeof(float);
 }
+
+uint8_t anemometer_read(Sensor_t* sens, uint8_t* data) {
+  Anemometer* pAnemometer = (Anemometer*)sens->sensor_mod;
+
+  data_float_bytes temp;
+  temp.value = (float)(pAnemometer->readWindSpeed());
+
+#if DEBUG_ANEMOMETER_SERIAL
+  Serial.print("Vit. Vent: "); Serial.print(temp.value); Serial.print("\n");
+#endif
+  for (int i = 0; i < sizeof(float); i++){
+    data[i] = temp.bytes[i];
+  }
+  return sizeof(float);
+}
+
 /*
 uint16_t calculate_crc16(uint16_t crc, const uint8_t *c_ptr, size_t len){
   const uint8_t *c = c_ptr;

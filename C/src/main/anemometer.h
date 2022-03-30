@@ -15,6 +15,9 @@
 
 #define ANEMOMETER_DEFAULT_PIN      (A0)
 
+// Conversion constants
+#define ANEMO_C1                 (float) (0.098974)
+#define ANEMO_C2                 (float) (8.1)
 
 /**************************************************************************/
 /*!

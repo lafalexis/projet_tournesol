@@ -65,6 +65,9 @@ void sleepISR();
 #define UPDATE_TIMESTAMP		  (0)
 #define UNIX_CURRENT_TIMESTAMP    (1648429410)
 
+#define ANEMO_ADC_PIN             (A0)
+#define PT100_ADC_PIN             (A1)
+
 struct Sensor_t;
 
 typedef uint8_t (*_sensor_read)(Sensor_t*, uint8_t*);
@@ -402,6 +405,8 @@ int pt100_init(Sensor_t* sens){
 	
   PRINTFUNCT;
 
+  pt100_sensor.setPin(PT100_ADC_PIN);
+
   sens->sensor_mod = (void*)&pt100_sensor;
   sens->sread = &pt100_read;
 
@@ -411,6 +416,8 @@ int pt100_init(Sensor_t* sens){
 int anemometer_init(Sensor_t* sens) {
   
   PRINTFUNCT;
+
+  anemometer_sensor.setPin(ANEMO_ADC_PIN);
 
   sens->sensor_mod = (void*)&anemometer_sensor;
   sens->sread = &anemometer_read;

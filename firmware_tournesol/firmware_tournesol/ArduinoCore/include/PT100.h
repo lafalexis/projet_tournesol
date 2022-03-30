@@ -32,7 +32,7 @@ public:           // Access specifier
       @param  None 
      
   */
-  PT100(float ref = PT100_CAL_REF, int pin = PT100_DEFAULT_PIN);     // Constructor
+  PT100(int pin = PT100_DEFAULT_PIN, float ref = PT100_CAL_REF);     // Constructor
   ~PT100(void);     // Destructor
 
   /*!

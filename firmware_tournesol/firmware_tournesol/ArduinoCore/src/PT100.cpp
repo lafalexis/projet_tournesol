@@ -10,7 +10,7 @@
 
 #include "PT100.h"
 
-PT100::PT100(float ref, int pin) {
+PT100::PT100(int pin, float ref) {
   _control_setup.calRef = ref;
   _control_setup.pin = pin;
   _control_setup.rawVal = 0;

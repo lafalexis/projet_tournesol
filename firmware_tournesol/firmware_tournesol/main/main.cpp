@@ -12,6 +12,7 @@
 #include "Adafruit_AS726x.h"
 #include "ClosedCube_HDC1080.h"
 #include "DS3231.h"
+#include "PT100.h"
 
 
 //Beginning of Auto generated function prototypes by Atmel Studio
@@ -45,6 +46,7 @@ void sleepISR();
 #define DEBUG_DS3231_SERIAL       (0 & SERIAL_EN)
 #define DEBUG_AS7262_SERIAL       (0 & SERIAL_EN)
 #define DEBUG_HDC1080_SERIAL      (0 & SERIAL_EN)
+#define DEBUG_PT100_SERIAL        (0 & SERIAL_EN)
 #define DEBUG_SAVE_FRAME_SERIAL   (1 & SERIAL_EN)
 #define DEBUG_SIGNAL_ERROR_SERIAL (1 & SERIAL_EN)
 
@@ -91,10 +93,12 @@ int ds3231_init(uint8_t set_current_time);
 int as7262_init(Sensor_t* sens);
 int hdc1080_init(Sensor_t* sens);
 int dht20_init(Sensor_t* sens);
+int pt100_init(Sensor_t* sens);
 
 uint8_t as7262_read(Sensor_t* sens, uint8_t* data);
 uint8_t hdc1080_read(Sensor_t* sens, uint8_t* data);
 uint8_t dht20_read(Sensor_t* sens, uint8_t* data);
+uint8_t pt100_read(Sensor_t* sens, uint8_t* data);
 
 void save_frame(char* fname, uint8_t* data, uint8_t len);
 void signal_error(int err);
@@ -105,9 +109,11 @@ uint16_t checksum(const uint8_t *c_ptr, size_t len);
 
 Sensor_t as7262;
 Sensor_t hdc1080;
+Sensor_t pt100;
 
 Adafruit_AS726x as7262_sensor;
 ClosedCube_HDC1080 hdc1080_sensor;
+PT100 pt100_sensor;
 
 DS3231_config_t ds3231_config = DS3231_CONFIG_DEFAULT;
 
@@ -151,6 +157,7 @@ int main(){
 
 			ix += as7262.sread(&as7262, data + ix);
 			ix += hdc1080.sread(&hdc1080, data + ix);
+			ix += pt100.sread(&pt100, data + ix);
 
 			crc = checksum(data, ix);
 
@@ -190,6 +197,7 @@ int init_setup(void){
 
 	err |= as7262_init(&as7262);
 	err |= hdc1080_init(&hdc1080);
+	err |= pt100_init(&pt100);
 
 	delay(500);
 	status_blinker_disable();
@@ -383,6 +391,14 @@ int hdc1080_init(Sensor_t* sens){
 	return NO_ERROR;
 }
 
+int pt100_init(Sensor_t* sens){
+
+  sens->sensor_mod = (void*)&pt100_sensor;
+  sens->sread = &pt100_read;
+
+  return 0;
+}
+
 uint8_t as7262_read(Sensor_t* sens, uint8_t* data){
 
 	PRINTFUNCT;
@@ -439,6 +455,21 @@ uint8_t hdc1080_read(Sensor_t* sens, uint8_t* data){
 	data[i + sizeof(float)] = rh.bytes[i];
 	}
 		return 2 * sizeof(float);
+}
+
+uint8_t pt100_read(Sensor_t* sens, uint8_t* data) {
+  PT100* pPt100 = (PT100*)sens->sensor_mod;
+  
+  data_float_bytes temp;
+  temp.value = (float)(pPt100->readTemperature());
+
+#if DEBUG_PT100_SERIAL
+  Serial.print("Temp(PT100): "); Serial.print(temp.value); Serial.print("\n");
+#endif
+  for (int i = 0; i < sizeof(float); i++){
+    data[i] = temp.bytes[i];
+  }
+  return sizeof(float);
 }
 
 void goto_sleep(void){

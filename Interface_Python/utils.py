@@ -127,5 +127,4 @@ def checksum(frame: bytearray, checksum_bytes=2):
     xsum = struct.unpack('>H', bytes([frame.pop(-i) for i in range(checksum_bytes, 0, -1)]))[0]
     calculated_xsum = sum(frame)
 
-    return calculated_xsum == xsuM
- 
+    return calculated_xsum == xsum

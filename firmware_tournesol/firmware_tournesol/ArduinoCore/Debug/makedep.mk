@@ -4,9 +4,13 @@
 
 include\drivers\Adafruit_AS726x.cpp
 
+include\drivers\anemometer.cpp
+
 include\drivers\ClosedCube_HDC1080.cpp
 
 include\drivers\DS3231.cpp
+
+include\drivers\PT100.cpp
 
 src\core\abi.cpp
 

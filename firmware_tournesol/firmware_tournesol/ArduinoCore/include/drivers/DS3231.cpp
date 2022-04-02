@@ -1,3 +1,15 @@
+/*!
+ * @file DS3231.h
+ *
+ * This is a library for the DS3231 RTC.
+ * It allows to use only unixtime in order
+ * to set and get current time.
+ *
+ * @author Alexis Laframboise
+ * @date   03-20-2022
+ *
+ */
+
 #include "DS3231.h"
 #include <Wire.h>
 #include <time.h>

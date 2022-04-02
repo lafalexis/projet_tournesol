@@ -41,7 +41,13 @@ main.d main.o: .././main.cpp ..\\..\ArduinoCore\include\core/Arduino.h \
  ..\\..\ArduinoCore\include/sleep.h ..\\..\ArduinoCore\include/status.h \
  ..\\..\ArduinoCore\include/memory.h ..\\..\ArduinoCore\include/modules.h \
  ..\\..\ArduinoCore\include/common.h ..\\..\ArduinoCore\include/config.h \
- ..\\..\ArduinoCore\include/connections.h
+ ..\\..\ArduinoCore\include/connections.h \
+ ..\\..\ArduinoCore\include/drivers/Adafruit_AS726x.h \
+ ..\\..\ArduinoCore\include\libraries\adafruit_busio/Adafruit_I2CDevice.h \
+ ..\\..\ArduinoCore\include/drivers/ClosedCube_HDC1080.h \
+ ..\\..\ArduinoCore\include/drivers/PT100.h \
+ ..\\..\ArduinoCore\include/drivers/anemometer.h \
+ ..\\..\ArduinoCore\include/common.h
 
 ..\\..\ArduinoCore\include\core/Arduino.h:
 
@@ -136,3 +142,15 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ..\\..\ArduinoCore\include/config.h:
 
 ..\\..\ArduinoCore\include/connections.h:
+
+..\\..\ArduinoCore\include/drivers/Adafruit_AS726x.h:
+
+..\\..\ArduinoCore\include\libraries\adafruit_busio/Adafruit_I2CDevice.h:
+
+..\\..\ArduinoCore\include/drivers/ClosedCube_HDC1080.h:
+
+..\\..\ArduinoCore\include/drivers/PT100.h:
+
+..\\..\ArduinoCore\include/drivers/anemometer.h:
+
+..\\..\ArduinoCore\include/common.h:

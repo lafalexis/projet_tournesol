@@ -12,6 +12,9 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
+/* Saving definition */
+#define SAVE_FILE_NAME	  ("datalog.bin")
+
 /* Timing definitions */
 #define ERROR_BLINK_MS    (200)
 
@@ -27,9 +30,11 @@
 /* Serial interface & debugging definitions */
 #define SERIAL_BAUD_RATE		  (9600)
 #define SERIAL_EN                 (1)
-#define DEBUG_DS3231_SERIAL       (1 & SERIAL_EN)
+#define DEBUG_DS3231_SERIAL       (0 & SERIAL_EN)
 #define DEBUG_AS7262_SERIAL       (1 & SERIAL_EN)
 #define DEBUG_HDC1080_SERIAL      (1 & SERIAL_EN)
+#define DEBUG_PT100_SERIAL        (0 & SERIAL_EN)
+#define DEBUG_ANEMOMETER_SERIAL   (0 & SERIAL_EN)
 #define DEBUG_SAVE_FRAME_SERIAL   (1 & SERIAL_EN)
 #define DEBUG_SIGNAL_ERROR_SERIAL (1 & SERIAL_EN)
 
@@ -61,5 +66,16 @@
 /* Timestamp related */
 #define UPDATE_TIMESTAMP		  (0)
 #define UNIX_CURRENT_TIMESTAMP    (1648429410)
+
+/* Modules related */
+#define AS7262_MEAS_BYTES		  (AS726x_NUM_CHANNELS * sizeof(float))
+#define HDC1080_MEAS_BYTES		  (2 * sizeof(float))
+#define PT100_MEAS_BYTES		  (1 * sizeof(float))
+#define ANEMOMETER_MEAS_BYTES	  (1 * sizeof(float))
+
+#define TOTAL_MEAS_BYTES		  (AS7262_MEAS_BYTES +\
+								   HDC1080_MEAS_BYTES+\
+								   PT100_MEAS_BYTES+\
+								   ANEMOMETER_MEAS_BYTES)
 
 #endif /* CONFIG_H_ */

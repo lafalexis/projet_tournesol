@@ -300,6 +300,12 @@
     <Compile Include="include\drivers\Adafruit_AS726x.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\drivers\anemometer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\drivers\anemometer.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\drivers\ClosedCube_HDC1080.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -310,6 +316,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\drivers\DS3231.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\drivers\PT100.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\drivers\PT100.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\libraries\adafruit_busio\Adafruit_BusIO_Register.h">

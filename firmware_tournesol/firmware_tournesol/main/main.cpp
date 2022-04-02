@@ -21,6 +21,8 @@
 #include "modules.h"
 #include "common.h"
 
+#define CHECKSUM_BYTES	(2)
+
 
 int main();
 
@@ -31,15 +33,13 @@ int main();
  *  @return
  */
 int init_setup(void);
+/*
+void init_relay();
 
-/** @brief
- *
- *
- *  @param
- *  @return
- */
-int ds3231_init(uint8_t set_current_time);
+void activate_relay();
 
+void deactivate_relay();
+*/
 /** @brief
  *
  *
@@ -55,12 +55,14 @@ int main(){
 	init();
 	// Initializing peripherals and components
 	int err = 0;
+
 	if((err = init_setup()) != ERROR_OK){
 		signal_error(err);
 	}
 
 	// Buffer to be saved on SD
-	uint8_t data[64] = {0};
+	uint8_t data[TOTAL_MEAS_BYTES + CHECKSUM_BYTES] = {0};
+
 	// Index of data in buffer
 	uint8_t ix = 0;
 
@@ -69,11 +71,12 @@ int main(){
 
 	// Program loop
 	while(true){
-
 		PRINTFUNCT;
 		if (wake_flag){
-			digitalWrite(ERROR_LED, HIGH);
 			wake_flag = 0;
+			err = 0;
+
+			delay(2000);
 			dt.value = DS3231_get_datetime();
 
 			for (int i = sizeof(uint64_t) - 1; i >= 0; i--){
@@ -88,10 +91,12 @@ int main(){
 			data[ix++] = (uint8_t)((crc & 0xFF00) >> 8);
 			data[ix++] = (uint8_t)(crc & 0x00FF);
 
-			save_frame("datalog.bin", data, ix);
+			save_frame(SAVE_FILE_NAME, data, ix);
+
+			//deactivate_relay();
 			ix = 0;
 		}
-	digitalWrite(ERROR_LED, LOW);
+
 	goto_sleep();
 	}
 	return 0;
@@ -108,6 +113,7 @@ int init_setup(void){
 	PRINTFUNCT;
 
 	status_blinker_init();
+	//init_relay();
 
 	Wire.begin();
 
@@ -123,6 +129,30 @@ int init_setup(void){
 	status_blinker_disable();
 	return err;
 }
+
+/*
+void init_relay(){
+	PRINTFUNCT;
+	pinMode(RELAY_5V_PIN, OUTPUT);
+	pinMode(RELAY_9V_PIN, OUTPUT);
+	activate_relay();
+}
+
+void activate_relay(){
+	PRINTFUNCT;
+	digitalWrite(RELAY_5V_PIN, LOW);
+	digitalWrite(RELAY_9V_PIN, LOW);
+	digitalWrite(ERROR_LED_PIN, HIGH);
+	delay(1000);
+}
+
+void deactivate_relay(){
+	PRINTFUNCT;
+	digitalWrite(RELAY_5V_PIN, HIGH);
+	digitalWrite(RELAY_9V_PIN, HIGH);
+	digitalWrite(ERROR_LED_PIN, LOW);
+}
+*/
 
 uint16_t checksum(const uint8_t *c_ptr, size_t len){
 	PRINTFUNCT;

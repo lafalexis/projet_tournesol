@@ -37,9 +37,9 @@ void signal_error(int err){
 
 	while(1){
 		for (int i = 0; i < blink_cnt; i++){
-			digitalWrite(ERROR_LED, HIGH);
+			digitalWrite(ERROR_LED_PIN, HIGH);
 			delay(ERROR_BLINK_MS);
-			digitalWrite(ERROR_LED, LOW);
+			digitalWrite(ERROR_LED_PIN, LOW);
 			delay(ERROR_BLINK_MS);
 		}
 		delay(ERROR_BLINK_MS * 2);
@@ -49,7 +49,7 @@ void signal_error(int err){
 
 void status_blinker_init(void){
 	PRINTFUNCT;
-	pinMode(ERROR_LED, OUTPUT);
+	pinMode(ERROR_LED_PIN, OUTPUT);
 
 	cli();
 	TCCR1A = 0;                      //Reset Timer1 control Registor A
@@ -73,7 +73,7 @@ void status_blinker_init(void){
 void status_blinker_disable(void){
 	PRINTFUNCT;
 	TIMSK1 &= ~(1 << OCIE1A); // turn off the timer interrupt
-	digitalWrite(ERROR_LED, LOW);
+	digitalWrite(ERROR_LED_PIN, LOW);
 	initStatus = 1;
 }
 
@@ -84,6 +84,6 @@ ISR(TIMER1_COMPA_vect){
 			} else {
 			ledState = 1;
 		}
-		digitalWrite(ERROR_LED, ledState);
+		digitalWrite(ERROR_LED_PIN, ledState);
 	}
 }

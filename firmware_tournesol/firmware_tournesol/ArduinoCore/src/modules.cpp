@@ -1,17 +1,19 @@
 /*
  * modules.cpp
  *
- * Created: 2022-04-01 9:33:49 AM
- *  Author: aplaf
+ *  Created: 2022-04-01 9:34:06 AM
+ *  Authors: Alexis Laframboise
+ *			 Eric Castillo-Gonzalez
+ *
+ *	This module contains the modules that make the
+ *	measurements. It is an abstraction layer between
+ *	the drivers and the application.
  */
+
 #include <Wire.h>
 
 #include "modules.h"
-#include "common.h"
 
-#include "drivers/Adafruit_AS726x.h"
-#include "drivers/ClosedCube_HDC1080.h"
-#include "drivers/DS3231.h"
 
 /* Convenient types definitions */
 struct Sensor_t;
@@ -40,6 +42,20 @@ int _as7262_init(Sensor_t* sens);
  */
 int _hdc1080_init(Sensor_t* sens);
 
+/** @brief	This function initializes the pt100 module.
+ *
+ *  @param	sensor struct pointer
+ *  @return	error code
+ */
+int _pt100_init(Sensor_t* sens);
+
+/** @brief	This function initializes the anemometer module.
+ *
+ *  @param	sensor struct pointer
+ *  @return	error code
+ */
+int _anemometer_init(Sensor_t* sens);
+
 /** @brief	This function reads the measurements from the AS7262.
  *
  *
@@ -58,24 +74,53 @@ uint8_t _as7262_read(Sensor_t* sens, uint8_t* data);
  */
 uint8_t _hdc1080_read(Sensor_t* sens, uint8_t* data);
 
+/** @brief	This function reads the measurements from the pt100.
+ *
+ *
+ *  @param	sensor struct pointer
+ *  @param	byte array from main
+ *  @return	number of bytes read
+ */
+uint8_t _pt100_read(Sensor_t* sens, uint8_t* data);
+
+/** @brief	This function reads the measurements from the anemometer.
+ *
+ *
+ *  @param	sensor struct pointer
+ *  @param	byte array from main
+ *  @return	number of bytes read
+ */
+uint8_t _anemometer_read(Sensor_t* sens, uint8_t* data);
+
 // Modules sensor struct
 Sensor_t as7262;
 Sensor_t hdc1080;
+Sensor_t pt100;
+Sensor_t anemometer;
 
-// Driver class instanciation
+// Driver class instantiation
 Adafruit_AS726x as7262_sensor;
 ClosedCube_HDC1080 hdc1080_sensor;
-
-
+PT100 pt100_sensor;
+Anemometer anemometer_sensor;
+/*
 const Sensor_t AS7262_SENSOR = {(void*)&as7262, &_as7262_init, &_as7262_read};
 const Sensor_t HDC1080_SENSOR = {(void*)&hdc1080, &_hdc1080_init, &_hdc1080_read};
-
+const Sensor_t PT100_SENSOR = {(void*)&pt100, &_pt100_init, &_pt100_read};
+const Sensor_t ANEMOMETER_SENSOR = {(void*)&anemometer, &_anemometer_init, &_anemometer_read};
+*/
 // Sensor struct list
 Sensor_t sensor_list[] = {
-	AS7262_SENSOR,
-	HDC1080_SENSOR,
+	{(void*)&as7262, &_as7262_init, &_as7262_read},
+	{(void*)&hdc1080, &_hdc1080_init, &_hdc1080_read},
+	{(void*)&pt100, &_pt100_init, &_pt100_read},
+	{(void*)&anemometer, &_anemometer_init, &_anemometer_read},
 	{NULL, NULL, NULL}
 };
+
+/************************************************************************/
+/*                    Sensor init functions                             */
+/************************************************************************/
 
 int _as7262_init(Sensor_t* sens){
 
@@ -95,6 +140,49 @@ int _as7262_init(Sensor_t* sens){
 	return ERROR_OK;
 }
 
+int _hdc1080_init(Sensor_t* sens){
+
+	PRINTFUNCT;
+
+	hdc1080_sensor.begin(0x40);
+	hdc1080_sensor.setResolution(HDC1080_RESOLUTION_11BIT, HDC1080_RESOLUTION_11BIT);
+
+	if(hdc1080_sensor.readDeviceId() != 0x1050){
+		Serial.print("ERROR : "); Serial.print(__FUNCTION__); Serial.println(" : Sensor unreachable.");
+		return ERROR_HDC1080;
+	}
+
+	sens->sensor_mod = (void*)&hdc1080_sensor;
+
+	return ERROR_OK;
+}
+
+int _pt100_init(Sensor_t* sens){
+
+	PRINTFUNCT;
+
+	pt100_sensor.setPin(PT100_ADC_PIN);
+
+	sens->sensor_mod = (void*)&pt100_sensor;
+
+	return 0;
+}
+
+int _anemometer_init(Sensor_t* sens) {
+
+	PRINTFUNCT;
+
+	anemometer_sensor.setPin(ANEMO_ADC_PIN);
+
+	sens->sensor_mod = (void*)&anemometer_sensor;
+
+	return 0;
+}
+
+/************************************************************************/
+/*                    Sensor read functions                             */
+/************************************************************************/
+
 uint8_t _as7262_read(Sensor_t* sens, uint8_t* data){
 
 	PRINTFUNCT;
@@ -113,38 +201,21 @@ uint8_t _as7262_read(Sensor_t* sens, uint8_t* data){
 	for (int i = 0; i < AS726x_NUM_CHANNELS; i++){
 		fb.value = measurements[i];
 
-		#if DEBUG_AS7262_SERIAL
+#if DEBUG_AS7262_SERIAL
 		Serial.print("CH: "); Serial.print(i);
 		Serial.print("\t"); Serial.print(measurements[i]); Serial.print("\t");
-		#endif
+#endif
 
 		for (int j = 0; j < sizeof(float); j++){
 			data[i * sizeof(float) + j] = fb.bytes[j];
 		}
 	}
 
-	#if DEBUG_AS7262_SERIAL
+#if DEBUG_AS7262_SERIAL
 	Serial.println();
-	#endif
+#endif
 
-	return AS726x_NUM_CHANNELS * sizeof(float);
-}
-
-int _hdc1080_init(Sensor_t* sens){
-
-	PRINTFUNCT;
-
-	hdc1080_sensor.begin(0x40);
-	hdc1080_sensor.setResolution(HDC1080_RESOLUTION_11BIT, HDC1080_RESOLUTION_11BIT);
-
-	if(hdc1080_sensor.readDeviceId() != 0x1050){
-		Serial.print("ERROR : "); Serial.print(__FUNCTION__); Serial.println(" : Sensor unreachable.");
-		return ERROR_HDC1080;
-	}
-
-	sens->sensor_mod = (void*)&hdc1080_sensor;
-
-	return ERROR_OK;
+	return AS7262_MEAS_BYTES;
 }
 
 uint8_t _hdc1080_read(Sensor_t* sens, uint8_t* data){
@@ -158,16 +229,53 @@ uint8_t _hdc1080_read(Sensor_t* sens, uint8_t* data){
 	temp.value = (float)(pHdc1080->readTemperature());
 	rh.value = (float)(pHdc1080->readHumidity());
 
-	#if DEBUG_HDC1080_SERIAL
+#if DEBUG_HDC1080_SERIAL
 	Serial.print("Temp: "); Serial.print(temp.value);
 	Serial.print("\tRH: "); Serial.println(rh.value);
-	#endif
+#endif
 
 	for (int i = 0; i < sizeof(float); i++){
 		data[i] = temp.bytes[i];
 		data[i + sizeof(float)] = rh.bytes[i];
 	}
-	return 2 * sizeof(float);
+	return HDC1080_MEAS_BYTES;
+}
+
+uint8_t _pt100_read(Sensor_t* sens, uint8_t* data) {
+
+	PRINTFUNCT;
+
+	PT100* pPt100 = (PT100*)sens->sensor_mod;
+
+	data_float_bytes temp;
+	temp.value = (float)(pPt100->readTemperature());
+
+	#if DEBUG_PT100_SERIAL
+	Serial.print("Temp(PT100): "); Serial.print(temp.value); Serial.print("\n");
+	#endif
+	for (int i = 0; i < sizeof(float); i++){
+		data[i] = temp.bytes[i];
+	}
+	return PT100_MEAS_BYTES;
+}
+
+uint8_t _anemometer_read(Sensor_t* sens, uint8_t* data) {
+
+	PRINTFUNCT;
+
+	Anemometer* pAnemometer = (Anemometer*)sens->sensor_mod;
+
+	data_float_bytes temp;
+	temp.value = (float)(pAnemometer->readWindSpeed());
+
+#if DEBUG_ANEMOMETER_SERIAL
+	Serial.print("Vit. Vent: "); Serial.print(temp.value); Serial.print("\n");
+#endif
+
+	for (int i = 0; i < sizeof(float); i++){
+		data[i] = temp.bytes[i];
+	}
+	return ANEMOMETER_MEAS_BYTES;
 }
 
 int init_modules(void){

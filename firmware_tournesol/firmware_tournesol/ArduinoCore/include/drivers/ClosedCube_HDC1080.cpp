@@ -41,7 +41,7 @@ void ClosedCube_HDC1080::begin(uint8_t address) {
 	_address = address;
 	Wire.begin();
 
-	setResolution(HDC1080_RESOLUTION_14BIT, HDC1080_RESOLUTION_14BIT);
+	//setResolution(HDC1080_RESOLUTION_14BIT, HDC1080_RESOLUTION_14BIT);
 }
 
 void ClosedCube_HDC1080::setResolution(HDC1080_MeasurementResolution humidity, HDC1080_MeasurementResolution temperature) {
@@ -141,7 +141,7 @@ uint16_t ClosedCube_HDC1080::readData(uint8_t pointer) {
 	Wire.beginTransmission(_address);
 	Wire.write(pointer);
 	Wire.endTransmission();
-	
+
 	delay(9);
 	Wire.requestFrom(_address, (uint8_t)2);
 

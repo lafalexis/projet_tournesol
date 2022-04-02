@@ -11,13 +11,14 @@
 
 /* Connected pins */
 /* Outputs */
-#define ERROR_LED			(2)
-#define RELAY_9V			(5)
-#define RELAY_5V			(6)
+#define ERROR_LED_PIN		(2)
+#define RELAY_5V_PIN		(4)
+#define RELAY_9V_PIN		(5)
 
 /* Inputs */
 #define DS3231_EXTINT_PIN	(3)
-
+#define ANEMO_ADC_PIN       (A0)
+#define PT100_ADC_PIN       (A1)
 
 
 #endif /* CONNECTIONS_H_ */

@@ -61,8 +61,10 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../include/drivers/Adafruit_AS726x.cpp \
+../include/drivers/anemometer.cpp \
 ../include/drivers/ClosedCube_HDC1080.cpp \
 ../include/drivers/DS3231.cpp \
+../include/drivers/PT100.cpp \
 ../src/core/abi.cpp \
 ../src/core/CDC.cpp \
 ../src/core/HardwareSerial.cpp \
@@ -114,8 +116,10 @@ ASM_SRCS +=
 
 OBJS +=  \
 include/drivers/Adafruit_AS726x.o \
+include/drivers/anemometer.o \
 include/drivers/ClosedCube_HDC1080.o \
 include/drivers/DS3231.o \
+include/drivers/PT100.o \
 src/core/abi.o \
 src/core/CDC.o \
 src/core/HardwareSerial.o \
@@ -160,8 +164,10 @@ src/status.o
 
 OBJS_AS_ARGS +=  \
 include/drivers/Adafruit_AS726x.o \
+include/drivers/anemometer.o \
 include/drivers/ClosedCube_HDC1080.o \
 include/drivers/DS3231.o \
+include/drivers/PT100.o \
 src/core/abi.o \
 src/core/CDC.o \
 src/core/HardwareSerial.o \
@@ -206,8 +212,10 @@ src/status.o
 
 C_DEPS +=  \
 include/drivers/Adafruit_AS726x.d \
+include/drivers/anemometer.d \
 include/drivers/ClosedCube_HDC1080.d \
 include/drivers/DS3231.d \
+include/drivers/PT100.d \
 src/core/abi.d \
 src/core/CDC.d \
 src/core/HardwareSerial.d \
@@ -252,8 +260,10 @@ src/status.d
 
 C_DEPS_AS_ARGS +=  \
 include/drivers/Adafruit_AS726x.d \
+include/drivers/anemometer.d \
 include/drivers/ClosedCube_HDC1080.d \
 include/drivers/DS3231.d \
+include/drivers/PT100.d \
 src/core/abi.d \
 src/core/CDC.d \
 src/core/HardwareSerial.d \
@@ -317,6 +327,13 @@ include/drivers/Adafruit_AS726x.o: ../include/drivers/Adafruit_AS726x.cpp
 	@echo Finished building: $<
 	
 
+include/drivers/anemometer.o: ../include/drivers/anemometer.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 include/drivers/ClosedCube_HDC1080.o: ../include/drivers/ClosedCube_HDC1080.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
@@ -325,6 +342,13 @@ include/drivers/ClosedCube_HDC1080.o: ../include/drivers/ClosedCube_HDC1080.cpp
 	
 
 include/drivers/DS3231.o: ../include/drivers/DS3231.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+include/drivers/PT100.o: ../include/drivers/PT100.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -43,6 +43,10 @@
 #define DS3231_STATUS_EN32KHZ  (1 << 3)   /* Enable 32KHz Output  */
 #define DS3231_STATUS_OSF      (1 << 7)   /* Oscillator Stop Flag */
 
+// general info
+#define DS3231_ALARM_COUNT		  (2)
+
+// default config : date of month, 24h, no alarms.
 #define DS3231_CONFIG_DEFAULT { 0, 0, NULL, NULL }
 
 // time constants
@@ -87,9 +91,26 @@ typedef struct DS3231_config{
   DS3231_alm_config_t* pAlarm_2;
 } DS3231_config_t;
 
+/** @brief	Initializes the DS3231. Won't set the time
+ *			but configures the alarms and stuff.
+ *
+ *
+ *  @param	pointer to a config structure
+ *  @return	error code
+ */
 int DS3231_init(DS3231_config* pConfig);
 
-int DS3231_set_datetime(DS3231_unix_time_t unix_time);
+/** @brief	Sets the timekeeping registers according to the unix time.
+ *
+ *
+ *  @param	current unix time, seconds since 1 jan 1970
+ */
+void DS3231_set_datetime(DS3231_unix_time_t unix_time);
+
+/** @brief	Gets the current time in seconds.
+ *
+ *  @return	seconds since 1 jan 1970
+ */
 DS3231_unix_time_t DS3231_get_datetime(void);
 
 #endif //__DS3231_H_

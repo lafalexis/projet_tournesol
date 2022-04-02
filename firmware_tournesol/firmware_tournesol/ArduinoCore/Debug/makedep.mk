@@ -2,9 +2,11 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-src\Adafruit_AS726x.cpp
+include\drivers\Adafruit_AS726x.cpp
 
-src\ClosedCube_HDC1080.cpp
+include\drivers\ClosedCube_HDC1080.cpp
+
+include\drivers\DS3231.cpp
 
 src\core\abi.cpp
 
@@ -56,8 +58,6 @@ src\core\WMath.cpp
 
 src\core\WString.cpp
 
-src\DS3231.cpp
-
 src\libraries\adafruit_busio\Adafruit_BusIO_Register.cpp
 
 src\libraries\adafruit_busio\Adafruit_I2CDevice.cpp
@@ -79,4 +79,14 @@ src\libraries\SPI\SPI.cpp
 src\libraries\Wire\utility\twi.c
 
 src\libraries\Wire\Wire.cpp
+
+src\memory.cpp
+
+src\modules.cpp
+
+src\rtc.cpp
+
+src\sleep.cpp
+
+src\status.cpp
 

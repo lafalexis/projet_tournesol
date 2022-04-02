@@ -42,7 +42,7 @@ SUBDIRS :=  \
 ../include/libraries/SPI/ \
 ../include/libraries/Wire/ \
 ../include/libraries/Wire/utility/ \
-../include/TODO/ \
+../include/drivers \
 ../include/variants/ \
 ../include/variants/eightanaloginputs/ \
 ../include/variants/standard/ \
@@ -60,8 +60,9 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../src/Adafruit_AS726x.cpp \
-../src/ClosedCube_HDC1080.cpp \
+../include/drivers/Adafruit_AS726x.cpp \
+../include/drivers/ClosedCube_HDC1080.cpp \
+../include/drivers/DS3231.cpp \
 ../src/core/abi.cpp \
 ../src/core/CDC.cpp \
 ../src/core/HardwareSerial.cpp \
@@ -86,7 +87,6 @@ C_SRCS +=  \
 ../src/core/wiring_shift.c \
 ../src/core/WMath.cpp \
 ../src/core/WString.cpp \
-../src/DS3231.cpp \
 ../src/libraries/adafruit_busio/Adafruit_BusIO_Register.cpp \
 ../src/libraries/adafruit_busio/Adafruit_I2CDevice.cpp \
 ../src/libraries/adafruit_busio/Adafruit_SPIDevice.cpp \
@@ -97,7 +97,12 @@ C_SRCS +=  \
 ../src/libraries/SD/utility/SdVolume.cpp \
 ../src/libraries/SPI/SPI.cpp \
 ../src/libraries/Wire/utility/twi.c \
-../src/libraries/Wire/Wire.cpp
+../src/libraries/Wire/Wire.cpp \
+../src/memory.cpp \
+../src/modules.cpp \
+../src/rtc.cpp \
+../src/sleep.cpp \
+../src/status.cpp
 
 
 PREPROCESSING_SRCS +=  \
@@ -108,8 +113,9 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-src/Adafruit_AS726x.o \
-src/ClosedCube_HDC1080.o \
+include/drivers/Adafruit_AS726x.o \
+include/drivers/ClosedCube_HDC1080.o \
+include/drivers/DS3231.o \
 src/core/abi.o \
 src/core/CDC.o \
 src/core/HardwareSerial.o \
@@ -135,7 +141,6 @@ src/core/wiring_pulse.o \
 src/core/wiring_shift.o \
 src/core/WMath.o \
 src/core/WString.o \
-src/DS3231.o \
 src/libraries/adafruit_busio/Adafruit_BusIO_Register.o \
 src/libraries/adafruit_busio/Adafruit_I2CDevice.o \
 src/libraries/adafruit_busio/Adafruit_SPIDevice.o \
@@ -146,11 +151,17 @@ src/libraries/SD/utility/SdFile.o \
 src/libraries/SD/utility/SdVolume.o \
 src/libraries/SPI/SPI.o \
 src/libraries/Wire/utility/twi.o \
-src/libraries/Wire/Wire.o
+src/libraries/Wire/Wire.o \
+src/memory.o \
+src/modules.o \
+src/rtc.o \
+src/sleep.o \
+src/status.o
 
 OBJS_AS_ARGS +=  \
-src/Adafruit_AS726x.o \
-src/ClosedCube_HDC1080.o \
+include/drivers/Adafruit_AS726x.o \
+include/drivers/ClosedCube_HDC1080.o \
+include/drivers/DS3231.o \
 src/core/abi.o \
 src/core/CDC.o \
 src/core/HardwareSerial.o \
@@ -176,7 +187,6 @@ src/core/wiring_pulse.o \
 src/core/wiring_shift.o \
 src/core/WMath.o \
 src/core/WString.o \
-src/DS3231.o \
 src/libraries/adafruit_busio/Adafruit_BusIO_Register.o \
 src/libraries/adafruit_busio/Adafruit_I2CDevice.o \
 src/libraries/adafruit_busio/Adafruit_SPIDevice.o \
@@ -187,11 +197,17 @@ src/libraries/SD/utility/SdFile.o \
 src/libraries/SD/utility/SdVolume.o \
 src/libraries/SPI/SPI.o \
 src/libraries/Wire/utility/twi.o \
-src/libraries/Wire/Wire.o
+src/libraries/Wire/Wire.o \
+src/memory.o \
+src/modules.o \
+src/rtc.o \
+src/sleep.o \
+src/status.o
 
 C_DEPS +=  \
-src/Adafruit_AS726x.d \
-src/ClosedCube_HDC1080.d \
+include/drivers/Adafruit_AS726x.d \
+include/drivers/ClosedCube_HDC1080.d \
+include/drivers/DS3231.d \
 src/core/abi.d \
 src/core/CDC.d \
 src/core/HardwareSerial.d \
@@ -217,7 +233,6 @@ src/core/wiring_pulse.d \
 src/core/wiring_shift.d \
 src/core/WMath.d \
 src/core/WString.d \
-src/DS3231.d \
 src/libraries/adafruit_busio/Adafruit_BusIO_Register.d \
 src/libraries/adafruit_busio/Adafruit_I2CDevice.d \
 src/libraries/adafruit_busio/Adafruit_SPIDevice.d \
@@ -228,11 +243,17 @@ src/libraries/SD/utility/SdFile.d \
 src/libraries/SD/utility/SdVolume.d \
 src/libraries/SPI/SPI.d \
 src/libraries/Wire/utility/twi.d \
-src/libraries/Wire/Wire.d
+src/libraries/Wire/Wire.d \
+src/memory.d \
+src/modules.d \
+src/rtc.d \
+src/sleep.d \
+src/status.d
 
 C_DEPS_AS_ARGS +=  \
-src/Adafruit_AS726x.d \
-src/ClosedCube_HDC1080.d \
+include/drivers/Adafruit_AS726x.d \
+include/drivers/ClosedCube_HDC1080.d \
+include/drivers/DS3231.d \
 src/core/abi.d \
 src/core/CDC.d \
 src/core/HardwareSerial.d \
@@ -258,7 +279,6 @@ src/core/wiring_pulse.d \
 src/core/wiring_shift.d \
 src/core/WMath.d \
 src/core/WString.d \
-src/DS3231.d \
 src/libraries/adafruit_busio/Adafruit_BusIO_Register.d \
 src/libraries/adafruit_busio/Adafruit_I2CDevice.d \
 src/libraries/adafruit_busio/Adafruit_SPIDevice.d \
@@ -269,7 +289,12 @@ src/libraries/SD/utility/SdFile.d \
 src/libraries/SD/utility/SdVolume.d \
 src/libraries/SPI/SPI.d \
 src/libraries/Wire/utility/twi.d \
-src/libraries/Wire/Wire.d
+src/libraries/Wire/Wire.d \
+src/memory.d \
+src/modules.d \
+src/rtc.d \
+src/sleep.d \
+src/status.d
 
 OUTPUT_FILE_PATH +=libArduinoCore.a
 
@@ -285,14 +310,21 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
-src/Adafruit_AS726x.o: ../src/Adafruit_AS726x.cpp
+include/drivers/Adafruit_AS726x.o: ../include/drivers/Adafruit_AS726x.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-src/ClosedCube_HDC1080.o: ../src/ClosedCube_HDC1080.cpp
+include/drivers/ClosedCube_HDC1080.o: ../include/drivers/ClosedCube_HDC1080.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+include/drivers/DS3231.o: ../include/drivers/DS3231.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -467,13 +499,6 @@ src/core/WString.o: ../src/core/WString.cpp
 	@echo Finished building: $<
 	
 
-src/DS3231.o: ../src/DS3231.cpp
-	@echo Building file: $<
-	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
 src/libraries/adafruit_busio/Adafruit_BusIO_Register.o: ../src/libraries/adafruit_busio/Adafruit_BusIO_Register.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
@@ -545,6 +570,41 @@ src/libraries/Wire/utility/twi.o: ../src/libraries/Wire/utility/twi.c
 	
 
 src/libraries/Wire/Wire.o: ../src/libraries/Wire/Wire.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+src/memory.o: ../src/memory.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+src/modules.o: ../src/modules.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+src/rtc.o: ../src/rtc.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+src/sleep.o: ../src/sleep.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+src/status.o: ../src/status.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000L -DARDUINO=108019 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"..\include" -I"..\include\TODO" -I"..\include\libraries\SPI" -I"..\include\libraries\SD" -I"..\include\libraries\SD\utility" -I"..\include\libraries\Wire" -I"..\include\libraries\Wire\utility" -I"..\include\libraries\adafruit_busio" -I"..\include\core" -I"..\include\variants\eightanaloginputs" -I"..\include\variants\standard"  -Os -fno-threadsafe-statics -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -w -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega328p" -c -std=gnu++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

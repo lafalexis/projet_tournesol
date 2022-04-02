@@ -135,3 +135,4 @@ Interface_Python/.idea
 #Microchip studio stuff
 Debug/
 .vs
+.ccls-cache/

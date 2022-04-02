@@ -1,4 +1,4 @@
-﻿/** @file main.cpp
+/** @file main.cpp
  *  @brief	This is the main for the plant environment
  *			measurement station.
  *

@@ -1,3 +1,15 @@
+/*!
+ * @file DS3231.h
+ *
+ * This is a library for the DS3231 RTC.
+ * It allows to use only unixtime in order
+ * to set and get current time.
+ *
+ * @author Alexis Laframboise
+ * @date   03-20-2022
+ *
+ */
+
 #include "DS3231.h"
 #include <Wire.h>
 #include <time.h>
@@ -20,22 +32,71 @@ DS3231_unix_time_t unixtime;    /* seconds since 01.01.1970 00:00:00 UTC*/
 
 struct timestamp ts = { 0 };
 
+/** @brief  This function is only useful for
+ *			first initialization. It sets every
+ *			register to 0.
+ *
+ */
 void _reset_all_reg(void);
 
+/** @brief	Sets the value of a register.
+ *
+ *  @param	address of the register.
+ *  @param	value to set the register to.
+ */
 void _set_reg(const uint8_t addr, const uint8_t val);
+
+/** @brief	Gets the value of a register.
+ *
+ *
+ *  @param	address of the register
+ *  @return	value of the register
+ */
 uint8_t _get_reg(const uint8_t addr);
 
-void _set_alarm_mask(uint8_t mask, uint8_t alarm_num);
+/** @brief	This function sets the alarm mask for either
+ *			DS3231 alarm configuration.
+ *
+ *  @param	mask : The value of the mask
+ *  @param	alarm_num : either 0 for alm1 or 1 for alm2.
+ *  @return	0 if no error, -1 if error
+ */
+int _set_alarm_mask(uint8_t mask, uint8_t alarm_num);
 
-void _unix_to_datetime(DS3231_unix_time_t unixtime);
+/** @brief  This function works with the global variable
+ *			ts. It takes the unixtime field and fills the
+ *			datetime fields.
+ *
+ */
+void _unix_to_datetime(void);
+
+/** @brief  This function works with the global variable
+ *			ts. It takes the datetime fields to calculate
+ *			the unixtime field.
+ *
+ */
 void _datetime_to_unix(void);
 
+/** @brief	This function converts decimal value
+ *			to bcd.
+ *
+ *  @param	decimal value
+ *  @return bcd value
+ */
 uint8_t _dec2bcd(uint8_t dec);
+
+/** @brief  This function gets a 2 digit bcd value
+ *			and returns the integer value.
+ *
+ *  @param	bcd value
+ *  @return decimal value
+ */
 uint8_t _bcd2dec(uint8_t bcd);
 
 int DS3231_init(DS3231_config* pConfig) {
 	//_reset_all_reg();
 
+	int err = 0;
 	// Control registers initialization.
 	uint8_t control_reg = 0;
 
@@ -45,33 +106,32 @@ int DS3231_init(DS3231_config* pConfig) {
 		_set_reg(DS3231_ALARM1_ADDR + 1, _dec2bcd(pConfig->pAlarm_1->min));
 		_set_reg(DS3231_ALARM1_ADDR + 2, _dec2bcd(pConfig->pAlarm_1->hour));
 		_set_reg(DS3231_ALARM1_ADDR + 3, _dec2bcd(pConfig->pAlarm_1->day));
-		_set_alarm_mask(pConfig->pAlarm_1->mask, 0);
+		err |= _set_alarm_mask(pConfig->pAlarm_1->mask, 0);
 	}
 	if (pConfig->pAlarm_2 != NULL) {
 		control_reg |= DS3231_CONTROL_A2IE;
 		_set_reg(DS3231_ALARM2_ADDR, _dec2bcd(pConfig->pAlarm_2->min));
 		_set_reg(DS3231_ALARM2_ADDR + 1, _dec2bcd(pConfig->pAlarm_2->hour));
 		_set_reg(DS3231_ALARM2_ADDR + 2, _dec2bcd(pConfig->pAlarm_2->day));
-		_set_alarm_mask(pConfig->pAlarm_2->mask, 1);
+		err |= _set_alarm_mask(pConfig->pAlarm_2->mask, 1);
 	}
 	if (control_reg) {
 		control_reg |= DS3231_CONTROL_INTCN;
 	}
 
 	_set_reg(DS3231_CONTROL_ADDR, control_reg);
-	return 0;
+	return err;
 }
 
-int DS3231_set_datetime(DS3231_unix_time_t unixtime) {
-	_unix_to_datetime(unixtime);
+void DS3231_set_datetime(DS3231_unix_time_t unixtime) {
+	ts.unixtime = unixtime;
+	_unix_to_datetime();
 	_set_reg(DS3231_DATETIME_SEC, _dec2bcd(ts.sec));
 	_set_reg(DS3231_DATETIME_MIN, _dec2bcd(ts.min));
 	_set_reg(DS3231_DATETIME_HOUR, _dec2bcd(ts.hour));
 	_set_reg(DS3231_DATETIME_DATE, _dec2bcd(ts.day));
 	_set_reg(DS3231_DATETIME_MONTH, _dec2bcd(ts.mon));
 	_set_reg(DS3231_DATETIME_YEAR, _dec2bcd(ts.year - TIME_CALC_START_YEAR));
-
-	return 0;
 }
 
 DS3231_unix_time_t DS3231_get_datetime(void) {
@@ -135,7 +195,12 @@ uint8_t _get_reg(const uint8_t addr) {
 	return retval;
 }
 
-void _set_alarm_mask(uint8_t mask, uint8_t alarm_num) {
+int _set_alarm_mask(uint8_t mask, uint8_t alarm_num) {
+
+	if (alarm_num >= DS3231_ALARM_COUNT){
+		return -1;
+	}
+
 	uint8_t alm_base_addr = DS3231_ALARM_ADDR[alarm_num];
 	uint8_t reg = 0;
 
@@ -145,15 +210,14 @@ void _set_alarm_mask(uint8_t mask, uint8_t alarm_num) {
 		_set_reg(alm_base_addr++, reg);
 	}
 
+	return 0;
 }
 
-void _unix_to_datetime(DS3231_unix_time_t unixtime) {
+void _unix_to_datetime(void) {
 
-	DS3231_unix_time_t seconds = unixtime - YEAR_2000_IN_SECONDS;
+	DS3231_unix_time_t seconds = ts.unixtime - YEAR_2000_IN_SECONDS;
 	uint16_t year = TIME_CALC_START_YEAR;
 	int i = 0;
-
-	ts.unixtime = unixtime;
 
 	while (seconds > (SECONDS_IN_DAY * DAYS_IN_YEAR)) {
 	if (((year % 4) == 0) && (((year % 100) != 0) || ((year % 400) == 0))) {

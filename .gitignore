@@ -132,4 +132,7 @@ dmypy.json
 Interface_Python/venv/
 Interface_Python/.idea
 
+#Microchip studio stuff
+Debug/
+.vs
 .ccls-cache/

@@ -362,7 +362,7 @@ def filedirectory():
         # getting file size
         path = selectedfile.path()
         harddrivedirectory = path.find(':') + 1
-        path = path[harddrivedirectory:]
+        path = path[1:]
         size = os.path.getsize(path)
 
         size = size / 1000

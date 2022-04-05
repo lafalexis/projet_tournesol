@@ -6,8 +6,8 @@
 
   (title_block
     (title "Station météo - Diagramme de circuit ")
-    (date "2022-03-29")
-    (rev "0.2")
+    (date "2022-04-05")
+    (rev "1.0")
     (company "ÉTS - PFE HIVER 2022 - ELE795")
     (comment 1 "NASRI, Mahan")
     (comment 2 "CASTILLO-GONSALEZ, Eric")
@@ -805,10 +805,6 @@
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 51ed86e5-9553-4298-8ba9-203418c3df4a)
   )
-  (wire (pts (xy 162.56 58.42) (xy 162.56 67.31))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 5419332b-8e6c-41bc-b5aa-c5264ab644b2)
-  )
   (polyline (pts (xy 46.99 149.86) (xy 46.99 113.03))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 56cdbcb5-6549-4ba7-9cc7-6a4a542b469f)
@@ -938,7 +934,7 @@
     (uuid 9c7df3d2-ce4d-4be2-bdd8-b1c271064b58)
   )
 
-  (wire (pts (xy 180.34 67.31) (xy 222.25 67.31))
+  (wire (pts (xy 180.34 67.31) (xy 224.79 67.31))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 9d39aedc-d2f6-4a63-9e36-ad3d968abefa)
   )
@@ -1158,13 +1154,6 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "3V" (shape output) (at 78.74 158.75 90) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 0cc18caf-7889-44b7-b48c-38ca57c2b130)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 78.6606 154.0388 90)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
   (global_label "SDA" (shape bidirectional) (at 177.8 102.87 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 0fe323b1-56a0-4b80-9c35-b5bc36c35c6b)
@@ -1193,13 +1182,6 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "3V" (shape input) (at 162.56 58.42 90) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 4b3a0fe6-2890-4f96-8722-e1d53e90a2bd)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 162.4806 53.7088 90)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
   (global_label "VIN" (shape output) (at 227.33 30.48 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid a1388fde-64d4-4693-ac8c-4c3c3afd1581)
@@ -1211,6 +1193,13 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid c3f9e7c5-f60b-4623-9648-8bbb1d312b2d)
     (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 131.6507 43.1006 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
+  (global_label "5V" (shape output) (at 78.74 158.75 90) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid c85ce056-eb95-4ab3-a8df-27f333c5dc76)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 78.6606 152.7083 90)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1335,12 +1324,12 @@
     (property "Datasheet" "" (id 3) (at 68.58 165.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979035e))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979035e))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979035e))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979035e))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979035e))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979035e))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
   )
 
   (symbol (lib_id "Timer_RTC:DS3231M") (at 60.96 38.1 0) (mirror y) (unit 1)
@@ -1561,8 +1550,25 @@
     (pin "1" (uuid 9fe908e0-e3d7-4b23-be00-d02a1c4e5960))
   )
 
+  (sheet (at 224.79 60.96) (size 26.67 27.94) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 806a040a-651b-439f-9240-0e13101ec59b)
+    (property "Sheet name" "Circuit_RTD_PT100" (id 0) (at 224.79 60.2484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "PFE_RTD.kicad_sch" (id 1) (at 224.79 89.4846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (pin "Sortie" output (at 224.79 67.31 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 40e4c8e4-ced2-46d0-aa2b-5282eb7c7888)
+    )
+  )
+
   (sheet_instances
     (path "/" (page "1"))
+    (path "/806a040a-651b-439f-9240-0e13101ec59b" (page "2"))
   )
 
   (symbol_instances
@@ -1587,11 +1593,50 @@
     (path "/56de0579-054e-48b7-addd-fc28242ddd35"
       (reference "#PWR07") (unit 1) (value "GND") (footprint "")
     )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/2ed77dab-9d3c-4561-bfa6-92dc6a7e27b7"
+      (reference "#PWR08") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/7f89682d-1838-422d-b1f3-eeaa3bc004ff"
+      (reference "#PWR09") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/cf772c03-fb44-49da-879b-fbf9668d529b"
+      (reference "#PWR010") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/bc6c0cfa-87ac-4a1b-87e3-eac3144ed737"
+      (reference "#PWR011") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/501193c8-4eda-4951-b814-14b4cf9d4de2"
+      (reference "#PWR012") (unit 1) (value "GND") (footprint "")
+    )
     (path "/136f24ab-7b8a-4b96-87e9-b51854289072"
       (reference "A1") (unit 1) (value "Arduino_Nano_v3.x") (footprint "Module:Arduino_Nano")
     )
     (path "/7efd36da-2373-45eb-96f7-94a171c3e6cd"
       (reference "J1") (unit 1) (value "Conn_01x04") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/ad2404c6-4ebc-4c59-b4a0-c769f8c853bf"
+      (reference "R1") (unit 1) (value "2.2k") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/accebe4a-4811-45d8-8b08-88051390a08a"
+      (reference "R2") (unit 1) (value "68") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/db4f3c25-f8e7-4f26-99f8-988930ae814e"
+      (reference "R3") (unit 1) (value "2.2k") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/8e8991b4-e67e-41ed-84b1-ecd433d4e14f"
+      (reference "R4") (unit 1) (value "1k") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/47f67289-7364-45d4-885b-8f979b51f8cd"
+      (reference "R5") (unit 1) (value "1k") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/da65892e-d331-4b58-b238-fc5e3ae49daf"
+      (reference "R6") (unit 1) (value "39k") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/32aa336b-a858-47f4-b2ce-a661ec9ff34b"
+      (reference "R7") (unit 1) (value "39k") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/fef95238-d472-4d2e-a0c1-16789adce777"
+      (reference "TH1") (unit 1) (value "PT100") (footprint "")
     )
     (path "/361247c4-b43c-47ef-b3c8-f8ff60f69348"
       (reference "U1") (unit 1) (value "DS3231M") (footprint "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm")
@@ -1604,6 +1649,15 @@
     )
     (path "/311f9ecb-12dc-4106-bf23-3e2702feb9ef"
       (reference "U4") (unit 1) (value "MicroSD_Card_Adapter") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/7122a679-0d1d-4bc8-a92d-965bd8303494"
+      (reference "U5") (unit 1) (value "MCP6042") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/47ea8403-309f-4b8a-bc8b-bf702d94c456"
+      (reference "U6") (unit 1) (value "MCP6042") (footprint "")
+    )
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/b7333a97-7cde-42ee-afa0-6bd98eded848"
+      (reference "U7") (unit 1) (value "MCP6042") (footprint "")
     )
     (path "/8e606922-08c7-4d14-8e6b-d1873e169fc8"
       (reference "V1") (unit 1) (value "9v") (footprint "")

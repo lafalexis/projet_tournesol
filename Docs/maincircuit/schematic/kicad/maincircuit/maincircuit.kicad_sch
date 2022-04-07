@@ -1324,12 +1324,12 @@
     (property "Datasheet" "" (id 3) (at 68.58 165.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
-    (pin "" (uuid c78c350b-c435-4db9-a7c2-259759790363))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979036d))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979036d))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979036d))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979036d))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979036d))
+    (pin "" (uuid c78c350b-c435-4db9-a7c2-25975979036d))
   )
 
   (symbol (lib_id "Timer_RTC:DS3231M") (at 60.96 38.1 0) (mirror y) (unit 1)
@@ -1653,11 +1653,11 @@
     (path "/806a040a-651b-439f-9240-0e13101ec59b/7122a679-0d1d-4bc8-a92d-965bd8303494"
       (reference "U5") (unit 1) (value "MCP6042") (footprint "")
     )
-    (path "/806a040a-651b-439f-9240-0e13101ec59b/47ea8403-309f-4b8a-bc8b-bf702d94c456"
-      (reference "U6") (unit 1) (value "MCP6042") (footprint "")
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/0f1f20e7-f120-4dc8-94ef-ff3951655b6b"
+      (reference "U5") (unit 2) (value "MCP6042") (footprint "")
     )
-    (path "/806a040a-651b-439f-9240-0e13101ec59b/b7333a97-7cde-42ee-afa0-6bd98eded848"
-      (reference "U7") (unit 1) (value "MCP6042") (footprint "")
+    (path "/806a040a-651b-439f-9240-0e13101ec59b/494a626f-2d88-4556-9911-9d33b4807e49"
+      (reference "U6") (unit 1) (value "MCP6042") (footprint "")
     )
     (path "/8e606922-08c7-4d14-8e6b-d1873e169fc8"
       (reference "V1") (unit 1) (value "9v") (footprint "")

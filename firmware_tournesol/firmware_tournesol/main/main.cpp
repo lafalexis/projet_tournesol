@@ -33,13 +33,19 @@ int main();
  *  @return
  */
 int init_setup(void);
-/*
+
 void init_relay();
 
 void activate_relay();
 
 void deactivate_relay();
-*/
+
+void init_instruments();
+
+void activate_instruments();
+
+void deactivate_instruments();
+
 /** @brief
  *
  *
@@ -76,15 +82,25 @@ int main(){
 			wake_flag = 0;
 			err = 0;
 
-			delay(2000);
+			if((err = init_setup()) != ERROR_OK){
+				signal_error(err);
+			}
+
 			dt.value = DS3231_get_datetime();
 
 			for (int i = sizeof(uint64_t) - 1; i >= 0; i--){
 				data[ix++] = dt.bytes[i];
 			}
 
+			// Relay for the anemometer + delay for its activation time.
+			activate_relay();
+			delay(1000);
+
 			// Reads all the modules data
 			ix += exec_modules(data + ix);
+
+			// Deactivating the relay asap because its the main power consumption element.
+			deactivate_relay();
 
 			crc = checksum(data, ix);
 
@@ -93,7 +109,6 @@ int main(){
 
 			save_frame(SAVE_FILE_NAME, data, ix);
 
-			//deactivate_relay();
 			ix = 0;
 		}
 
@@ -113,7 +128,9 @@ int init_setup(void){
 	PRINTFUNCT;
 
 	status_blinker_init();
-	//init_relay();
+	init_relay();
+	init_instruments();
+	activate_instruments();
 
 	Wire.begin();
 
@@ -130,29 +147,44 @@ int init_setup(void){
 	return err;
 }
 
-/*
+
 void init_relay(){
 	PRINTFUNCT;
-	pinMode(RELAY_5V_PIN, OUTPUT);
 	pinMode(RELAY_9V_PIN, OUTPUT);
-	activate_relay();
 }
 
 void activate_relay(){
 	PRINTFUNCT;
-	digitalWrite(RELAY_5V_PIN, LOW);
 	digitalWrite(RELAY_9V_PIN, LOW);
-	digitalWrite(ERROR_LED_PIN, HIGH);
-	delay(1000);
 }
 
 void deactivate_relay(){
 	PRINTFUNCT;
-	digitalWrite(RELAY_5V_PIN, HIGH);
 	digitalWrite(RELAY_9V_PIN, HIGH);
-	digitalWrite(ERROR_LED_PIN, LOW);
 }
-*/
+
+void init_instruments(){
+	PRINTFUNCT;
+	pinMode(PT100_POWER_PIN, OUTPUT);
+	pinMode(HDC1080_POWER_PIN, OUTPUT);
+	pinMode(AS7262_POWER_PIN, OUTPUT);
+}
+
+void activate_instruments(){
+	PRINTFUNCT;
+	digitalWrite(PT100_POWER_PIN, HIGH);
+	digitalWrite(HDC1080_POWER_PIN, HIGH);
+	digitalWrite(AS7262_POWER_PIN, HIGH);
+	delay(1000);
+}
+
+void deactivate_instruments(){
+	PRINTFUNCT;
+	digitalWrite(PT100_POWER_PIN, LOW);
+	digitalWrite(HDC1080_POWER_PIN, LOW);
+	digitalWrite(AS7262_POWER_PIN, LOW);
+}
+
 
 uint16_t checksum(const uint8_t *c_ptr, size_t len){
 	PRINTFUNCT;

@@ -12,8 +12,11 @@
 /* Connected pins */
 /* Outputs */
 #define ERROR_LED_PIN		(2)
-#define RELAY_5V_PIN		(4)
 #define RELAY_9V_PIN		(5)
+
+#define PT100_POWER_PIN		(7)
+#define HDC1080_POWER_PIN	(8)
+#define AS7262_POWER_PIN	(9)
 
 /* Inputs */
 #define DS3231_EXTINT_PIN	(3)

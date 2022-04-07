@@ -1,6 +1,6 @@
 import serial
 
-s = serial.Serial('COM3', baudrate=9600, bytesize=8, stopbits=serial.STOPBITS_ONE)
+s = serial.Serial('COM4', baudrate=9600, bytesize=8, stopbits=serial.STOPBITS_ONE)
 data = []
 while 1:
     data.append(println := s.read())

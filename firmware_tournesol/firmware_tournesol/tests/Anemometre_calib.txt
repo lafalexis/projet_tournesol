@@ -26,3 +26,37 @@ Anemometer raw data : 104
 Anemometer raw data : 104
 
 9 tours en 6 secondes
+
+init_setup
+init_relay
+init_instruments
+activate_instruments
+Set anemometer 0 m/s
+Anemometer raw data : 91
+Anemometer raw data : 91
+Anemometer raw data : 91
+Anemometer raw data : 91
+Anemometer raw data : 91
+Anemometer raw data : 91
+Anemometer raw data : 91
+Anemometer raw data : 91
+Anemometer raw data : 91
+Anemometer raw data : 91
+Set anemometer to constant speed
+Anemometer raw data : 114
+Anemometer raw data : 115
+Anemometer raw data : 114
+Anemometer raw data : 114
+Anemometer raw data : 115
+Anemometer raw data : 114
+Anemometer raw data : 115
+Anemometer raw data : 115
+Anemometer raw data : 114
+Anemometer raw data : 115
+
+31 tours en 15 secondes
+
+rayon anemometre 	: 3" -> 76.2mm -> 0.0762m
+circonference 	: 2 * pi * 0.0762m = 0.47877872m
+
+31 tours en 15 secondes -> 31 * 0.47877872 / 15 = 0.98947 m/s

@@ -104,13 +104,6 @@ Sensor_t hdc1080 = {(void*)&hdc1080_sensor, &_hdc1080_init, &_hdc1080_read};
 Sensor_t pt100 = {(void*)&pt100_sensor, &_pt100_init, &_pt100_read};
 Sensor_t anemometer = {(void*)&anemometer_sensor, &_anemometer_init, &_anemometer_read};
 
-
-/*
-const Sensor_t AS7262_SENSOR = {(void*)&as7262, &_as7262_init, &_as7262_read};
-const Sensor_t HDC1080_SENSOR = {(void*)&hdc1080, &_hdc1080_init, &_hdc1080_read};
-const Sensor_t PT100_SENSOR = {(void*)&pt100, &_pt100_init, &_pt100_read};
-const Sensor_t ANEMOMETER_SENSOR = {(void*)&anemometer, &_anemometer_init, &_anemometer_read};
-*/
 // Sensor struct list
 Sensor_t sensor_list[] = {
 	as7262,
@@ -201,7 +194,7 @@ uint8_t _as7262_read(Sensor_t* sens, uint8_t* data){
 	pAs7262->readCalibratedValues(measurements);
 
 	for (int i = 0; i < AS726x_NUM_CHANNELS; i++){
-		fb.value = measurements[i];
+		fb.value = (measurements[i] - AS7262_CALIBRATED_DARK_OFFSET[i]) * AS7262_CALIBRATED_DIFFUSER_MULTIPLIER[i];
 
 #if DEBUG_AS7262_SERIAL
 		Serial.print("CH: "); Serial.print(i);

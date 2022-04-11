@@ -38,7 +38,7 @@
 #define DEBUG_SAVE_FRAME_SERIAL   (1 & SERIAL_EN)
 #define DEBUG_SIGNAL_ERROR_SERIAL (1 & SERIAL_EN)
 
-#define DEBUG_NO_SD               (0)
+#define DEBUG_NO_SD               (1)
 
 /* DS3231 config */
 /* Alarm 1 config

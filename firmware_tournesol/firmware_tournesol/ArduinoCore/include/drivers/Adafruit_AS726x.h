@@ -152,6 +152,40 @@ enum drv_led_current_limits {
 #define AS726x_INTEGRATION_TIME_MULT 2.8 ///< multiplier for integration time
 #define AS726x_NUM_CHANNELS 6            ///< number of sensor channels
 
+
+/**************************************************************************/
+/*!
+    @brief  Additional content by Alexis Laframboise
+*/
+/**************************************************************************/
+#define AS7262_CALIBRATED_DARK_OFFSET_CH1 4.68
+#define AS7262_CALIBRATED_DARK_OFFSET_CH2 6.44
+#define AS7262_CALIBRATED_DARK_OFFSET_CH3 3.29
+#define AS7262_CALIBRATED_DARK_OFFSET_CH4 3.71
+#define AS7262_CALIBRATED_DARK_OFFSET_CH5 2.93
+#define AS7262_CALIBRATED_DARK_OFFSET_CH6 4.47
+
+#define AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH1 15.2
+#define AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH2 21.91
+#define AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH3 7.68
+#define AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH4 34.37
+#define AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH5 22.49
+#define AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH6 71.45
+
+const float AS7262_CALIBRATED_DARK_OFFSET[] = {AS7262_CALIBRATED_DARK_OFFSET_CH1,\
+											 AS7262_CALIBRATED_DARK_OFFSET_CH2,\
+											 AS7262_CALIBRATED_DARK_OFFSET_CH3,\
+											 AS7262_CALIBRATED_DARK_OFFSET_CH4,\
+											 AS7262_CALIBRATED_DARK_OFFSET_CH5,\
+											 AS7262_CALIBRATED_DARK_OFFSET_CH6};
+
+const float AS7262_CALIBRATED_DIFFUSER_MULTIPLIER[] = {AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH1,\
+													 AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH2,\
+													 AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH3,\
+													 AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH4,\
+													 AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH5,\
+													 AS7262_CALIBRATED_DIFFUSER_MULTIPLIER_CH6};
+
 /**************************************************************************/
 /*!
     @brief  Color definitions used by the library

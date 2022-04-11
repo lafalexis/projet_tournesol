@@ -71,7 +71,7 @@ int main(){
 	}
 
 	test_as7262();
-	
+	//test_pt100();
 	//test_anemometre();
 	
 	
@@ -171,13 +171,26 @@ int test_anemometre(){
 int test_pt100(){
 	int err = 0;
 	int i = 0;
-	float temp;
+	float temp = 0, old_temp = 0;
 
 	pt100_sensor.setPin(PT100_ADC_PIN);
 	
-	temp = (float)(pt100_sensor.readRawVal());
-
-	Serial.print("Temp(PT100): "); Serial.print(temp); Serial.print("\n");
+	while (1){
+		for(int i = 0; i < 5; i++){
+			temp += (float)(pt100_sensor.readRawVal());
+			delay(1000);
+		}
+		temp /= 5;
+		Serial.print("Temp(PT100) : "); Serial.print(temp); Serial.print(" raw count\n");
+				
+		if (temp == old_temp){
+			Serial.print("Temp(PT100) stabilized : "); Serial.print((float)(pt100_sensor.readRawVal())); Serial.print("\n");
+			break;
+		}
+		
+		old_temp = temp;
+		temp = 0;
+	}
 	
 	return err;
 }

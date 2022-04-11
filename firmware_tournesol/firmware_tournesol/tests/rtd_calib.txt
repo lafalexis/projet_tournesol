@@ -1,0 +1,59 @@
+test a 0 degC
+init_setup
+init_relay
+init_instruments
+activate_instruments
+Temp(PT100) : 557.70 raw count
+Temp(PT100) : 558.50 raw count
+Temp(PT100) : 559.00 raw count
+Temp(PT100) : 558.80 raw count
+Temp(PT100) : 557.30 raw count
+Temp(PT100) : 557.80 raw count
+Temp(PT100) : 553.10 raw count
+Temp(PT100) : 551.20 raw count
+Temp(PT100) : 551.30 raw count
+Temp(PT100) : 552.30 raw count
+Temp(PT100) : 553.60 raw count
+Temp(PT100) : 551.40 raw count
+Temp(PT100) : 552.60 raw count
+Temp(PT100) : 551.40 raw count
+Temp(PT100) : 557.70 raw count
+Temp(PT100) : 557.90 raw count
+Temp(PT100) : 556.00 raw count
+Temp(PT100) : 554.80 raw count
+Temp(PT100) : 555.90 raw count
+Temp(PT100) : 550.60 raw count
+Temp(PT100) : 552.10 raw count
+Temp(PT100) : 558.50 raw count
+Temp(PT100) : 556.70 raw count
+Temp(PT100) : 555.90 raw count
+Temp(PT100) : 555.70 raw count
+Temp(PT100) : 551.70 raw count
+Temp(PT100) : 551.10 raw count
+Temp(PT100) : 550.80 raw count
+Temp(PT100) : 550.90 raw count
+Temp(PT100) : 551.60 raw count
+Temp(PT100) : 551.00 raw count
+Temp(PT100) : 551.90 raw count
+Temp(PT100) : 551.50 raw count
+Temp(PT100) : 551.30 raw count
+Temp(PT100) : 551.80 raw count
+
+Temp(PT100) stabilized : 551 raw count
+
+test a 40.5 degC (temperature finale)
+init_setup
+init_relay
+init_instruments
+activate_instruments
+Temp(PT100) : 788.60 raw count
+Temp(PT100) : 811.80 raw count
+Temp(PT100) : 818.00 raw count
+Temp(PT100) : 820.30 raw count
+Temp(PT100) : 821.00 raw count
+Temp(PT100) : 820.10 raw count
+Temp(PT100) : 819.60 raw count
+Temp(PT100) : 819.30 raw count
+Temp(PT100) : 819.10 raw count
+Temp(PT100) : 818.00 raw count
+Temp(PT100) stabilized : 818 raw count

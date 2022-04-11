@@ -418,6 +418,10 @@
     [
       "806a040a-651b-439f-9240-0e13101ec59b",
       "Circuit_RTD_PT100"
+    ],
+    [
+      "907c48aa-bd70-4abd-8dba-f2bdcc0e8861",
+      "Circuit_Relais"
     ]
   ],
   "text_variables": {}

@@ -54,6 +54,10 @@ void deactivate_instruments();
 
 int test_as7262();
 
+
+int test_anemometre();
+
+
 int main(){
 	// Necessary to use int main() instead of void setup() & void loop()
 	init();
@@ -64,8 +68,9 @@ int main(){
 		signal_error(err);
 	}
 
-	
 	test_as7262();
+	
+	//test_anemometre();
 	
 	
 	return 0;
@@ -85,23 +90,80 @@ int test_as7262(){
 		return ERROR_AS7262;
 	}
 	
+	Serial.println("Prepare for dark measurement in 10s :");
+	for (int i = 10; i > 0; i--){
+		Serial.println(i);
+		delay(1000);
+	}
+	
 	as7262_sensor.startMeasurement(); //begin a measurement
 
 	while(!as7262_sensor.dataReady());
 	
 	as7262_sensor.readCalibratedValues(as7262_data);
-	
 		
-	while(1){
+	for(int i = 0; i < 6; i++){
 		Serial.print("CH "); Serial.print(i); Serial.print(" : "); Serial.print(as7262_data[i]); Serial.println(",");
-		i++;
-		if (i > 6)
-		{
-			break;
-		}
+	}
+	Serial.println();
+	Serial.println("Prepare for 50% measurement in 10s :");
+	for (int i = 30; i > 0; i--){
+		Serial.println(i);
+		delay(1000);
+	}
+		
+	as7262_sensor.startMeasurement(); //begin a measurement
+
+	while(!as7262_sensor.dataReady());
+		
+	as7262_sensor.readCalibratedValues(as7262_data);
+		
+	for(int i = 0; i < 6; i++){
+		Serial.print("CH "); Serial.print(i); Serial.print(" : "); Serial.print(as7262_data[i]); Serial.println(",");
+	}
+	Serial.println();
+	Serial.println("Prepare for 100% measurement in 10s :");
+	for (int i = 10; i > 0; i--){
+		Serial.println(i);
+		delay(1000);
+	}
+
+	as7262_sensor.startMeasurement(); //begin a measurement
+
+	while(!as7262_sensor.dataReady());
+
+	as7262_sensor.readCalibratedValues(as7262_data);
+
+	for(int i = 0; i < 6; i++){
+		Serial.print("CH "); Serial.print(i); Serial.print(" : "); Serial.print(as7262_data[i]); Serial.print(",\t");
+	}
+	Serial.println();
+	Serial.println("The end");
+	for (int i = 10; i > 0; i--){
+		Serial.println();
+		}		
+
+	return err;
+}
+
+int test_anemometre(){
+	anemometer_sensor.setPin(ANEMO_ADC_PIN);
+	
+	Serial.println("Set anemometer 0 m/s");
+	
+	delay(5000);
+	
+	for (int i = 0; i < 10; i++){
+		Serial.print("Anemometer raw data : "); Serial.println(analogRead(ANEMO_ADC_PIN));
 	}
 	
-	return err;
+	Serial.println("Set anemometer to constant speed");
+		
+	delay(30000);	
+		
+	for (int i = 0; i < 10; i++){
+		Serial.print("Anemometer raw data : "); Serial.println(analogRead(ANEMO_ADC_PIN));
+	}
 }
 
 int init_setup(void){

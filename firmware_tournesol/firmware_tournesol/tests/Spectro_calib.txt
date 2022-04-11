@@ -1,0 +1,27 @@
+init_setup
+init_relay
+init_instruments
+activate_instruments
+Prepare for dark measurement in 10s : (dark)
+CH 0 : 5.84,
+CH 1 : 7.73,
+CH 2 : 3.29,
+CH 3 : 4.64,
+CH 4 : 3.91,
+CH 5 : 6.25,
+
+Prepare for 50% measurement in 10s : (ambient)
+CH 0 : 142.61,
+CH 1 : 207.49,
+CH 2 : 530.17,
+CH 3 : 408.64,
+CH 4 : 543.73,
+CH 5 : 199.19,
+
+Prepare for 100% measurement in 10s : (ambient + 2 flashlight)
+CH 0 : 201.05,
+CH 1 : 283.53,
+CH 2 : 624.57,
+CH 3 : 516.37,
+CH 4 : 655.21,
+CH 5 : 299.23,

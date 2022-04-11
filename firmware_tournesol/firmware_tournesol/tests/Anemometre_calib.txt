@@ -1,0 +1,28 @@
+init_setup
+init_relay
+init_instruments
+activate_instruments
+Set anemometer 0 m/s
+Anemometer raw data : 88
+Anemometer raw data : 88
+Anemometer raw data : 88
+Anemometer raw data : 88
+Anemometer raw data : 88
+Anemometer raw data : 88
+Anemometer raw data : 88
+Anemometer raw data : 88
+Anemometer raw data : 88
+Anemometer raw data : 88
+Set anemometer to constant speed
+Anemometer raw data : 104
+Anemometer raw data : 104
+Anemometer raw data : 104
+Anemometer raw data : 104
+Anemometer raw data : 104
+Anemometer raw data : 104
+Anemometer raw data : 104
+Anemometer raw data : 104
+Anemometer raw data : 104
+Anemometer raw data : 104
+
+9 tours en 6 secondes

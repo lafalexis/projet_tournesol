@@ -54,6 +54,8 @@ void deactivate_instruments();
 
 int test_as7262();
 
+int test_pt100();
+
 int main(){
 	// Necessary to use int main() instead of void setup() & void loop()
 	init();
@@ -100,6 +102,20 @@ int test_as7262(){
 			break;
 		}
 	}
+	
+	return err;
+}
+
+int test_pt100(){
+	int err = 0;
+	int i = 0;
+	float temp;
+
+	pt100_sensor.setPin(PT100_ADC_PIN);
+	
+	temp = (float)(pt100_sensor.readRawVal());
+
+	Serial.print("Temp(PT100): "); Serial.print(temp); Serial.print("\n");
 	
 	return err;
 }

@@ -70,3 +70,14 @@ float PT100::readTemperature(void) {
   return _control_setup.tempVal;
 }
 
+/**************************************************************************/
+/*!
+    @brief  
+    @param 
+    @return 
+*/
+/**************************************************************************/
+int PT100::readRawVal(void) {
+  _control_setup.rawVal = analogRead(_control_setup.pin);
+  return _control_setup.rawVal;
+}

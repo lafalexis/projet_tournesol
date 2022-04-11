@@ -54,8 +54,10 @@ void deactivate_instruments();
 
 int test_as7262();
 
+int test_pt100();
 
 int test_anemometre();
+
 
 
 int main(){
@@ -164,6 +166,20 @@ int test_anemometre(){
 	for (int i = 0; i < 10; i++){
 		Serial.print("Anemometer raw data : "); Serial.println(analogRead(ANEMO_ADC_PIN));
 	}
+}
+
+int test_pt100(){
+	int err = 0;
+	int i = 0;
+	float temp;
+
+	pt100_sensor.setPin(PT100_ADC_PIN);
+	
+	temp = (float)(pt100_sensor.readRawVal());
+
+	Serial.print("Temp(PT100): "); Serial.print(temp); Serial.print("\n");
+	
+	return err;
 }
 
 int init_setup(void){

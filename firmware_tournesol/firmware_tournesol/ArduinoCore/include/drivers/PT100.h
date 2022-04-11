@@ -60,6 +60,11 @@ public:           // Access specifier
       @return
   */
   float readTemperature(void);
+  /*!
+      @brief
+      @return
+  */
+  int readRawVal(void);
 
 private:
   struct control_setup {

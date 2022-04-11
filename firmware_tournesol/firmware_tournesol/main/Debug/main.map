@@ -10,6 +10,8 @@ C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libA
                               C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o) (_ZN5Print5writeEPKhj)
 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
                               C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o) (millis)
+C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                              main.o (pinMode)
 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
                               C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o) (_ZN7TwoWire4readEv)
 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
@@ -42,8 +44,6 @@ C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libA
                               C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o) (attachInterrupt)
 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
                               C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o) (analogRead)
-C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
-                              C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o) (pinMode)
 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WString.o)
                               C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Stream.o) (_ZN6StringC1EPKc)
 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
@@ -207,6 +207,10 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
+ .text._Z22deactivate_instrumentsv
+                0x00000000       0x24 main.o
+ .rodata._ZZ22deactivate_instrumentsvE12__FUNCTION__
+                0x00000000       0x17 main.o
  .text          0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
  .data          0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
  .bss           0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
@@ -269,6 +273,13 @@ Discarded input sections
  .bss           0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
  .text.delayMicroseconds
                 0x00000000       0x16 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .text          0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .data          0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .bss           0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .text.digitalRead
+                0x00000000       0x52 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .progmem.data.port_to_input_PGM
+                0x00000000        0xa C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
  .group         0x00000000        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
  .group         0x00000000        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
  .group         0x00000000        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
@@ -442,13 +453,6 @@ Discarded input sections
                 0x00000000        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
  .text.analogWrite
                 0x00000000       0xbe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
- .text          0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .data          0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .bss           0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .text.digitalRead
-                0x00000000       0x52 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .progmem.data.port_to_input_PGM
-                0x00000000        0xa C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
  .group         0x00000000        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WString.o)
  .text          0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WString.o)
  .data          0x00000000        0x0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WString.o)
@@ -1267,7 +1271,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x38da
+.text           0x00000000     0x39f4
  *(.vectors)
  .vectors       0x00000000       0x68 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x00000000                __vector_default
@@ -1368,570 +1372,585 @@ END GROUP
                 0x00000110                __vector_20
                 0x00000114                . = ALIGN (0x2)
  *(.text.*)
+ .text._Z10init_relayv
+                0x00000114       0x14 main.o
+                0x00000114                _Z10init_relayv
+ .text._Z14activate_relayv
+                0x00000128       0x14 main.o
+                0x00000128                _Z14activate_relayv
+ .text._Z16deactivate_relayv
+                0x0000013c       0x14 main.o
+                0x0000013c                _Z16deactivate_relayv
+ .text._Z16init_instrumentsv
+                0x00000150       0x24 main.o
+                0x00000150                _Z16init_instrumentsv
+ .text._Z20activate_instrumentsv
+                0x00000174       0x30 main.o
+                0x00000174                _Z20activate_instrumentsv
  .text._Z10init_setupv
-                0x00000114       0x5c main.o
-                0x00000114                _Z10init_setupv
+                0x000001a4       0x68 main.o
+                0x000001a4                _Z10init_setupv
  .text._Z8checksumPKhj
-                0x00000170       0x3a main.o
-                0x00000170                _Z8checksumPKhj
+                0x0000020c       0x3a main.o
+                0x0000020c                _Z8checksumPKhj
  .text.startup.main
-                0x000001aa       0xca main.o
-                0x000001aa                main
+                0x00000246       0xe0 main.o
+                0x00000246                main
  .text._Z17_unix_to_datetimev
-                0x00000274      0x148 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x00000274                _Z17_unix_to_datetimev
+                0x00000326      0x148 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x00000326                _Z17_unix_to_datetimev
  .text._Z17_datetime_to_unixv
-                0x000003bc      0x226 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x000003bc                _Z17_datetime_to_unixv
+                0x0000046e      0x226 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x0000046e                _Z17_datetime_to_unixv
  .text._Z8_dec2bcdh
-                0x000005e2       0x1a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x000005e2                _Z8_dec2bcdh
+                0x00000694       0x1a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x00000694                _Z8_dec2bcdh
  .text._Z8_bcd2dech
-                0x000005fc       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x000005fc                _Z8_bcd2dech
+                0x000006ae       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x000006ae                _Z8_bcd2dech
  .text._Z8_set_reghh
-                0x0000060e       0x34 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x0000060e                _Z8_set_reghh
+                0x000006c0       0x34 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x000006c0                _Z8_set_reghh
  .text._Z19DS3231_set_datetimem
-                0x00000642       0x6e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x00000642                _Z19DS3231_set_datetimem
+                0x000006f4       0x6e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x000006f4                _Z19DS3231_set_datetimem
  .text._Z8_get_regh
-                0x000006b0       0x74 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x000006b0                _Z8_get_regh
+                0x00000762       0x74 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x00000762                _Z8_get_regh
  .text._Z19DS3231_get_datetimev
-                0x00000724       0x98 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x00000724                _Z19DS3231_get_datetimev
+                0x000007d6       0x98 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x000007d6                _Z19DS3231_get_datetimev
  .text._Z15_set_alarm_maskhh
-                0x000007bc       0x6e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x000007bc                _Z15_set_alarm_maskhh
+                0x0000086e       0x6e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x0000086e                _Z15_set_alarm_maskhh
  .text._Z11DS3231_initP13DS3231_config
-                0x0000082a       0xde C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x0000082a                _Z11DS3231_initP13DS3231_config
+                0x000008dc       0xde C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x000008dc                _Z11DS3231_initP13DS3231_config
  .text._ZN14HardwareSerial9availableEv
-                0x00000908       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x00000908                _ZN14HardwareSerial9availableEv
+                0x000009ba       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000009ba                _ZN14HardwareSerial9availableEv
  .text._ZN14HardwareSerial4peekEv
-                0x00000920       0x1c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x00000920                _ZN14HardwareSerial4peekEv
+                0x000009d2       0x1c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000009d2                _ZN14HardwareSerial4peekEv
  .text._ZN14HardwareSerial4readEv
-                0x0000093c       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x0000093c                _ZN14HardwareSerial4readEv
+                0x000009ee       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000009ee                _ZN14HardwareSerial4readEv
  .text._ZN14HardwareSerial17availableForWriteEv
-                0x00000964       0x1e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x00000964                _ZN14HardwareSerial17availableForWriteEv
+                0x00000a16       0x1e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00000a16                _ZN14HardwareSerial17availableForWriteEv
  .text._ZN14HardwareSerial17_tx_udr_empty_irqEv
-                0x00000982       0x44 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x00000982                _ZN14HardwareSerial17_tx_udr_empty_irqEv
+                0x00000a34       0x44 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00000a34                _ZN14HardwareSerial17_tx_udr_empty_irqEv
  .text._ZN14HardwareSerial5writeEh
-                0x000009c6       0x9a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x000009c6                _ZN14HardwareSerial5writeEh
+                0x00000a78       0x9a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00000a78                _ZN14HardwareSerial5writeEh
  .text._ZN14HardwareSerial5flushEv
-                0x00000a60       0x44 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x00000a60                _ZN14HardwareSerial5flushEv
+                0x00000b12       0x44 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00000b12                _ZN14HardwareSerial5flushEv
  .text._ZN14HardwareSerial5beginEmh
-                0x00000aa4       0xca C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x00000aa4                _ZN14HardwareSerial5beginEmh
+                0x00000b56       0xca C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00000b56                _ZN14HardwareSerial5beginEmh
  .text._ZN5Print17availableForWriteEv
-                0x00000b6e        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
-                0x00000b6e                _ZN5Print17availableForWriteEv
+                0x00000c20        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00000c20                _ZN5Print17availableForWriteEv
  .text.__vector_18
-                0x00000b74       0x64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
-                0x00000b74                __vector_18
+                0x00000c26       0x64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00000c26                __vector_18
  .text.__vector_19
-                0x00000bd8       0x4c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
-                0x00000bd8                __vector_19
+                0x00000c8a       0x4c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00000c8a                __vector_19
  .text.startup._GLOBAL__sub_I___vector_18
-                0x00000c24       0x5a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00000cd6       0x5a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
  .text._ZN5Print5writeEPKhj
-                0x00000c7e       0x54 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000c7e                _ZN5Print5writeEPKhj
+                0x00000d30       0x54 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000d30                _ZN5Print5writeEPKhj
  .text._ZN5Print5writeEPKc
-                0x00000cd2       0x2a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000cd2                _ZN5Print5writeEPKc
+                0x00000d84       0x2a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000d84                _ZN5Print5writeEPKc
  .text._ZN5Print5printEPKc
-                0x00000cfc        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000cfc                _ZN5Print5printEPKc
+                0x00000dae        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000dae                _ZN5Print5printEPKc
  .text._ZN5Print5printEc
-                0x00000d00        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000d00                _ZN5Print5printEc
+                0x00000db2        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000db2                _ZN5Print5printEc
  .text._ZN5Print7printlnEv
-                0x00000d0e        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000d0e                _ZN5Print7printlnEv
+                0x00000dc0        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000dc0                _ZN5Print7printlnEv
  .text._ZN5Print7printlnEPKc
-                0x00000d16       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000d16                _ZN5Print7printlnEPKc
+                0x00000dc8       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000dc8                _ZN5Print7printlnEPKc
  .text._ZN5Print11printNumberEmh
-                0x00000d3a       0x92 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000d3a                _ZN5Print11printNumberEmh
+                0x00000dec       0x92 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000dec                _ZN5Print11printNumberEmh
  .text._ZN5Print5printEmi
-                0x00000dcc       0x1a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000dcc                _ZN5Print5printEmi
+                0x00000e7e       0x1a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000e7e                _ZN5Print5printEmi
  .text._ZN5Print5printEhi
-                0x00000de6        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000de6                _ZN5Print5printEhi
+                0x00000e98        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000e98                _ZN5Print5printEhi
  .text._ZN5Print7printlnEhi
-                0x00000df4       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000df4                _ZN5Print7printlnEhi
+                0x00000ea6       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000ea6                _ZN5Print7printlnEhi
  .text._ZN5Print5printEji
-                0x00000e18        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000e18                _ZN5Print5printEji
+                0x00000eca        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000eca                _ZN5Print5printEji
  .text._ZN5Print5printEli
-                0x00000e24       0x90 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000e24                _ZN5Print5printEli
+                0x00000ed6       0x90 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000ed6                _ZN5Print5printEli
  .text._ZN5Print5printEii
-                0x00000eb4        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000eb4                _ZN5Print5printEii
+                0x00000f66        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000f66                _ZN5Print5printEii
  .text._ZN5Print10printFloatEdh
-                0x00000ec2      0x1b6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000ec2                _ZN5Print10printFloatEdh
+                0x00000f74      0x1b6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000f74                _ZN5Print10printFloatEdh
  .text._ZN5Print5printEdi
-                0x00001078        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00001078                _ZN5Print5printEdi
+                0x0000112a        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x0000112a                _ZN5Print5printEdi
  .text._ZN5Print7printlnEdi
-                0x0000107c       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x0000107c                _ZN5Print7printlnEdi
+                0x0000112e       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x0000112e                _ZN5Print7printlnEdi
  .text.__vector_16
-                0x000010a0       0x94 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x000010a0                __vector_16
- .text.millis   0x00001134       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x00001134                millis
- .text.micros   0x0000114c       0x4a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x0000114c                micros
- .text.delay    0x00001196       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x00001196                delay
- .text.init     0x0000120e       0x76 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x0000120e                init
- .text._ZN7TwoWire9availableEv
-                0x00001284       0x10 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001284                _ZN7TwoWire9availableEv
- .text._ZN7TwoWire4readEv
-                0x00001294       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001294                _ZN7TwoWire4readEv
- .text._ZN7TwoWire4peekEv
-                0x000012bc       0x1e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x000012bc                _ZN7TwoWire4peekEv
- .text._ZN7TwoWire5flushEv
-                0x000012da        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x000012da                _ZN7TwoWire5flushEv
- .text._ZN7TwoWire16onReceiveServiceEPhi
-                0x000012dc       0x54 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x000012dc                _ZN7TwoWire16onReceiveServiceEPhi
- .text._ZN7TwoWire16onRequestServiceEv
-                0x00001330       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001330                _ZN7TwoWire16onRequestServiceEv
- .text._ZN7TwoWire5writeEPKhj
-                0x00001348       0x5a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001348                _ZN7TwoWire5writeEPKhj
- .text._ZN7TwoWire5writeEh
-                0x000013a2       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x000013a2                _ZN7TwoWire5writeEh
- .text._ZN7TwoWireC2Ev
-                0x00001400       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001400                _ZN7TwoWireC1Ev
-                0x00001400                _ZN7TwoWireC2Ev
- .text._ZN7TwoWire5beginEv
-                0x00001420       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001420                _ZN7TwoWire5beginEv
- .text._ZN7TwoWire17beginTransmissionEh
-                0x00001444       0x14 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001444                _ZN7TwoWire17beginTransmissionEh
- .text._ZN7TwoWire17beginTransmissionEi
-                0x00001458        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001458                _ZN7TwoWire17beginTransmissionEi
- .text._ZN7TwoWire15endTransmissionEh
-                0x0000145c       0x26 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x0000145c                _ZN7TwoWire15endTransmissionEh
- .text._ZN7TwoWire11requestFromEhhmhh
-                0x00001482       0xa8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001482                _ZN7TwoWire11requestFromEhhmhh
- .text._ZN7TwoWire11requestFromEhhh
-                0x0000152a       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x0000152a                _ZN7TwoWire11requestFromEhhh
- .text._ZN7TwoWire11requestFromEhh
-                0x0000154a        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x0000154a                _ZN7TwoWire11requestFromEhh
- .text._ZN7TwoWire11requestFromEii
-                0x00001550        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001550                _ZN7TwoWire11requestFromEii
- .text._ZN7TwoWire15endTransmissionEv
-                0x00001556        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x00001556                _ZN7TwoWire15endTransmissionEv
- .text.startup._GLOBAL__sub_I__ZN7TwoWire8rxBufferE
-                0x0000155c        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
- .text._Z10save_framePcPhh
-                0x00001564       0x92 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
-                0x00001564                _Z10save_framePcPhh
- .text._Z7sd_initv
-                0x000015f6       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
-                0x000015f6                _Z7sd_initv
- .text._Z11init_memoryv
-                0x00001608       0x10 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
-                0x00001608                _Z11init_memoryv
- .text._Z11_pt100_initP8Sensor_t
-                0x00001618       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00001618                _Z11_pt100_initP8Sensor_t
- .text._Z16_anemometer_initP8Sensor_t
-                0x00001648       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00001648                _Z16_anemometer_initP8Sensor_t
- .text._Z12_as7262_readP8Sensor_tPh
-                0x00001678      0x12e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00001678                _Z12_as7262_readP8Sensor_tPh
- .text._Z13_hdc1080_readP8Sensor_tPh
-                0x000017a6       0xec C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x000017a6                _Z13_hdc1080_readP8Sensor_tPh
- .text._Z11_pt100_readP8Sensor_tPh
-                0x00001892       0x66 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00001892                _Z11_pt100_readP8Sensor_tPh
- .text._Z16_anemometer_readP8Sensor_tPh
-                0x000018f8       0x66 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x000018f8                _Z16_anemometer_readP8Sensor_tPh
- .text._Z12_as7262_initP8Sensor_t
-                0x0000195e       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x0000195e                _Z12_as7262_initP8Sensor_t
- .text._Z13_hdc1080_initP8Sensor_t
-                0x000019bc       0x72 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x000019bc                _Z13_hdc1080_initP8Sensor_t
- .text._Z12init_modulesv
-                0x00001a2e       0x3e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00001a2e                _Z12init_modulesv
- .text._Z12exec_modulesPh
-                0x00001a6c       0x58 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00001a6c                _Z12exec_modulesPh
- .text.startup._GLOBAL__sub_I_as7262
-                0x00001ac4       0x34 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
- .text.exit._GLOBAL__sub_D_as7262
-                0x00001af8       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
- .text._Z11ds3231_inith
-                0x00001b10       0x94 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
-                0x00001b10                _Z11ds3231_inith
- .text._Z8rtc_initv
-                0x00001ba4        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
-                0x00001ba4                _Z8rtc_initv
- .text._Z8sleepISRv
-                0x00001baa       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
-                0x00001baa                _Z8sleepISRv
- .text._Z10goto_sleepv
-                0x00001bbc       0x62 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
-                0x00001bbc                _Z10goto_sleepv
- .text._Z12signal_errori
-                0x00001c1e       0xb8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
-                0x00001c1e                _Z12signal_errori
- .text._Z19status_blinker_initv
-                0x00001cd6       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
-                0x00001cd6                _Z19status_blinker_initv
- .text._Z22status_blinker_disablev
-                0x00001d34       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
-                0x00001d34                _Z22status_blinker_disablev
- .text.__vector_11
-                0x00001d60       0x80 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
-                0x00001d60                __vector_11
- .text._ZN15Adafruit_AS726x13control_setup3getEv
-                0x00001de0        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001de0                _ZN15Adafruit_AS726x13control_setup3getEv
- .text._ZN15Adafruit_AS726x11led_control3getEv
-                0x00001de8        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001de8                _ZN15Adafruit_AS726x11led_control3getEv
- .text._ZN15Adafruit_AS726xD2Ev
-                0x00001df0       0x10 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001df0                _ZN15Adafruit_AS726xD2Ev
-                0x00001df0                _ZN15Adafruit_AS726xD1Ev
- .text._ZN15Adafruit_AS726x4readEhPhh
-                0x00001e00       0x3c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001e00                _ZN15Adafruit_AS726x4readEhPhh
- .text._ZN15Adafruit_AS726x5read8Eh
-                0x00001e3c       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001e3c                _ZN15Adafruit_AS726x5read8Eh
- .text._ZN15Adafruit_AS726x5writeEhPhh
-                0x00001e5c       0x44 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001e5c                _ZN15Adafruit_AS726x5writeEhPhh
- .text._ZN15Adafruit_AS726x6write8Ehh
-                0x00001ea0       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001ea0                _ZN15Adafruit_AS726x6write8Ehh
- .text._ZN15Adafruit_AS726x11virtualReadEh
-                0x00001ec0       0x5a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001ec0                _ZN15Adafruit_AS726x11virtualReadEh
- .text._ZN15Adafruit_AS726x19readCalibratedValueEh
-                0x00001f1a       0x6c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001f1a                _ZN15Adafruit_AS726x19readCalibratedValueEh
- .text._ZN15Adafruit_AS726x20readCalibratedValuesEPfh
-                0x00001f86       0xd2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00001f86                _ZN15Adafruit_AS726x20readCalibratedValuesEPfh
- .text._ZN15Adafruit_AS726x12virtualWriteEhh
-                0x00002058       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00002058                _ZN15Adafruit_AS726x12virtualWriteEhh
- .text._ZN15Adafruit_AS726x6drvOffEv
-                0x000020b6       0x22 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x000020b6                _ZN15Adafruit_AS726x6drvOffEv
- .text._ZN15Adafruit_AS726x13setDrvCurrentEh
-                0x000020d8       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x000020d8                _ZN15Adafruit_AS726x13setDrvCurrentEh
- .text._ZN15Adafruit_AS726x17setConversionTypeEh
-                0x00002104       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00002104                _ZN15Adafruit_AS726x17setConversionTypeEh
- .text._ZN15Adafruit_AS726x7setGainEh
-                0x00002130       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00002130                _ZN15Adafruit_AS726x7setGainEh
- .text._ZN15Adafruit_AS726x18setIntegrationTimeEh
-                0x0000215c        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x0000215c                _ZN15Adafruit_AS726x18setIntegrationTimeEh
- .text._ZN15Adafruit_AS726x15enableInterruptEv
-                0x00002168       0x22 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00002168                _ZN15Adafruit_AS726x15enableInterruptEv
- .text._ZN15Adafruit_AS726x5beginEP7TwoWire
-                0x0000218a       0xb6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x0000218a                _ZN15Adafruit_AS726x5beginEP7TwoWire
- .text._ZN15Adafruit_AS726x16startMeasurementEv
-                0x00002240       0x2a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                0x00002240                _ZN15Adafruit_AS726x16startMeasurementEv
- .text._ZN10AnemometerC2Ei
-                0x0000226a        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
-                0x0000226a                _ZN10AnemometerC1Ei
-                0x0000226a                _ZN10AnemometerC2Ei
- .text._ZN10AnemometerD2Ev
-                0x00002276        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
-                0x00002276                _ZN10AnemometerD1Ev
-                0x00002276                _ZN10AnemometerD2Ev
- .text._ZN10Anemometer6setPinEi
-                0x00002278        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
-                0x00002278                _ZN10Anemometer6setPinEi
- .text._ZN10Anemometer13readWindSpeedEv
-                0x00002280       0x76 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
-                0x00002280                _ZN10Anemometer13readWindSpeedEv
- .text._ZN18ClosedCube_HDC1080C2Ev
-                0x000022f6        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
-                0x000022f6                _ZN18ClosedCube_HDC1080C1Ev
-                0x000022f6                _ZN18ClosedCube_HDC1080C2Ev
- .text._ZN18ClosedCube_HDC10805beginEh
-                0x000022f8        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
-                0x000022f8                _ZN18ClosedCube_HDC10805beginEh
- .text._ZN18ClosedCube_HDC108013writeRegisterE17HDC1080_Registers
-                0x00002304       0x44 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
-                0x00002304                _ZN18ClosedCube_HDC108013writeRegisterE17HDC1080_Registers
- .text._ZN18ClosedCube_HDC108013setResolutionE29HDC1080_MeasurementResolutionS0_
-                0x00002348       0x26 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
-                0x00002348                _ZN18ClosedCube_HDC108013setResolutionE29HDC1080_MeasurementResolutionS0_
- .text._ZN18ClosedCube_HDC10808readDataEh
-                0x0000236e       0x70 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
-                0x0000236e                _ZN18ClosedCube_HDC10808readDataEh
- .text._ZN18ClosedCube_HDC108015readTemperatureEv
-                0x000023de       0x36 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
-                0x000023de                _ZN18ClosedCube_HDC108015readTemperatureEv
- .text._ZN18ClosedCube_HDC108012readHumidityEv
-                0x00002414       0x2a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
-                0x00002414                _ZN18ClosedCube_HDC108012readHumidityEv
- .text._ZN18ClosedCube_HDC108012readDeviceIdEv
-                0x0000243e        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
-                0x0000243e                _ZN18ClosedCube_HDC108012readDeviceIdEv
- .text._ZN5PT100C2Eif
-                0x00002444       0x14 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
-                0x00002444                _ZN5PT100C2Eif
-                0x00002444                _ZN5PT100C1Eif
- .text._ZN5PT100D2Ev
-                0x00002458        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
-                0x00002458                _ZN5PT100D1Ev
-                0x00002458                _ZN5PT100D2Ev
- .text._ZN5PT1006setPinEi
-                0x0000245a        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
-                0x0000245a                _ZN5PT1006setPinEi
- .text._ZN5PT10015readTemperatureEv
-                0x00002462       0x42 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
-                0x00002462                _ZN5PT10015readTemperatureEv
- .text.__empty  0x000024a4        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
-                0x000024a4                yield
- .text._Znwj    0x000024a6        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
-                0x000024a6                _Znwj
- .text._ZdlPv   0x000024aa        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
-                0x000024aa                _ZdlPv
- .text.nothing  0x000024ae        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
- .text.attachInterrupt
-                0x000024b0       0x40 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
-                0x000024b0                attachInterrupt
- .text.detachInterrupt
-                0x000024f0       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
-                0x000024f0                detachInterrupt
- .text.__vector_1
-                0x00002514       0x4e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
-                0x00002514                __vector_1
- .text.__vector_2
-                0x00002562       0x4e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
-                0x00002562                __vector_2
- .text.analogRead
-                0x000025b0       0x3a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
-                0x000025b0                analogRead
+                0x00001152       0x94 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00001152                __vector_16
+ .text.millis   0x000011e6       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x000011e6                millis
+ .text.micros   0x000011fe       0x4a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x000011fe                micros
+ .text.delay    0x00001248       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00001248                delay
+ .text.init     0x000012c0       0x76 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x000012c0                init
  .text.turnOffPWM
-                0x000025ea       0x52 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .text.pinMode  0x0000263c       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
-                0x0000263c                pinMode
+                0x00001336       0x52 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .text.pinMode  0x00001388       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00001388                pinMode
  .text.digitalWrite
-                0x000026b4       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
-                0x000026b4                digitalWrite
+                0x00001400       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00001400                digitalWrite
+ .text._ZN7TwoWire9availableEv
+                0x0000145e       0x10 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x0000145e                _ZN7TwoWire9availableEv
+ .text._ZN7TwoWire4readEv
+                0x0000146e       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x0000146e                _ZN7TwoWire4readEv
+ .text._ZN7TwoWire4peekEv
+                0x00001496       0x1e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00001496                _ZN7TwoWire4peekEv
+ .text._ZN7TwoWire5flushEv
+                0x000014b4        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x000014b4                _ZN7TwoWire5flushEv
+ .text._ZN7TwoWire16onReceiveServiceEPhi
+                0x000014b6       0x54 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x000014b6                _ZN7TwoWire16onReceiveServiceEPhi
+ .text._ZN7TwoWire16onRequestServiceEv
+                0x0000150a       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x0000150a                _ZN7TwoWire16onRequestServiceEv
+ .text._ZN7TwoWire5writeEPKhj
+                0x00001522       0x5a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00001522                _ZN7TwoWire5writeEPKhj
+ .text._ZN7TwoWire5writeEh
+                0x0000157c       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x0000157c                _ZN7TwoWire5writeEh
+ .text._ZN7TwoWireC2Ev
+                0x000015da       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x000015da                _ZN7TwoWireC1Ev
+                0x000015da                _ZN7TwoWireC2Ev
+ .text._ZN7TwoWire5beginEv
+                0x000015fa       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x000015fa                _ZN7TwoWire5beginEv
+ .text._ZN7TwoWire17beginTransmissionEh
+                0x0000161e       0x14 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x0000161e                _ZN7TwoWire17beginTransmissionEh
+ .text._ZN7TwoWire17beginTransmissionEi
+                0x00001632        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00001632                _ZN7TwoWire17beginTransmissionEi
+ .text._ZN7TwoWire15endTransmissionEh
+                0x00001636       0x26 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00001636                _ZN7TwoWire15endTransmissionEh
+ .text._ZN7TwoWire11requestFromEhhmhh
+                0x0000165c       0xa8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x0000165c                _ZN7TwoWire11requestFromEhhmhh
+ .text._ZN7TwoWire11requestFromEhhh
+                0x00001704       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00001704                _ZN7TwoWire11requestFromEhhh
+ .text._ZN7TwoWire11requestFromEhh
+                0x00001724        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00001724                _ZN7TwoWire11requestFromEhh
+ .text._ZN7TwoWire11requestFromEii
+                0x0000172a        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x0000172a                _ZN7TwoWire11requestFromEii
+ .text._ZN7TwoWire15endTransmissionEv
+                0x00001730        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00001730                _ZN7TwoWire15endTransmissionEv
+ .text.startup._GLOBAL__sub_I__ZN7TwoWire8rxBufferE
+                0x00001736        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+ .text._Z10save_framePcPhh
+                0x0000173e       0x92 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+                0x0000173e                _Z10save_framePcPhh
+ .text._Z7sd_initv
+                0x000017d0       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+                0x000017d0                _Z7sd_initv
+ .text._Z11init_memoryv
+                0x000017e2       0x10 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+                0x000017e2                _Z11init_memoryv
+ .text._Z11_pt100_initP8Sensor_t
+                0x000017f2       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x000017f2                _Z11_pt100_initP8Sensor_t
+ .text._Z16_anemometer_initP8Sensor_t
+                0x00001822       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00001822                _Z16_anemometer_initP8Sensor_t
+ .text._Z12_as7262_readP8Sensor_tPh
+                0x00001852      0x12e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00001852                _Z12_as7262_readP8Sensor_tPh
+ .text._Z13_hdc1080_readP8Sensor_tPh
+                0x00001980       0xec C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00001980                _Z13_hdc1080_readP8Sensor_tPh
+ .text._Z11_pt100_readP8Sensor_tPh
+                0x00001a6c       0x9a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00001a6c                _Z11_pt100_readP8Sensor_tPh
+ .text._Z16_anemometer_readP8Sensor_tPh
+                0x00001b06       0x9a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00001b06                _Z16_anemometer_readP8Sensor_tPh
+ .text._Z12_as7262_initP8Sensor_t
+                0x00001ba0       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00001ba0                _Z12_as7262_initP8Sensor_t
+ .text._Z13_hdc1080_initP8Sensor_t
+                0x00001bfe       0x72 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00001bfe                _Z13_hdc1080_initP8Sensor_t
+ .text._Z12init_modulesv
+                0x00001c70       0x3e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00001c70                _Z12init_modulesv
+ .text._Z12exec_modulesPh
+                0x00001cae       0x58 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00001cae                _Z12exec_modulesPh
+ .text.startup._GLOBAL__sub_I_as7262
+                0x00001d06       0x34 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+ .text.exit._GLOBAL__sub_D_as7262
+                0x00001d3a       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+ .text._Z11ds3231_inith
+                0x00001d52       0x94 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+                0x00001d52                _Z11ds3231_inith
+ .text._Z8rtc_initv
+                0x00001de6        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+                0x00001de6                _Z8rtc_initv
+ .text._Z8sleepISRv
+                0x00001dec       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+                0x00001dec                _Z8sleepISRv
+ .text._Z10goto_sleepv
+                0x00001dfe       0x62 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+                0x00001dfe                _Z10goto_sleepv
+ .text._Z12signal_errori
+                0x00001e60       0xb8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x00001e60                _Z12signal_errori
+ .text._Z19status_blinker_initv
+                0x00001f18       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x00001f18                _Z19status_blinker_initv
+ .text._Z22status_blinker_disablev
+                0x00001f76       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x00001f76                _Z22status_blinker_disablev
+ .text.__vector_11
+                0x00001fa2       0x80 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x00001fa2                __vector_11
+ .text._ZN15Adafruit_AS726x13control_setup3getEv
+                0x00002022        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x00002022                _ZN15Adafruit_AS726x13control_setup3getEv
+ .text._ZN15Adafruit_AS726x11led_control3getEv
+                0x0000202a        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x0000202a                _ZN15Adafruit_AS726x11led_control3getEv
+ .text._ZN15Adafruit_AS726xD2Ev
+                0x00002032       0x10 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x00002032                _ZN15Adafruit_AS726xD2Ev
+                0x00002032                _ZN15Adafruit_AS726xD1Ev
+ .text._ZN15Adafruit_AS726x4readEhPhh
+                0x00002042       0x3c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x00002042                _ZN15Adafruit_AS726x4readEhPhh
+ .text._ZN15Adafruit_AS726x5read8Eh
+                0x0000207e       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x0000207e                _ZN15Adafruit_AS726x5read8Eh
+ .text._ZN15Adafruit_AS726x5writeEhPhh
+                0x0000209e       0x44 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x0000209e                _ZN15Adafruit_AS726x5writeEhPhh
+ .text._ZN15Adafruit_AS726x6write8Ehh
+                0x000020e2       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x000020e2                _ZN15Adafruit_AS726x6write8Ehh
+ .text._ZN15Adafruit_AS726x11virtualReadEh
+                0x00002102       0x5a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x00002102                _ZN15Adafruit_AS726x11virtualReadEh
+ .text._ZN15Adafruit_AS726x19readCalibratedValueEh
+                0x0000215c       0x6c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x0000215c                _ZN15Adafruit_AS726x19readCalibratedValueEh
+ .text._ZN15Adafruit_AS726x20readCalibratedValuesEPfh
+                0x000021c8       0xd2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x000021c8                _ZN15Adafruit_AS726x20readCalibratedValuesEPfh
+ .text._ZN15Adafruit_AS726x12virtualWriteEhh
+                0x0000229a       0x5e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x0000229a                _ZN15Adafruit_AS726x12virtualWriteEhh
+ .text._ZN15Adafruit_AS726x6drvOffEv
+                0x000022f8       0x22 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x000022f8                _ZN15Adafruit_AS726x6drvOffEv
+ .text._ZN15Adafruit_AS726x13setDrvCurrentEh
+                0x0000231a       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x0000231a                _ZN15Adafruit_AS726x13setDrvCurrentEh
+ .text._ZN15Adafruit_AS726x17setConversionTypeEh
+                0x00002346       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x00002346                _ZN15Adafruit_AS726x17setConversionTypeEh
+ .text._ZN15Adafruit_AS726x7setGainEh
+                0x00002372       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x00002372                _ZN15Adafruit_AS726x7setGainEh
+ .text._ZN15Adafruit_AS726x18setIntegrationTimeEh
+                0x0000239e        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x0000239e                _ZN15Adafruit_AS726x18setIntegrationTimeEh
+ .text._ZN15Adafruit_AS726x15enableInterruptEv
+                0x000023aa       0x22 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x000023aa                _ZN15Adafruit_AS726x15enableInterruptEv
+ .text._ZN15Adafruit_AS726x5beginEP7TwoWire
+                0x000023cc       0xb6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x000023cc                _ZN15Adafruit_AS726x5beginEP7TwoWire
+ .text._ZN15Adafruit_AS726x16startMeasurementEv
+                0x00002482       0x2a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x00002482                _ZN15Adafruit_AS726x16startMeasurementEv
+ .text._ZN10AnemometerC2Ei
+                0x000024ac        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+                0x000024ac                _ZN10AnemometerC1Ei
+                0x000024ac                _ZN10AnemometerC2Ei
+ .text._ZN10AnemometerD2Ev
+                0x000024b8        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+                0x000024b8                _ZN10AnemometerD1Ev
+                0x000024b8                _ZN10AnemometerD2Ev
+ .text._ZN10Anemometer6setPinEi
+                0x000024ba        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+                0x000024ba                _ZN10Anemometer6setPinEi
+ .text._ZN10Anemometer13readWindSpeedEv
+                0x000024c2       0x76 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+                0x000024c2                _ZN10Anemometer13readWindSpeedEv
+ .text._ZN18ClosedCube_HDC1080C2Ev
+                0x00002538        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                0x00002538                _ZN18ClosedCube_HDC1080C1Ev
+                0x00002538                _ZN18ClosedCube_HDC1080C2Ev
+ .text._ZN18ClosedCube_HDC10805beginEh
+                0x0000253a        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                0x0000253a                _ZN18ClosedCube_HDC10805beginEh
+ .text._ZN18ClosedCube_HDC108013writeRegisterE17HDC1080_Registers
+                0x00002546       0x44 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                0x00002546                _ZN18ClosedCube_HDC108013writeRegisterE17HDC1080_Registers
+ .text._ZN18ClosedCube_HDC108013setResolutionE29HDC1080_MeasurementResolutionS0_
+                0x0000258a       0x26 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                0x0000258a                _ZN18ClosedCube_HDC108013setResolutionE29HDC1080_MeasurementResolutionS0_
+ .text._ZN18ClosedCube_HDC10808readDataEh
+                0x000025b0       0x70 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                0x000025b0                _ZN18ClosedCube_HDC10808readDataEh
+ .text._ZN18ClosedCube_HDC108015readTemperatureEv
+                0x00002620       0x36 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                0x00002620                _ZN18ClosedCube_HDC108015readTemperatureEv
+ .text._ZN18ClosedCube_HDC108012readHumidityEv
+                0x00002656       0x2a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                0x00002656                _ZN18ClosedCube_HDC108012readHumidityEv
+ .text._ZN18ClosedCube_HDC108012readDeviceIdEv
+                0x00002680        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                0x00002680                _ZN18ClosedCube_HDC108012readDeviceIdEv
+ .text._ZN5PT100C2Eif
+                0x00002686       0x14 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+                0x00002686                _ZN5PT100C2Eif
+                0x00002686                _ZN5PT100C1Eif
+ .text._ZN5PT100D2Ev
+                0x0000269a        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+                0x0000269a                _ZN5PT100D1Ev
+                0x0000269a                _ZN5PT100D2Ev
+ .text._ZN5PT1006setPinEi
+                0x0000269c        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+                0x0000269c                _ZN5PT1006setPinEi
+ .text._ZN5PT10015readTemperatureEv
+                0x000026a4       0x42 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+                0x000026a4                _ZN5PT10015readTemperatureEv
+ .text.__empty  0x000026e6        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+                0x000026e6                yield
+ .text._Znwj    0x000026e8        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+                0x000026e8                _Znwj
+ .text._ZdlPv   0x000026ec        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+                0x000026ec                _ZdlPv
+ .text.nothing  0x000026f0        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+ .text.attachInterrupt
+                0x000026f2       0x40 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+                0x000026f2                attachInterrupt
+ .text.detachInterrupt
+                0x00002732       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+                0x00002732                detachInterrupt
+ .text.__vector_1
+                0x00002756       0x4e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+                0x00002756                __vector_1
+ .text.__vector_2
+                0x000027a4       0x4e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+                0x000027a4                __vector_2
+ .text.analogRead
+                0x000027f2       0x3a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
+                0x000027f2                analogRead
  .text._ZN18Adafruit_I2CDeviceC2EhP7TwoWire
-                0x00002712       0x14 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
-                0x00002712                _ZN18Adafruit_I2CDeviceC2EhP7TwoWire
-                0x00002712                _ZN18Adafruit_I2CDeviceC1EhP7TwoWire
+                0x0000282c       0x14 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+                0x0000282c                _ZN18Adafruit_I2CDeviceC2EhP7TwoWire
+                0x0000282c                _ZN18Adafruit_I2CDeviceC1EhP7TwoWire
  .text._ZN18Adafruit_I2CDevice8detectedEv
-                0x00002726       0x3a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
-                0x00002726                _ZN18Adafruit_I2CDevice8detectedEv
+                0x00002840       0x3a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+                0x00002840                _ZN18Adafruit_I2CDevice8detectedEv
  .text._ZN18Adafruit_I2CDevice5beginEb
-                0x00002760       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
-                0x00002760                _ZN18Adafruit_I2CDevice5beginEb
+                0x0000287a       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+                0x0000287a                _ZN18Adafruit_I2CDevice5beginEb
  .text._ZN18Adafruit_I2CDevice5writeEPKhjbS1_j
-                0x00002790       0xac C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
-                0x00002790                _ZN18Adafruit_I2CDevice5writeEPKhjbS1_j
+                0x000028aa       0xac C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+                0x000028aa                _ZN18Adafruit_I2CDevice5writeEPKhjbS1_j
  .text._ZN18Adafruit_I2CDevice5_readEPhjb
-                0x0000283c       0x6a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
-                0x0000283c                _ZN18Adafruit_I2CDevice5_readEPhjb
+                0x00002956       0x6a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+                0x00002956                _ZN18Adafruit_I2CDevice5_readEPhjb
  .text._ZN18Adafruit_I2CDevice4readEPhjb
-                0x000028a6       0x80 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
-                0x000028a6                _ZN18Adafruit_I2CDevice4readEPhjb
+                0x000029c0       0x80 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+                0x000029c0                _ZN18Adafruit_I2CDevice4readEPhjb
  .text._ZN18Adafruit_I2CDevice15write_then_readEPKhjPhjb
-                0x00002926       0x64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
-                0x00002926                _ZN18Adafruit_I2CDevice15write_then_readEPKhjPhjb
+                0x00002a40       0x64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+                0x00002a40                _ZN18Adafruit_I2CDevice15write_then_readEPKhjPhjb
  .text.twi_init
-                0x0000298a       0x3c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x0000298a                twi_init
+                0x00002aa4       0x3c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002aa4                twi_init
  .text.twi_disable
-                0x000029c6       0x1a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x000029c6                twi_disable
+                0x00002ae0       0x1a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002ae0                twi_disable
  .text.twi_transmit
-                0x000029e0       0x50 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x000029e0                twi_transmit
+                0x00002afa       0x50 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002afa                twi_transmit
  .text.twi_attachSlaveRxEvent
-                0x00002a30        0xa C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x00002a30                twi_attachSlaveRxEvent
+                0x00002b4a        0xa C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002b4a                twi_attachSlaveRxEvent
  .text.twi_attachSlaveTxEvent
-                0x00002a3a        0xa C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x00002a3a                twi_attachSlaveTxEvent
+                0x00002b54        0xa C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002b54                twi_attachSlaveTxEvent
  .text.twi_releaseBus
-                0x00002a44        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x00002a44                twi_releaseBus
+                0x00002b5e        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002b5e                twi_releaseBus
  .text.twi_handleTimeout
-                0x00002a50       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x00002a50                twi_handleTimeout
+                0x00002b6a       0x2c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002b6a                twi_handleTimeout
  .text.twi_readFrom
-                0x00002a7c      0x1d2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x00002a7c                twi_readFrom
+                0x00002b96      0x1d2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002b96                twi_readFrom
  .text.twi_writeTo
-                0x00002c4e      0x1e0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x00002c4e                twi_writeTo
+                0x00002d68      0x1e0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002d68                twi_writeTo
  .text.twi_stop
-                0x00002e2e       0x70 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x00002e2e                twi_stop
+                0x00002f48       0x70 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002f48                twi_stop
  .text.__vector_24
-                0x00002e9e      0x25a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
-                0x00002e9e                __vector_24
+                0x00002fb8      0x25a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00002fb8                __vector_24
  .text.avr-libc.fplib
-                0x000030f8        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
-                0x000030f8                __subsf3
-                0x000030fa                __addsf3
+                0x00003212        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                0x00003212                __subsf3
+                0x00003214                __addsf3
  .text.avr-libc.fplib
-                0x00003106       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
-                0x00003128                __addsf3x
+                0x00003220       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                0x00003242                __addsf3x
  .text.avr-libc.fplib
-                0x000031d2        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
-                0x000031d2                __nesf2
-                0x000031d2                __eqsf2
-                0x000031d2                __cmpsf2
-                0x000031d2                __ltsf2
-                0x000031d2                __lesf2
+                0x000032ec        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+                0x000032ec                __nesf2
+                0x000032ec                __eqsf2
+                0x000032ec                __cmpsf2
+                0x000032ec                __ltsf2
+                0x000032ec                __lesf2
  .text.avr-libc.fplib
-                0x000031dc        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
-                0x000031dc                __divsf3
+                0x000032f6        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                0x000032f6                __divsf3
  .text.avr-libc.fplib
-                0x000031e4       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
-                0x00003204                __divsf3x
-                0x0000320a                __divsf3_pse
+                0x000032fe       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                0x0000331e                __divsf3x
+                0x00003324                __divsf3_pse
  .text.avr-libc.fplib
-                0x000032c0       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
-                0x000032c0                __fixunssfsi
+                0x000033da       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                0x000033da                __fixunssfsi
  .text.avr-libc.fplib
-                0x0000331e       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
-                0x0000331e                __floatunsisf
-                0x00003322                __floatsisf
+                0x00003438       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                0x00003438                __floatunsisf
+                0x0000343c                __floatsisf
  .text.avr-libc.fplib
-                0x00003398       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
-                0x00003398                __fp_cmp
+                0x000034b2       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+                0x000034b2                __fp_cmp
  .text.avr-libc.fplib
-                0x000033e0        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
-                0x000033e0                __fp_inf
+                0x000034fa        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                0x000034fa                __fp_inf
  .text.avr-libc.fplib
-                0x000033ec        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
-                0x000033ec                __fp_nan
+                0x00003506        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                0x00003506                __fp_nan
  .text.avr-libc.fplib
-                0x000033f2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
-                0x000033f2                __fp_pscA
+                0x0000350c        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                0x0000350c                __fp_pscA
  .text.avr-libc.fplib
-                0x00003400        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
-                0x00003400                __fp_pscB
+                0x0000351a        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                0x0000351a                __fp_pscB
  .text.avr-libc.fplib
-                0x0000340e       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
-                0x0000340e                __fp_round
+                0x00003528       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                0x00003528                __fp_round
  .text.avr-libc.fplib
-                0x00003430       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
-                0x00003430                __fp_split3
-                0x00003440                __fp_splitA
+                0x0000354a       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                0x0000354a                __fp_split3
+                0x0000355a                __fp_splitA
  .text.avr-libc.fplib
-                0x00003474        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
-                0x00003474                __fp_zero
-                0x00003476                __fp_szero
+                0x0000358e        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                0x0000358e                __fp_zero
+                0x00003590                __fp_szero
  .text.avr-libc.fplib
-                0x00003482        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(gesf2.o)
-                0x00003482                __gesf2
-                0x00003482                __gtsf2
+                0x0000359c        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(gesf2.o)
+                0x0000359c                __gesf2
+                0x0000359c                __gtsf2
  .text.avr-libc.fplib
-                0x0000348c        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
-                0x0000348c                __mulsf3
+                0x000035a6        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                0x000035a6                __mulsf3
  .text.avr-libc.fplib
-                0x00003494       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
-                0x000034b2                __mulsf3x
-                0x000034b8                __mulsf3_pse
+                0x000035ae       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                0x000035cc                __mulsf3x
+                0x000035d2                __mulsf3_pse
  .text.avr-libc.fplib
-                0x00003566        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(unordsf2.o)
-                0x00003566                __unordsf2
+                0x00003680        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a(unordsf2.o)
+                0x00003680                __unordsf2
  .text.libgcc.div
-                0x00003570       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
-                0x00003570                __udivmodqi4
+                0x0000368a       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
+                0x0000368a                __udivmodqi4
  .text.libgcc.div
-                0x00003588       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x00003588                __udivmodhi4
+                0x000036a2       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x000036a2                __udivmodhi4
  .text.libgcc.div
-                0x000035b0       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x000035b0                _div
-                0x000035b0                __divmodhi4
+                0x000036ca       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                0x000036ca                _div
+                0x000036ca                __divmodhi4
  .text.libgcc.div
-                0x000035d8       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
-                0x000035d8                __udivmodsi4
+                0x000036f2       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x000036f2                __udivmodsi4
  .text.libgcc.mul
-                0x0000361c       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
-                0x0000361c                __umulhisi3
+                0x00003736       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00003736                __umulhisi3
  .text.libgcc.mul
-                0x0000363a       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_muluhisi3.o)
-                0x0000363a                __muluhisi3
+                0x00003754       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_muluhisi3.o)
+                0x00003754                __muluhisi3
  .text.libgcc.mul
-                0x00003650       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_mulshisi3.o)
-                0x00003650                __mulshisi3
-                0x00003656                __mulohisi3
- .text.libgcc   0x00003660       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_adddi3.o)
-                0x00003660                __adddi3
- .text.libgcc   0x00003672        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                0x00003672                __tablejump2__
+                0x0000376a       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_mulshisi3.o)
+                0x0000376a                __mulshisi3
+                0x00003770                __mulohisi3
+ .text.libgcc   0x0000377a       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_adddi3.o)
+                0x0000377a                __adddi3
+ .text.libgcc   0x0000378c        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x0000378c                __tablejump2__
  .text.avr-libc
-                0x0000367e      0x242 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x0000367e                malloc
-                0x000037ae                free
-                0x000038c0                . = ALIGN (0x2)
+                0x00003798      0x242 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00003798                malloc
+                0x000038c8                free
+                0x000039da                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000038c0        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000038c0                _exit
-                0x000038c0                exit
+ .fini9         0x000039da        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000039da                _exit
+                0x000039da                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x000038c0       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
-                0x000038c0                __do_global_dtors
+ .fini6         0x000039da       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+                0x000039da                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -1944,11 +1963,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000038d6        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000039f0        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000038da                _etext = .
+                0x000039f4                _etext = .
 
-.data           0x00800100      0x1f8 load address 0x000038da
+.data           0x00800100      0x264 load address 0x000039f4
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
@@ -1970,201 +1989,212 @@ END GROUP
                 0x00800129        0xc main.o
  .rodata._ZZ8checksumPKhjE12__FUNCTION__
                 0x00800135        0x9 main.o
+ .rodata._ZZ20activate_instrumentsvE12__FUNCTION__
+                0x0080013e       0x15 main.o
+ .rodata._ZZ16init_instrumentsvE12__FUNCTION__
+                0x00800153       0x11 main.o
+ .rodata._ZZ16deactivate_relayvE12__FUNCTION__
+                0x00800164       0x11 main.o
+ .rodata._ZZ14activate_relayvE12__FUNCTION__
+                0x00800175        0xf main.o
+ .rodata._ZZ10init_relayvE12__FUNCTION__
+                0x00800184        0xb main.o
  .rodata._ZZ10init_setupvE12__FUNCTION__
-                0x0080013e        0xb main.o
+                0x0080018f        0xb main.o
  .rodata._ZZ4mainE12__FUNCTION__
-                0x00800149        0x5 main.o
+                0x0080019a        0x5 main.o
  .rodata._ZL17DS3231_ALARM_ADDR
-                0x0080014e        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x0080019f        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
  .rodata._ZL13DAYS_IN_MONTH
-                0x00800150        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x008001a1        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
  .rodata._ZTV14HardwareSerial
-                0x0080015c       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x0080015c                _ZTV14HardwareSerial
+                0x008001ad       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x008001ad                _ZTV14HardwareSerial
  .rodata.str1.1
-                0x0080016e        0xf C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x008001bf        0xf C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
  .rodata._ZTV7TwoWire
-                0x0080017d       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x0080017d                _ZTV7TwoWire
+                0x008001ce       0x12 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x008001ce                _ZTV7TwoWire
  .rodata.str1.1
-                0x0080018f       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+                0x008001e0       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
  .rodata._ZZ7sd_initvE12__FUNCTION__
-                0x008001af        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+                0x00800200        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
  .rodata._ZZ10save_framePcPhhE12__FUNCTION__
-                0x008001b7        0xb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+                0x00800208        0xb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
  .rodata._ZZ11init_memoryvE12__FUNCTION__
-                0x008001c2        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+                0x00800213        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
  .rodata.str1.1
-                0x008001ce       0x32 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                                 0x34 (size before relaxing)
+                0x0080021f       0x4c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                                 0x50 (size before relaxing)
  .rodata._ZZ12exec_modulesPhE12__FUNCTION__
-                0x00800200        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x0080026b        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ12init_modulesvE12__FUNCTION__
-                0x0080020d        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00800278        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ16_anemometer_readP8Sensor_tPhE12__FUNCTION__
-                0x0080021a       0x11 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00800285       0x11 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ11_pt100_readP8Sensor_tPhE12__FUNCTION__
-                0x0080022b        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00800296        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ13_hdc1080_readP8Sensor_tPhE12__FUNCTION__
-                0x00800237        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x008002a2        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ12_as7262_readP8Sensor_tPhE12__FUNCTION__
-                0x00800245        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x008002b0        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ16_anemometer_initP8Sensor_tE12__FUNCTION__
-                0x00800252       0x11 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x008002bd       0x11 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ11_pt100_initP8Sensor_tE12__FUNCTION__
-                0x00800263        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x008002ce        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ13_hdc1080_initP8Sensor_tE12__FUNCTION__
-                0x0080026f        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x008002da        0xe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ12_as7262_initP8Sensor_tE12__FUNCTION__
-                0x0080027d        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x008002e8        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .rodata._ZZ11ds3231_inithE12__FUNCTION__
-                0x0080028a        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+                0x008002f5        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
  .rodata._ZZ10goto_sleepvE12__FUNCTION__
-                0x00800296        0xb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+                0x00800301        0xb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
  .rodata.str1.1
-                0x008002a1       0x1f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x0080030c       0x1f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
  .rodata._ZZ22status_blinker_disablevE12__FUNCTION__
-                0x008002c0       0x17 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x0080032b       0x17 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
  .rodata._ZZ19status_blinker_initvE12__FUNCTION__
-                0x008002d7       0x14 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x00800342       0x14 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
  .rodata._ZZ12signal_erroriE12__FUNCTION__
-                0x008002eb        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x00800356        0xd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
  *(.gnu.linkonce.r*)
-                0x008002f8                . = ALIGN (0x2)
-                0x008002f8                _edata = .
-                0x008002f8                PROVIDE (__data_end, .)
+                0x00800364                . = ALIGN (0x2)
+ *fill*         0x00800363        0x1 
+                0x00800364                _edata = .
+                0x00800364                PROVIDE (__data_end, .)
 
-.bss            0x008002f8      0x1c4
-                0x008002f8                PROVIDE (__bss_start, .)
+.bss            0x00800364      0x1c4
+                0x00800364                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.ts        0x008002f8        0xb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
-                0x008002f8                ts
- .bss.Serial    0x00800303       0x9d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
-                0x00800303                Serial
+ .bss.ts        0x00800364        0xb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x00800364                ts
+ .bss.Serial    0x0080036f       0x9d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x0080036f                Serial
  .bss.timer0_fract
-                0x008003a0        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x0080040c        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
  .bss.timer0_millis
-                0x008003a1        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x008003a1                timer0_millis
+                0x0080040d        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x0080040d                timer0_millis
  .bss.timer0_overflow_count
-                0x008003a5        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x008003a5                timer0_overflow_count
- .bss.Wire      0x008003a9        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003a9                Wire
+                0x00800411        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00800411                timer0_overflow_count
+ .bss.Wire      0x00800415        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00800415                Wire
  .bss._ZN7TwoWire14user_onReceiveE
-                0x008003b5        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003b5                _ZN7TwoWire14user_onReceiveE
+                0x00800421        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00800421                _ZN7TwoWire14user_onReceiveE
  .bss._ZN7TwoWire14user_onRequestE
-                0x008003b7        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003b7                _ZN7TwoWire14user_onRequestE
+                0x00800423        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00800423                _ZN7TwoWire14user_onRequestE
  .bss._ZN7TwoWire12transmittingE
-                0x008003b9        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003b9                _ZN7TwoWire12transmittingE
+                0x00800425        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00800425                _ZN7TwoWire12transmittingE
  .bss._ZN7TwoWire14txBufferLengthE
-                0x008003ba        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003ba                _ZN7TwoWire14txBufferLengthE
+                0x00800426        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00800426                _ZN7TwoWire14txBufferLengthE
  .bss._ZN7TwoWire13txBufferIndexE
-                0x008003bb        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003bb                _ZN7TwoWire13txBufferIndexE
+                0x00800427        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00800427                _ZN7TwoWire13txBufferIndexE
  .bss._ZN7TwoWire8txBufferE
-                0x008003bc       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003bc                _ZN7TwoWire8txBufferE
+                0x00800428       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00800428                _ZN7TwoWire8txBufferE
  .bss._ZN7TwoWire9txAddressE
-                0x008003dc        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003dc                _ZN7TwoWire9txAddressE
+                0x00800448        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00800448                _ZN7TwoWire9txAddressE
  .bss._ZN7TwoWire14rxBufferLengthE
-                0x008003dd        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003dd                _ZN7TwoWire14rxBufferLengthE
+                0x00800449        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x00800449                _ZN7TwoWire14rxBufferLengthE
  .bss._ZN7TwoWire13rxBufferIndexE
-                0x008003de        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003de                _ZN7TwoWire13rxBufferIndexE
+                0x0080044a        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x0080044a                _ZN7TwoWire13rxBufferIndexE
  .bss._ZN7TwoWire8rxBufferE
-                0x008003df       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                0x008003df                _ZN7TwoWire8rxBufferE
+                0x0080044b       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x0080044b                _ZN7TwoWire8rxBufferE
  .bss.anemometer_sensor
-                0x008003ff        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x008003ff                anemometer_sensor
+                0x0080046b        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x0080046b                anemometer_sensor
  .bss.pt100_sensor
-                0x0080040b        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x0080040b                pt100_sensor
+                0x00800477        0xc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00800477                pt100_sensor
  .bss.hdc1080_sensor
-                0x00800417        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00800417                hdc1080_sensor
+                0x00800483        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00800483                hdc1080_sensor
  .bss.as7262_sensor
-                0x00800418        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00800418                as7262_sensor
+                0x00800484        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00800484                as7262_sensor
  .bss.anemometer
-                0x0080041e        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x0080041e                anemometer
- .bss.pt100     0x00800424        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00800424                pt100
- .bss.hdc1080   0x0080042a        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x0080042a                hdc1080
- .bss.as7262    0x00800430        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                0x00800430                as7262
+                0x0080048a        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x0080048a                anemometer
+ .bss.pt100     0x00800490        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00800490                pt100
+ .bss.hdc1080   0x00800496        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00800496                hdc1080
+ .bss.as7262    0x0080049c        0x6 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x0080049c                as7262
  .bss._ZZ10goto_sleepvE10prevADCSRA
-                0x00800436        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+                0x008004a2        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
  .bss._ZGVZ10goto_sleepvE10prevADCSRA
-                0x00800437        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+                0x008004a3        0x8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
  .bss.wake_flag
-                0x0080043f        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
-                0x0080043f                wake_flag
+                0x008004ab        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+                0x008004ab                wake_flag
  .bss.initStatus
-                0x00800440        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
-                0x00800440                initStatus
- .bss.ledState  0x00800442        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
-                0x00800442                ledState
+                0x008004ac        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x008004ac                initStatus
+ .bss.ledState  0x008004ae        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x008004ae                ledState
  .bss.twi_error
-                0x00800444        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x008004b0        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_rxBufferIndex
-                0x00800445        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x008004b1        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_rxBuffer
-                0x00800446       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x008004b2       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_txBufferLength
-                0x00800466        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x008004d2        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_txBufferIndex
-                0x00800467        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x008004d3        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_txBuffer
-                0x00800468       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x008004d4       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_masterBufferLength
-                0x00800488        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x008004f4        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_masterBufferIndex
-                0x00800489        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x008004f5        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_masterBuffer
-                0x0080048a       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x008004f6       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_onSlaveReceive
-                0x008004aa        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00800516        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_onSlaveTransmit
-                0x008004ac        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00800518        0x2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_do_reset_on_timeout
-                0x008004ae        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x0080051a        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_timed_out_flag
-                0x008004af        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x0080051b        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_timeout_us
-                0x008004b0        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x0080051c        0x4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_inRepStart
-                0x008004b4        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00800520        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_sendStop
-                0x008004b5        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00800521        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_slarw
-                0x008004b6        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00800522        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .bss.twi_state
-                0x008004b7        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00800523        0x1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  *(COMMON)
- COMMON         0x008004b8        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x008004b8                __brkval
-                0x008004ba                __flp
-                0x008004bc                PROVIDE (__bss_end, .)
-                0x000038da                __data_load_start = LOADADDR (.data)
-                0x00003ad2                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800524        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00800524                __brkval
+                0x00800526                __flp
+                0x00800528                PROVIDE (__bss_end, .)
+                0x000039f4                __data_load_start = LOADADDR (.data)
+                0x00003c58                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008004bc        0x0
+.noinit         0x00800528        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008004bc                _end = .
-                0x008004bc                PROVIDE (__heap_start, .)
+                0x00800528                _end = .
+                0x00800528                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -2212,6 +2242,7 @@ END GROUP
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
@@ -2226,7 +2257,6 @@ END GROUP
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
- .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
  .comment       0x00000030       0x31 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
  .comment       0x00000030       0x31 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
@@ -2251,238 +2281,238 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x8c8
+.debug_aranges  0x00000000      0x8f8
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x30 main.o
+                0x00000000       0x60 main.o
  .debug_aranges
-                0x00000030       0x70 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+                0x00000060       0x70 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
  .debug_aranges
-                0x000000a0       0x68 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000000d0       0x68 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
  .debug_aranges
-                0x00000108       0x48 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00000138       0x48 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
  .debug_aranges
-                0x00000150      0x100 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000180      0x100 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
  .debug_aranges
-                0x00000250       0x48 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00000280       0x48 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
  .debug_aranges
-                0x00000298      0x110 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                0x000002c8       0x38 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
  .debug_aranges
-                0x000003a8       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+                0x00000300      0x110 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
  .debug_aranges
-                0x000003d8       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                0x00000410       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
  .debug_aranges
-                0x00000450       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+                0x00000440       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
  .debug_aranges
-                0x00000478       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+                0x000004b8       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
  .debug_aranges
-                0x000004a0       0x38 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                0x000004e0       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
  .debug_aranges
-                0x000004d8       0xe0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                0x00000508       0x38 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
  .debug_aranges
-                0x000005b8       0x40 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+                0x00000540       0xe0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
  .debug_aranges
-                0x000005f8       0x88 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                0x00000620       0x40 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
  .debug_aranges
-                0x00000680       0x50 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+                0x00000660       0x88 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
  .debug_aranges
-                0x000006d0       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+                0x000006e8       0x50 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
  .debug_aranges
-                0x000006f0       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+                0x00000738       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
  .debug_aranges
-                0x00000720       0x40 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+                0x00000758       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
  .debug_aranges
-                0x00000760       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
+                0x00000788       0x40 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
  .debug_aranges
-                0x00000790       0x38 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x000007c8       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
  .debug_aranges
-                0x000007c8       0x68 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+                0x000007f8       0x68 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
  .debug_aranges
-                0x00000830       0x98 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+                0x00000860       0x98 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x144db
+.debug_info     0x00000000    0x14938
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_info    0x000005f4      0x6c1 main.o
- .debug_info    0x00000cb5      0xaf3 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
- .debug_info    0x000017a8     0x1f64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_info    0x0000370c     0x1b16 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_info    0x00005222     0x28ff C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_info    0x00007b21      0x2cb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_info    0x00007dec     0x2910 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
- .debug_info    0x0000a6fc      0xaea C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
- .debug_info    0x0000b1e6     0x1e7c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
- .debug_info    0x0000d062      0x467 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
- .debug_info    0x0000d4c9      0x30a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
- .debug_info    0x0000d7d3      0x50b C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
- .debug_info    0x0000dcde     0x1de9 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
- .debug_info    0x0000fac7      0x3ce C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
- .debug_info    0x0000fe95     0x2234 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
- .debug_info    0x000120c9      0x4a4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
- .debug_info    0x0001256d       0x3e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
- .debug_info    0x000125ab      0x15f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
- .debug_info    0x0001270a      0x21c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
- .debug_info    0x00012926      0x26d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
- .debug_info    0x00012b93      0x5fe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_info    0x00013191      0xa6e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
- .debug_info    0x00013bff      0x8dc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+ .debug_info    0x000005f4      0xa62 main.o
+ .debug_info    0x00001056      0xaf3 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+ .debug_info    0x00001b49     0x1f64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_info    0x00003aad     0x1b16 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_info    0x000055c3     0x28ff C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_info    0x00007ec2      0x2cb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_info    0x0000818d      0x5fe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_info    0x0000878b     0x2910 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+ .debug_info    0x0000b09b      0xaea C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+ .debug_info    0x0000bb85     0x1f38 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+ .debug_info    0x0000dabd      0x467 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+ .debug_info    0x0000df24      0x30a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+ .debug_info    0x0000e22e      0x50b C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+ .debug_info    0x0000e739     0x1de9 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+ .debug_info    0x00010522      0x3ce C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+ .debug_info    0x000108f0     0x2234 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+ .debug_info    0x00012b24      0x4a4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+ .debug_info    0x00012fc8       0x3e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_info    0x00013006      0x15f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+ .debug_info    0x00013165      0x21c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+ .debug_info    0x00013381      0x26d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_info    0x000135ee      0xa6e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+ .debug_info    0x0001405c      0x8dc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
 
-.debug_abbrev   0x00000000     0x43eb
+.debug_abbrev   0x00000000     0x4414
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_abbrev  0x000005a2      0x26a main.o
- .debug_abbrev  0x0000080c      0x2d7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
- .debug_abbrev  0x00000ae3      0x4b7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_abbrev  0x00000f9a      0x3ce C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_abbrev  0x00001368      0x47a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_abbrev  0x000017e2      0x146 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_abbrev  0x00001928      0x563 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
- .debug_abbrev  0x00001e8b      0x251 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
- .debug_abbrev  0x000020dc      0x549 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
- .debug_abbrev  0x00002625      0x221 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
- .debug_abbrev  0x00002846      0x191 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
- .debug_abbrev  0x000029d7      0x1e2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
- .debug_abbrev  0x00002bb9      0x459 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
- .debug_abbrev  0x00003012      0x1ea C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
- .debug_abbrev  0x000031fc      0x499 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
- .debug_abbrev  0x00003695      0x200 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
- .debug_abbrev  0x00003895       0x2a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
- .debug_abbrev  0x000038bf      0x109 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
- .debug_abbrev  0x000039c8       0xfc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
- .debug_abbrev  0x00003ac4      0x16b C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
- .debug_abbrev  0x00003c2f      0x15b C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_abbrev  0x00003d8a      0x36f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
- .debug_abbrev  0x000040f9      0x2f2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+ .debug_abbrev  0x000005a2      0x293 main.o
+ .debug_abbrev  0x00000835      0x2d7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+ .debug_abbrev  0x00000b0c      0x4b7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_abbrev  0x00000fc3      0x3ce C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_abbrev  0x00001391      0x47a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_abbrev  0x0000180b      0x146 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_abbrev  0x00001951      0x15b C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_abbrev  0x00001aac      0x563 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+ .debug_abbrev  0x0000200f      0x251 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+ .debug_abbrev  0x00002260      0x549 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+ .debug_abbrev  0x000027a9      0x221 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+ .debug_abbrev  0x000029ca      0x191 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+ .debug_abbrev  0x00002b5b      0x1e2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+ .debug_abbrev  0x00002d3d      0x459 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+ .debug_abbrev  0x00003196      0x1ea C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+ .debug_abbrev  0x00003380      0x499 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+ .debug_abbrev  0x00003819      0x200 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+ .debug_abbrev  0x00003a19       0x2a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_abbrev  0x00003a43      0x109 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+ .debug_abbrev  0x00003b4c       0xfc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+ .debug_abbrev  0x00003c48      0x16b C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_abbrev  0x00003db3      0x36f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+ .debug_abbrev  0x00004122      0x2f2 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
 
-.debug_line     0x00000000     0x525b
+.debug_line     0x00000000     0x5369
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x134 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_line    0x00000134      0x376 main.o
- .debug_line    0x000004aa      0x59e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
- .debug_line    0x00000a48      0x4d9 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_line    0x00000f21      0x2a1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_line    0x000011c2      0x69a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_line    0x0000185c      0x2ae C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_line    0x00001b0a      0x637 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
- .debug_line    0x00002141      0x29f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
- .debug_line    0x000023e0      0x555 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
- .debug_line    0x00002935      0x22f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
- .debug_line    0x00002b64      0x219 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
- .debug_line    0x00002d7d      0x2fd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
- .debug_line    0x0000307a      0x78e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
- .debug_line    0x00003808      0x1b0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
- .debug_line    0x000039b8      0x479 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
- .debug_line    0x00003e31      0x1c1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
- .debug_line    0x00003ff2       0x41 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
- .debug_line    0x00004033      0x145 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
- .debug_line    0x00004178      0x1b7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
- .debug_line    0x0000432f      0x224 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
- .debug_line    0x00004553      0x267 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_line    0x000047ba      0x3d1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
- .debug_line    0x00004b8b      0x6d0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+ .debug_line    0x00000134      0x478 main.o
+ .debug_line    0x000005ac      0x59e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+ .debug_line    0x00000b4a      0x4d9 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_line    0x00001023      0x2a1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_line    0x000012c4      0x69a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_line    0x0000195e      0x2ae C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_line    0x00001c0c      0x267 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_line    0x00001e73      0x637 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+ .debug_line    0x000024aa      0x29f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+ .debug_line    0x00002749      0x561 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+ .debug_line    0x00002caa      0x22f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+ .debug_line    0x00002ed9      0x219 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+ .debug_line    0x000030f2      0x2fd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+ .debug_line    0x000033ef      0x78e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+ .debug_line    0x00003b7d      0x1b0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+ .debug_line    0x00003d2d      0x479 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+ .debug_line    0x000041a6      0x1c1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+ .debug_line    0x00004367       0x41 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_line    0x000043a8      0x145 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+ .debug_line    0x000044ed      0x1b7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+ .debug_line    0x000046a4      0x224 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_line    0x000048c8      0x3d1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+ .debug_line    0x00004c99      0x6d0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
 
-.debug_frame    0x00000000     0x1ae8
+.debug_frame    0x00000000     0x1b60
  *(.debug_frame)
- .debug_frame   0x00000000       0x74 main.o
- .debug_frame   0x00000074      0x1d8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
- .debug_frame   0x0000024c      0x110 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_frame   0x0000035c       0xe0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_frame   0x0000043c      0x3ac C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_frame   0x000007e8       0xc4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_frame   0x000008ac      0x2b0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
- .debug_frame   0x00000b5c       0x64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
- .debug_frame   0x00000bc0      0x208 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
- .debug_frame   0x00000dc8       0x54 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
- .debug_frame   0x00000e1c       0x34 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
- .debug_frame   0x00000e50       0x9c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
- .debug_frame   0x00000eec      0x370 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
- .debug_frame   0x0000125c       0x84 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
- .debug_frame   0x000012e0      0x17c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
- .debug_frame   0x0000145c       0x90 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
- .debug_frame   0x000014ec       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
- .debug_frame   0x00001510       0x64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
- .debug_frame   0x00001574       0xf4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
- .debug_frame   0x00001668       0x54 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
- .debug_frame   0x000016bc       0x7c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_frame   0x00001738      0x1a8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
- .debug_frame   0x000018e0      0x208 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+ .debug_frame   0x00000000       0xd4 main.o
+ .debug_frame   0x000000d4      0x1d8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+ .debug_frame   0x000002ac      0x110 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_frame   0x000003bc       0xe0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_frame   0x0000049c      0x3ac C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_frame   0x00000848       0xc4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_frame   0x0000090c       0x7c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_frame   0x00000988      0x2b0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+ .debug_frame   0x00000c38       0x64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+ .debug_frame   0x00000c9c      0x220 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+ .debug_frame   0x00000ebc       0x54 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+ .debug_frame   0x00000f10       0x34 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+ .debug_frame   0x00000f44       0x9c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+ .debug_frame   0x00000fe0      0x370 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+ .debug_frame   0x00001350       0x84 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+ .debug_frame   0x000013d4      0x17c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+ .debug_frame   0x00001550       0x90 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+ .debug_frame   0x000015e0       0x24 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_frame   0x00001604       0x64 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+ .debug_frame   0x00001668       0xf4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+ .debug_frame   0x0000175c       0x54 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_frame   0x000017b0      0x1a8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+ .debug_frame   0x00001958      0x208 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
 
-.debug_str      0x00000000     0x4d67
+.debug_str      0x00000000     0x4e31
  *(.debug_str)
  .debug_str     0x00000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_str     0x00000208      0x4ba main.o
-                                0x529 (size before relaxing)
- .debug_str     0x000006c2      0x37e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+ .debug_str     0x00000208      0x599 main.o
+                                0x62c (size before relaxing)
+ .debug_str     0x000007a1      0x37e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
                                 0x629 (size before relaxing)
- .debug_str     0x00000a40     0x12ba C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_str     0x00000b1f     0x12ba C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
                                0x162b (size before relaxing)
- .debug_str     0x00001cfa       0xca C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_str     0x00001dd9       0xca C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
                                0x141e (size before relaxing)
- .debug_str     0x00001dc4      0x3ce C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_str     0x00001ea3      0x3ce C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
                                0x1258 (size before relaxing)
- .debug_str     0x00002192      0x14d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_str     0x00002271      0x14d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
                                 0x260 (size before relaxing)
- .debug_str     0x000022df      0x5c8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
-                               0x19bb (size before relaxing)
- .debug_str     0x000028a7      0x662 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
-                                0xa27 (size before relaxing)
- .debug_str     0x00002f09     0x13da C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
-                               0x18be (size before relaxing)
- .debug_str     0x000042e3       0x7b C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
-                                0x423 (size before relaxing)
- .debug_str     0x0000435e       0x52 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
-                                0x370 (size before relaxing)
- .debug_str     0x000043b0       0x49 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
-                                0x3ea (size before relaxing)
- .debug_str     0x000043f9      0x2dc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
-                               0x11e0 (size before relaxing)
- .debug_str     0x000046d5       0x55 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
-                                0x3a3 (size before relaxing)
- .debug_str     0x0000472a      0x131 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
-                               0x188c (size before relaxing)
- .debug_str     0x0000485b       0x3a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
-                                0x3ec (size before relaxing)
- .debug_str     0x00004895       0x1c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
-                                0x155 (size before relaxing)
- .debug_str     0x000048b1       0x58 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
-                                0x1f5 (size before relaxing)
- .debug_str     0x00004909       0x67 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
-                                0x24d (size before relaxing)
- .debug_str     0x00004970       0x67 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
-                                0x264 (size before relaxing)
- .debug_str     0x000049d7       0xa4 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_str     0x000023be       0xc7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
                                 0x2c5 (size before relaxing)
- .debug_str     0x00004a7b       0xc7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+ .debug_str     0x00002485      0x5c8 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+                               0x19bb (size before relaxing)
+ .debug_str     0x00002a4d      0x65d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+                                0xa27 (size before relaxing)
+ .debug_str     0x000030aa     0x13da C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+                               0x18be (size before relaxing)
+ .debug_str     0x00004484       0x73 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+                                0x423 (size before relaxing)
+ .debug_str     0x000044f7       0x52 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+                                0x370 (size before relaxing)
+ .debug_str     0x00004549       0x3c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+                                0x3ea (size before relaxing)
+ .debug_str     0x00004585      0x2dc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+                               0x11e0 (size before relaxing)
+ .debug_str     0x00004861       0x55 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+                                0x3a3 (size before relaxing)
+ .debug_str     0x000048b6      0x131 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+                               0x188c (size before relaxing)
+ .debug_str     0x000049e7       0x3a C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+                                0x3ec (size before relaxing)
+ .debug_str     0x00004a21       0x1c C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+                                0x155 (size before relaxing)
+ .debug_str     0x00004a3d       0x58 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+                                0x1f5 (size before relaxing)
+ .debug_str     0x00004a95       0x62 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+                                0x24d (size before relaxing)
+ .debug_str     0x00004af7       0x4e C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
+                                0x264 (size before relaxing)
+ .debug_str     0x00004b45       0xc7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
                                 0x68d (size before relaxing)
- .debug_str     0x00004b42      0x225 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+ .debug_str     0x00004c0c      0x225 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
                                 0x50f (size before relaxing)
 
-.debug_loc      0x00000000     0x80ea
+.debug_loc      0x00000000     0x8123
  *(.debug_loc)
- .debug_loc     0x00000000      0x311 main.o
- .debug_loc     0x00000311      0x95b C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
- .debug_loc     0x00000c6c      0x4dc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_loc     0x00001148      0x1b0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_loc     0x000012f8     0x1c87 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_loc     0x00002f7f      0x28d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_loc     0x0000320c      0xcbb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
- .debug_loc     0x00003ec7      0x140 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
- .debug_loc     0x00004007      0x899 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
- .debug_loc     0x000048a0       0xe1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
- .debug_loc     0x00004981      0x134 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
- .debug_loc     0x00004ab5     0x11ca C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
- .debug_loc     0x00005c7f       0xc1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
- .debug_loc     0x00005d40      0x636 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
- .debug_loc     0x00006376       0x8d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
- .debug_loc     0x00006403       0x72 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
- .debug_loc     0x00006475      0x235 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
- .debug_loc     0x000066aa       0xfe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
- .debug_loc     0x000067a8      0x5fc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_loc     0x00006da4      0xac7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
- .debug_loc     0x0000786b      0x87f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+ .debug_loc     0x00000000      0x316 main.o
+ .debug_loc     0x00000316      0x95b C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+ .debug_loc     0x00000c71      0x4dc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_loc     0x0000114d      0x1b0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_loc     0x000012fd     0x1c87 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_loc     0x00002f84      0x28d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_loc     0x00003211      0x5fc C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_loc     0x0000380d      0xcbb C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+ .debug_loc     0x000044c8      0x140 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+ .debug_loc     0x00004608      0x8cd C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+ .debug_loc     0x00004ed5       0xe1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+ .debug_loc     0x00004fb6      0x134 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+ .debug_loc     0x000050ea     0x11ca C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+ .debug_loc     0x000062b4       0xc1 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+ .debug_loc     0x00006375      0x636 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+ .debug_loc     0x000069ab       0x8d C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+ .debug_loc     0x00006a38       0x72 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+ .debug_loc     0x00006aaa      0x235 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+ .debug_loc     0x00006cdf       0xfe C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_loc     0x00006ddd      0xac7 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+ .debug_loc     0x000078a4      0x87f C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -2502,31 +2532,31 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x7d0
+.debug_ranges   0x00000000      0x800
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x20 main.o
- .debug_ranges  0x00000020       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
- .debug_ranges  0x00000098       0x58 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_ranges  0x000000f0       0x38 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_ranges  0x00000128      0x120 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_ranges  0x00000248       0x38 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_ranges  0x00000280      0x100 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
- .debug_ranges  0x00000380       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
- .debug_ranges  0x000003a0       0x68 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
- .debug_ranges  0x00000408       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
- .debug_ranges  0x00000420       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
- .debug_ranges  0x00000438       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
- .debug_ranges  0x00000460       0xd0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
- .debug_ranges  0x00000530       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
- .debug_ranges  0x00000560       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
- .debug_ranges  0x000005d8       0x40 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
- .debug_ranges  0x00000618       0x10 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
- .debug_ranges  0x00000628       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
- .debug_ranges  0x00000648       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
- .debug_ranges  0x00000678       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
- .debug_ranges  0x00000698       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_ranges  0x000006c0       0x88 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
- .debug_ranges  0x00000748       0x88 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
+ .debug_ranges  0x00000000       0x50 main.o
+ .debug_ranges  0x00000050       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(DS3231.o)
+ .debug_ranges  0x000000c8       0x58 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_ranges  0x00000120       0x38 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_ranges  0x00000158      0x120 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_ranges  0x00000278       0x38 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_ranges  0x000002b0       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_ranges  0x000002d8      0x100 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Wire.o)
+ .debug_ranges  0x000003d8       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(memory.o)
+ .debug_ranges  0x000003f8       0x68 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(modules.o)
+ .debug_ranges  0x00000460       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(rtc.o)
+ .debug_ranges  0x00000478       0x18 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(sleep.o)
+ .debug_ranges  0x00000490       0x28 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(status.o)
+ .debug_ranges  0x000004b8       0xd0 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_AS726x.o)
+ .debug_ranges  0x00000588       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(anemometer.o)
+ .debug_ranges  0x000005b8       0x78 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(ClosedCube_HDC1080.o)
+ .debug_ranges  0x00000630       0x40 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(PT100.o)
+ .debug_ranges  0x00000670       0x10 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_ranges  0x00000680       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(new.o)
+ .debug_ranges  0x000006a0       0x30 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(WInterrupts.o)
+ .debug_ranges  0x000006d0       0x20 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_analog.o)
+ .debug_ranges  0x000006f0       0x88 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(Adafruit_I2CDevice.o)
+ .debug_ranges  0x00000778       0x88 C:\Users\aplaf\Desktop\ets\ELE795\PROJET~1\FIRMWA~1\FIRMWA~1\ARDUIN~1\Debug\libArduinoCore.a(twi.o)
 
 .debug_macro
  *(.debug_macro)

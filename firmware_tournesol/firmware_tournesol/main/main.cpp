@@ -82,10 +82,14 @@ int main(){
 			wake_flag = 0;
 			err = 0;
 
-			if((err = init_setup()) != ERROR_OK){
+			activate_instruments();
+			delay(1000);
+			
+			if((err = init_modules()) != ERROR_OK){
 				signal_error(err);
 			}
-
+		
+			
 			dt.value = DS3231_get_datetime();
 
 			for (int i = sizeof(uint64_t) - 1; i >= 0; i--){
@@ -101,6 +105,7 @@ int main(){
 
 			// Deactivating the relay asap because its the main power consumption element.
 			deactivate_relay();
+			deactivate_instruments();
 
 			crc = checksum(data, ix);
 

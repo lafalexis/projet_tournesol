@@ -370,7 +370,7 @@ def filedirectory():
         if path.split('.')[-1] == 'BIN':
 
             #Création du fichier excel (alexis)
-            data = utils.ReadBinaryData(page1_progressBar, 42, fn=path)
+            data = utils.ReadBinaryData(page1_progressBar, 50, fn=path)
             data = utils.GenerateDerivativeData(data.dfs)
             dfs = pd.read_excel(utils.EXCELNAME, index_col='datetime', sheet_name=None)
 

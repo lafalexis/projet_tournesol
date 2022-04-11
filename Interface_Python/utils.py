@@ -20,6 +20,8 @@ EXCELNAME = 'database.xlsx'
 BYTE_COUNT_FLOAT = 4
 BYTE_COUNT_TIME = 8
 
+BYTES_IN_FRAME = 50
+
 class ReadBinaryData:
     def __init__(self, progressbar: QtWidgets.QProgressBar, frame_size, fn=r'D:\DATALOG.BIN'):
 
@@ -62,13 +64,17 @@ class ReadBinaryData:
                             struct.unpack('f', bytes([frame.pop(0) for _ in range(BYTE_COUNT_FLOAT)]))[0])
             df_temp_rh.loc[sample_time] = temp_rh_data
             # Then the soil temperature.
+            soil_temp_data = struct.unpack('f', bytes([frame.pop(0) for _ in range(BYTE_COUNT_FLOAT)]))[0]
+            df_soil_temp.loc[sample_time] = soil_temp_data
             # Then the wind speed.
+            wind_speed_data = struct.unpack('f', bytes([frame.pop(0) for _ in range(BYTE_COUNT_FLOAT)]))[0]
+            df_anemometer.loc[sample_time] = wind_speed_data
 
         #df_light.index = pd.to_datetime(df_light.index, unit='s').tz_localize('canada/eastern')
-        df_light.index = pd.to_datetime(df_light.index, unit='s').tz_localize(None)
-        df_temp_rh.index = pd.to_datetime(df_temp_rh.index, unit='s').tz_localize(None)
-        df_soil_temp.index = pd.to_datetime(df_soil_temp.index, unit='s').tz_localize(None)
-        df_anemometer.index = pd.to_datetime(df_anemometer.index, unit='s').tz_localize(None)
+        df_light.index = pd.to_datetime(df_light.index - 14400, unit='s').tz_localize(None)
+        df_temp_rh.index = pd.to_datetime(df_temp_rh.index - 14400, unit='s').tz_localize(None)
+        df_soil_temp.index = pd.to_datetime(df_soil_temp.index - 14400, unit='s').tz_localize(None)
+        df_anemometer.index = pd.to_datetime(df_anemometer.index - 14400, unit='s').tz_localize(None)
 
         self.dfs = {'as7262': df_light,
                     'hdc1080': df_temp_rh,

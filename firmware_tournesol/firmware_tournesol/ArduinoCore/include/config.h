@@ -38,7 +38,7 @@
 #define DEBUG_SAVE_FRAME_SERIAL   (1 & SERIAL_EN)
 #define DEBUG_SIGNAL_ERROR_SERIAL (1 & SERIAL_EN)
 
-#define DEBUG_NO_SD               (1)
+#define DEBUG_NO_SD               (0)
 
 /* DS3231 config */
 /* Alarm 1 config
@@ -65,7 +65,7 @@
 
 /* Timestamp related */
 #define UPDATE_TIMESTAMP		  (0)
-#define UNIX_CURRENT_TIMESTAMP    (1648429410)
+#define UNIX_CURRENT_TIMESTAMP    (1649628900)
 
 /* Modules related */
 #define AS7262_MEAS_BYTES		  (AS726x_NUM_CHANNELS * sizeof(float))

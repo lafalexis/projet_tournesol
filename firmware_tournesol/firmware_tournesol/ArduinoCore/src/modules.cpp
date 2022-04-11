@@ -92,17 +92,19 @@ uint8_t _pt100_read(Sensor_t* sens, uint8_t* data);
  */
 uint8_t _anemometer_read(Sensor_t* sens, uint8_t* data);
 
-// Modules sensor struct
-Sensor_t as7262;
-Sensor_t hdc1080;
-Sensor_t pt100;
-Sensor_t anemometer;
-
 // Driver class instantiation
 Adafruit_AS726x as7262_sensor;
 ClosedCube_HDC1080 hdc1080_sensor;
 PT100 pt100_sensor;
 Anemometer anemometer_sensor;
+
+// Modules sensor struct
+Sensor_t as7262 = {(void*)&as7262_sensor, &_as7262_init, &_as7262_read};
+Sensor_t hdc1080 = {(void*)&hdc1080_sensor, &_hdc1080_init, &_hdc1080_read};
+Sensor_t pt100 = {(void*)&pt100_sensor, &_pt100_init, &_pt100_read};
+Sensor_t anemometer = {(void*)&anemometer_sensor, &_anemometer_init, &_anemometer_read};
+
+
 /*
 const Sensor_t AS7262_SENSOR = {(void*)&as7262, &_as7262_init, &_as7262_read};
 const Sensor_t HDC1080_SENSOR = {(void*)&hdc1080, &_hdc1080_init, &_hdc1080_read};
@@ -111,10 +113,10 @@ const Sensor_t ANEMOMETER_SENSOR = {(void*)&anemometer, &_anemometer_init, &_ane
 */
 // Sensor struct list
 Sensor_t sensor_list[] = {
-	{(void*)&as7262, &_as7262_init, &_as7262_read},
-	{(void*)&hdc1080, &_hdc1080_init, &_hdc1080_read},
-	{(void*)&pt100, &_pt100_init, &_pt100_read},
-	{(void*)&anemometer, &_anemometer_init, &_anemometer_read},
+	as7262,
+	hdc1080,
+	pt100,
+	anemometer,
 	{NULL, NULL, NULL}
 };
 
@@ -135,7 +137,7 @@ int _as7262_init(Sensor_t* sens){
 		return ERROR_AS7262;
 	}
 
-	sens->sensor_mod = (void*)&as7262_sensor;
+	//sens->sensor_mod = (void*)&as7262_sensor;
 
 	return ERROR_OK;
 }
@@ -152,7 +154,7 @@ int _hdc1080_init(Sensor_t* sens){
 		return ERROR_HDC1080;
 	}
 
-	sens->sensor_mod = (void*)&hdc1080_sensor;
+	//sens->sensor_mod = (void*)&hdc1080_sensor;
 
 	return ERROR_OK;
 }
@@ -163,7 +165,7 @@ int _pt100_init(Sensor_t* sens){
 
 	pt100_sensor.setPin(PT100_ADC_PIN);
 
-	sens->sensor_mod = (void*)&pt100_sensor;
+	//sens->sensor_mod = (void*)&pt100_sensor;
 
 	return 0;
 }
@@ -174,7 +176,7 @@ int _anemometer_init(Sensor_t* sens) {
 
 	anemometer_sensor.setPin(ANEMO_ADC_PIN);
 
-	sens->sensor_mod = (void*)&anemometer_sensor;
+	//sens->sensor_mod = (void*)&anemometer_sensor;
 
 	return 0;
 }
@@ -286,7 +288,7 @@ int init_modules(void){
 	int i = 0;
 
 	while (sensor_list[i].sensor_mod != NULL){
-		err |= sensor_list[i].s_init((Sensor_t*)(sensor_list[i].sensor_mod));
+		err |= sensor_list[i].s_init((Sensor_t*)(&(sensor_list[i])));
 		i++;
 	}
 
@@ -301,7 +303,7 @@ int exec_modules(uint8_t* data){
 	int ix = 0;
 
 	while (sensor_list[i].sensor_mod != NULL){
-		ix += sensor_list[i].s_read((Sensor_t*)(sensor_list[i].sensor_mod), data + ix);
+		ix += sensor_list[i].s_read((Sensor_t*)(&(sensor_list[i])), data + ix);
 		i++;
 	}
 

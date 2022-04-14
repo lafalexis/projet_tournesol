@@ -26,31 +26,33 @@
 
 int main();
 
-/** @brief
+/** @brief Initialization of the system modules and components.
  *
  *
- *  @param
- *  @return
+ *  @return error code
  */
 int init_setup(void);
 
+/** @brief Initialization, activation and deactivation of a relay.
+ *
+ */
 void init_relay();
-
 void activate_relay();
-
 void deactivate_relay();
 
+/** @brief Initialisation, activation and deactivation of the supply to 
+ *	   the measurement devices.
+ *
+ */
 void init_instruments();
-
 void activate_instruments();
-
 void deactivate_instruments();
 
-/** @brief
+/** @brief This function calculates the checksum of a byte array
  *
  *
- *  @param
- *  @return
+ *  @param	pointer to the head of the array and number of elements
+ *  @return	the checksum value (16 bits)
  */
 uint16_t checksum(const uint8_t *c_ptr, size_t len);
 
